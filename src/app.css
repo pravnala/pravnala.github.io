@@ -14,3 +14,7 @@ body {
 		@apply bg-black text-gray-400;
 	}
 }
+
+.contact label {
+	@apply mb-2;
+}
