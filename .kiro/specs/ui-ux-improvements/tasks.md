@@ -57,7 +57,7 @@
   - [x] 8.3 Update `DualPath.astro`: replace `hover:opacity-90`/`hover:opacity-80` with glass hover treatment; replace `opacity-60`/`opacity-40` text with ink token equivalents
   - [x] 8.4 Add CTA arrow micro-interaction to all "Read More →", "View Work →", "Explore Arnis →" links: wrap arrow in `<span class="cta-arrow">`, apply `transform: translateX(4px)` on parent hover within `150ms ease-out`
 
-- [-] 9. Write property-based tests
+- [x] 9. Write property-based tests
   - [x] 9.1 Write property test for Property 1: text contrast meets WCAG AA minimums (fast-check, ≥100 iterations)
   - [x] 9.2 Write property test for Property 2: no low-opacity text on meaningful content (fast-check, ≥100 iterations)
   - [x] 9.3 Write property test for Property 3: AnimatedSection renders correct attributes for all valid configs (fast-check, ≥100 iterations)
