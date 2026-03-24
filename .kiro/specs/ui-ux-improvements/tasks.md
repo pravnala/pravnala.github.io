@@ -61,7 +61,7 @@
   - [x] 9.1 Write property test for Property 1: text contrast meets WCAG AA minimums (fast-check, ≥100 iterations)
   - [x] 9.2 Write property test for Property 2: no low-opacity text on meaningful content (fast-check, ≥100 iterations)
   - [x] 9.3 Write property test for Property 3: AnimatedSection renders correct attributes for all valid configs (fast-check, ≥100 iterations)
-  - [ ] 9.4 Write property test for Property 4: only transform and opacity are animated (fast-check, ≥100 iterations)
+  - [x] 9.4 Write property test for Property 4: only transform and opacity are animated (fast-check, ≥100 iterations)
   - [ ] 9.5 Write property test for Property 5: will-change lifecycle is correct (fast-check, ≥100 iterations)
   - [ ] 9.6 Write property test for Property 6: active nav link indicator present for every route (fast-check, ≥100 iterations)
   - [ ] 9.7 Write property test for Property 7: mobile menu nav links have correct staggered delays (fast-check, ≥100 iterations)
