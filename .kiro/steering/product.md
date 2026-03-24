@@ -20,7 +20,9 @@ Two distinct audiences, one site:
 
 ## Design Language
 
-- Monochromatic editorial minimalism — black/white only, no mid-tones or gradients
+- Dark Glassmorphism -- permanently dark canvas (`#0A0A0A`), frosted-glass UI surfaces, no light mode
+- Gray midtone hierarchy: `--color-ink` (#FFF), `--color-ink-muted` (#A1A1AA), `--color-ink-subtle` (#71717A)
+- Glass surfaces: `backdrop-filter: blur(16px)`, `rgba(255,255,255,0.06)` backgrounds, subtle white borders
 - Aggressive sans-serif typography: ultra-bold headers, tight tracking (`-0.04em`), tight leading (`1.05`)
-- Section reveal animations and micro-interactions
+- Prominent section reveal animations, fluid micro-interactions, spring-curve easing
 - Astro View Transitions for seamless navigation between Dev and Arnis sections

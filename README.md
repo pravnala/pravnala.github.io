@@ -45,9 +45,9 @@ Content is managed via Keystatic's local UI during development. Navigate to `/ke
 
 ## Design
 
-Monochromatic editorial minimalism — high-contrast black and white, aggressive sans-serif typography, section reveal animations, and Astro View Transitions for seamless navigation between the dev and arnis sections.
+Dark glassmorphism — permanently dark canvas (`#0A0A0A`), frosted-glass UI surfaces, gray midtone typography hierarchy, and fluid spring-curve animations. Aggressive sans-serif headers with tight tracking and Astro View Transitions for seamless navigation between the dev and arnis sections.
 
-Light/dark mode is supported with a manual toggle that persists via `localStorage` and includes an anti-flicker inline script to prevent FOUC.
+The site is permanently dark with no light mode or theme toggle. An inline script in `<head>` unconditionally applies `class="dark"` to the `<html>` element before first paint to prevent FOUC.
 
 ## Deployment
 

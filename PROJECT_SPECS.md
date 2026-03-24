@@ -27,30 +27,28 @@
 * Create components as needed and organize components in descriptive folders under the /src/components/ directory
 
 #### **Tailwind v4**
-* **CRITICAL RULE:** For all generic Tailwind v4 syntax questions (e.g., gradients, flexbox, typography classes), ALWAYS rely on your knowledge or refer to the latest Tailwind documentation using the `context7` MCP server. 
+* **CRITICAL RULE:** For all generic Tailwind v4 syntax questions (e.g., gradients, flexbox, typography classes), ALWAYS rely on your knowledge or refer to the latest Tailwind documentation using the `context7` MCP server.
 * Tailwind v4 uses CSS variables and `@theme` instead of `tailwind.config.js`
 * **CRITICAL:** The definitive `@theme` configuration is located in `src/styles/global.css`. Always read this file to discover the latest available custom design tokens, fonts, colors, and animations before styling new components.
 * Prefer defined design tokens over arbitrary bracket values when possible.
 * Prefer standard utility classes over arbitrary values (e.g., use `h-px` instead of `h-[1px]`).
-
 
 #### **Keystatic CMS (Local-Only)**
 * **Workflow:** Content is managed via a local UI at `/keystatic` during development.
 * **Storage:** Data is saved as `.mdoc` (Markdoc) files directly in `src/content/`.
 * **Sync:** Content updates are pushed to GitHub via standard `git commit` alongside code changes. No external API or Cloud account required.
 
-#### **Theme Engine (Light/Dark Mode)**
-* **Manual Toggle:** A header switch that allows users to override system preferences.
-* **Persistence:** Uses `localStorage` to remember the user's choice.
-* **Anti-Flicker:** A small inline script in the `<head>` to prevent **FOUC** (*Flash of Unstyled Content*—the annoying white flash that happens before a dark theme loads).
+#### **Theme Engine**
+* **Permanently Dark:** The site uses a single dark theme (`#0A0A0A` canvas). There is no light mode or theme toggle.
+* **Anti-Flicker:** A simplified inline script in the `<head>` ensures the dark background is applied before first paint.
 
 #### **Design Language**
-* **Aesthetic:** "Modern Premium"—high contrast, generous whitespace, and sophisticated typography (e.g., Inter or Geist).
-* **Motion:** Use Astro’s built-in **View Transitions** for seamless, app-like navigation between the Dev and Arnis sections.
+* **Aesthetic:** Dark Glassmorphism -- a permanently dark canvas with frosted-glass UI surfaces, gray midtone hierarchy, and fluid motion design.
+* **Motion:** Use Astro's built-in **View Transitions** for seamless, app-like navigation between the Dev and Arnis sections.
 
 ### 4. Site Design
 
-* **Style:** Monochromatic Editorial Minimalism. High-contrast, black-and-white scheme with no mid-tones or gradients.
-* **Typography:** Aggressive Sans-Serif Overlays. Use massive, ultra-bold headers (likely Inter or PP Neue Montreal) with "tight" tracking (letter spacing) and "tight" leading (line height). Text-over-image masking when applicable.
-* **Feel:** Modern premium site with section reveal animations and micro-interactions
-
+* **Style:** Dark Glassmorphism. Permanent dark canvas (`#0A0A0A`) with frosted glass cards/panels (`backdrop-filter: blur(16px)`, `rgba(255,255,255,0.06)` backgrounds). Gray midtone tokens for text hierarchy. No light mode.
+* **Typography:** Aggressive Sans-Serif. Ultra-bold headers with tight tracking (`-0.04em`) and tight leading (`1.05`). Nav labels in uppercase with wide tracking (`0.12em`).
+* **Color Tokens:** `--color-canvas` (#0A0A0A), `--color-surface` (rgba white 6%), `--color-ink` (#FFFFFF), `--color-ink-muted` (#A1A1AA / zinc-400), `--color-ink-subtle` (#71717A / zinc-500), `--color-accent` (#E4E4E7 / zinc-200).
+* **Feel:** Premium dark site with prominent section reveal animations, fluid micro-interactions, and glass-effect UI surfaces.

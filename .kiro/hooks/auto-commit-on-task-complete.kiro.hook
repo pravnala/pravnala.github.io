@@ -8,7 +8,7 @@
   },
   "then": {
     "type": "runCommand",
-    "command": "git diff --quiet && git diff --cached --quiet && git ls-files --others --exclude-standard | grep -q . || exit 0; git add -A; git commit -m \"feat: complete task - $(git diff --cached --name-only | head -5 | tr '\\n' ' ')\"",
+    "command": "git add -A && git diff --cached --quiet || git commit -m \"feat: complete task - $(git diff --cached --name-only | head -5 | tr '\\n' ' ')\"",
     "timeout": 30
   },
   "workspaceFolderName": "alvinpenaflor",

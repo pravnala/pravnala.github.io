@@ -23,11 +23,11 @@
 - Prefer standard utilities over arbitrary values (e.g., `h-px` over `h-[1px]`)
 - For Tailwind v4 syntax questions, consult the latest Tailwind docs
 
-## Theme / Dark Mode
+## Theme
 
-- Dark mode toggled via `html.dark` class (manual toggle + `localStorage` persistence)
-- Anti-FOUC inline script in `<head>` applies theme before first paint
-- Dark overrides defined in `global.css` under `html.dark body`
+- Site is permanently dark -- no light mode, no theme toggle
+- `html` element always has `class="dark"` applied via a simplified anti-FOUC inline script in `<head>`
+- Base background is `--color-canvas: #0A0A0A`; no `html.dark` override block needed in `global.css`
 
 ## Content Collections
 

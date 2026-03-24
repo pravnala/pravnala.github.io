@@ -16,7 +16,7 @@ const summary =
 ---
 
 <article
-  class="group border border-[var(--color-ink)] p-8 md:p-10 flex flex-col gap-6 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors duration-200"
+  class="group relative border border-[var(--color-surface-border)] bg-[var(--color-surface)] p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-[var(--color-surface-hover)] hover:-translate-y-0.5 hover:border-white/24"
 >
   <!-- Title -->
   <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
@@ -30,7 +30,7 @@ const summary =
   </h2>
 
   <!-- Project context summary -->
-  <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-80 max-w-prose">
+  <p class="text-sm leading-relaxed text-[var(--color-ink-muted)] max-w-prose">
     {summary}
   </p>
 
@@ -48,10 +48,20 @@ const summary =
   <!-- Read more -->
   <a
     href={`/work/${slug}`}
-    class="mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
+    class="cta-link mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
     tabindex="-1"
     aria-hidden="true"
   >
-    Read More →
+    Read More <span class="cta-arrow">→</span>
   </a>
 </article>
+
+<style>
+  .cta-arrow {
+    display: inline-block;
+    transition: transform 150ms ease-out;
+  }
+  .cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+</style>

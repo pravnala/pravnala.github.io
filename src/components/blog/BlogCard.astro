@@ -19,7 +19,7 @@ const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
 ---
 
 <article
-  class="group border border-[var(--color-ink)] p-8 md:p-10 flex flex-col gap-6 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors duration-200"
+  class="group relative border border-[var(--color-surface-border)] bg-[var(--color-surface)] p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-[var(--color-surface-hover)] hover:-translate-y-0.5 hover:border-white/24"
 >
   <!-- Category badge -->
   <span
@@ -43,14 +43,14 @@ const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
   <!-- Publish date -->
   <time
     datetime={publishDate.toISOString()}
-    class="text-xs font-bold tracking-[0.12em] uppercase opacity-60 group-hover:opacity-80"
+    class="text-xs font-bold tracking-[0.12em] uppercase text-[var(--color-ink-muted)]"
   >
     {formattedDate}
   </time>
 
   <!-- Excerpt -->
   {excerpt && (
-    <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-80 max-w-prose">
+    <p class="text-sm leading-relaxed text-[var(--color-ink-muted)] max-w-prose">
       {excerpt}
     </p>
   )}
@@ -58,10 +58,20 @@ const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
   <!-- Read more -->
   <a
     href={`/blog/${slug}`}
-    class="mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
+    class="cta-link mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
     tabindex="-1"
     aria-hidden="true"
   >
-    Read Post →
+    Read Post <span class="cta-arrow">→</span>
   </a>
 </article>
+
+<style>
+  .cta-arrow {
+    display: inline-block;
+    transition: transform 150ms ease-out;
+  }
+  .cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+</style>

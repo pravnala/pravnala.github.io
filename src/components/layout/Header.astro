@@ -1,6 +1,4 @@
 ---
-import ThemeToggle from '../ui/ThemeToggle.astro';
-
 const pathname = Astro.url.pathname;
 
 const navLinks = [
@@ -17,12 +15,12 @@ function isActive(href: string): boolean {
 }
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-[var(--color-paper)] border-b border-current">
-  <div class="max-w-7xl mx-auto px-6 h-14 flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Wordmark -->
     <a
       href="/"
-      class="font-black text-sm tracking-[-0.04em] uppercase transition-opacity hover:opacity-60"
+      class="font-black text-base tracking-[-0.04em] transition-colors duration-150 ease-out text-[var(--color-ink)] hover:text-[var(--color-ink-muted)]"
       aria-label="Alvin Penaflor — Home"
     >
       AP
@@ -35,7 +33,7 @@ function isActive(href: string): boolean {
           href={href}
           aria-current={isActive(href) ? 'page' : undefined}
           class:list={[
-            'text-xs font-bold uppercase tracking-[0.1em] transition-opacity hover:opacity-60',
+            'text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-ink-muted)] transition-colors duration-150 ease-out hover:text-[var(--color-ink)]',
             isActive(href) ? 'nav-link-active' : '',
           ]}
         >
@@ -44,39 +42,42 @@ function isActive(href: string): boolean {
       ))}
     </nav>
 
-    <!-- Right side: theme toggle + hamburger -->
-    <div class="flex items-center gap-3">
-      <ThemeToggle />
-
-      <!-- Hamburger (mobile only) -->
-      <button
-        id="menu-toggle"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-        class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-current transition-opacity hover:opacity-60"
-      >
-        <span class="hamburger-bar block w-4 h-[2px] bg-current transition-transform duration-200"></span>
-        <span class="hamburger-bar block w-4 h-[2px] bg-current transition-opacity duration-200"></span>
-        <span class="hamburger-bar block w-4 h-[2px] bg-current transition-transform duration-200"></span>
-      </button>
-    </div>
+    <!-- Right side: hamburger (mobile only) -->
+    <button
+      id="menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-current transition-opacity hover:opacity-60"
+    >
+      <span class="hamburger-bar bar-top block w-4 h-[2px] bg-current"></span>
+      <span class="hamburger-bar bar-mid block w-4 h-[2px] bg-current"></span>
+      <span class="hamburger-bar bar-bottom block w-4 h-[2px] bg-current"></span>
+    </button>
   </div>
+</header>
 
-  <!-- Mobile menu -->
-  <nav
-    id="mobile-menu"
-    aria-label="Mobile navigation"
-    class="hidden md:hidden border-t border-current"
-  >
-    <ul class="flex flex-col px-6 py-4 gap-4">
-      {navLinks.map(({ href, label }) => (
-        <li>
+<!-- Spacer so page content isn't hidden under fixed header -->
+<div class="h-16" aria-hidden="true"></div>
+
+<!-- Fullscreen mobile menu overlay (sibling to header) -->
+<div
+  id="mobile-menu"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Navigation menu"
+  class="mobile-menu fixed inset-0 z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none"
+  style="background: rgba(10,10,10,0.95); backdrop-filter: blur(var(--blur-glass-heavy));"
+>
+  <nav aria-label="Mobile navigation">
+    <ul class="flex flex-col items-center gap-8">
+      {navLinks.map(({ href, label }, i) => (
+        <li style={`--link-delay: ${i * 50}ms`}>
           <a
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'block text-xs font-bold uppercase tracking-[0.1em] transition-opacity hover:opacity-60',
+              'text-3xl font-black tracking-[-0.04em] text-[var(--color-ink)] transition-colors duration-150 ease-out hover:text-[var(--color-ink-muted)]',
               isActive(href) ? 'nav-link-active' : '',
             ]}
           >
@@ -86,12 +87,21 @@ function isActive(href: string): boolean {
       ))}
     </ul>
   </nav>
-</header>
-
-<!-- Spacer so page content isn't hidden under fixed header -->
-<div class="h-14" aria-hidden="true"></div>
+</div>
 
 <style>
+  header {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    transition: background 250ms ease-out, border-color 250ms ease-out;
+  }
+
+  header.is-scrolled {
+    background: rgba(10, 10, 10, 0.80);
+    backdrop-filter: blur(var(--blur-glass));
+    border-bottom-color: var(--color-surface-border);
+  }
+
   .nav-link-active {
     position: relative;
   }
@@ -103,54 +113,161 @@ function isActive(href: string): boolean {
     left: 0;
     right: 0;
     height: 2px;
-    background-color: currentColor;
+    background-color: var(--color-accent);
+  }
+
+  /* ── Mobile menu overlay ─────────────────────────────── */
+
+  .mobile-menu {
+    transition: opacity 350ms cubic-bezier(0.16, 1, 0.3, 1),
+                transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translateY(-8px);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.is-closing {
+    transition: opacity 250ms ease-in, transform 250ms ease-in;
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  /* Staggered link entrance */
+  .mobile-menu nav a {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 350ms cubic-bezier(0.16, 1, 0.3, 1) var(--link-delay, 0ms),
+                transform 350ms cubic-bezier(0.16, 1, 0.3, 1) var(--link-delay, 0ms);
+  }
+
+  .mobile-menu.is-open nav a {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hamburger → × */
+  .hamburger-bar {
+    transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+  }
+
+  [aria-expanded="true"] .bar-top {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  [aria-expanded="true"] .bar-mid {
+    opacity: 0;
+  }
+
+  [aria-expanded="true"] .bar-bottom {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Hide on md+ regardless of state */
+  @media (min-width: 768px) {
+    .mobile-menu {
+      display: none !important;
+    }
   }
 </style>
 
 <script>
   function initMenu(): void {
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    const bars = toggle?.querySelectorAll<HTMLElement>('.hamburger-bar');
+    const toggle = document.getElementById('menu-toggle') as HTMLButtonElement | null;
+    const menu = document.getElementById('mobile-menu') as HTMLElement | null;
 
     if (!toggle || !menu) return;
 
-    toggle.addEventListener('click', () => {
-      const isOpen = menu.classList.contains('block');
+    function getFocusable(): HTMLElement[] {
+      return Array.from(
+        menu!.querySelectorAll<HTMLElement>(
+          'a, button, [tabindex]:not([tabindex="-1"])'
+        )
+      ).filter(el => !el.hasAttribute('disabled'));
+    }
 
-      if (isOpen) {
-        menu.classList.remove('block');
-        menu.classList.add('hidden');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open navigation menu');
-        bars?.[0]?.style.setProperty('transform', '');
-        bars?.[1]?.style.setProperty('opacity', '');
-        bars?.[2]?.style.setProperty('transform', '');
-      } else {
-        menu.classList.remove('hidden');
-        menu.classList.add('block');
-        toggle.setAttribute('aria-expanded', 'true');
-        toggle.setAttribute('aria-label', 'Close navigation menu');
-        bars?.[0]?.style.setProperty('transform', 'translateY(7px) rotate(45deg)');
-        bars?.[1]?.style.setProperty('opacity', '0');
-        bars?.[2]?.style.setProperty('transform', 'translateY(-7px) rotate(-45deg)');
+    function openMenu(): void {
+      menu!.classList.remove('is-closing');
+      menu!.classList.add('is-open');
+      toggle!.setAttribute('aria-expanded', 'true');
+      toggle!.setAttribute('aria-label', 'Close navigation menu');
+      document.body.style.overflow = 'hidden';
+      const focusable = getFocusable();
+      focusable[0]?.focus();
+    }
+
+    function closeMenu(): void {
+      menu!.classList.add('is-closing');
+      menu!.classList.remove('is-open');
+      toggle!.setAttribute('aria-expanded', 'false');
+      toggle!.setAttribute('aria-label', 'Open navigation menu');
+      document.body.style.overflow = '';
+      menu!.addEventListener('transitionend', () => {
+        menu!.classList.remove('is-closing');
+      }, { once: true });
+    }
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+
+    // Close on nav link click (with animation)
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // Escape key closes menu
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        toggle.focus();
       }
     });
 
-    // Close menu on nav link click
-    menu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        menu.classList.remove('block');
-        menu.classList.add('hidden');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.setAttribute('aria-label', 'Open navigation menu');
-        bars?.[0]?.style.setProperty('transform', '');
-        bars?.[1]?.style.setProperty('opacity', '');
-        bars?.[2]?.style.setProperty('transform', '');
-      });
+    // Focus trap
+    menu.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key !== 'Tab') return;
+      const focusable = getFocusable();
+      if (focusable.length === 0) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
     });
   }
 
+  function initScrollEffect(): void {
+    const header = document.querySelector('header');
+    const THRESHOLD = 80;
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (!header) return;
+
+    function update(): void {
+      const scrolled = window.scrollY > THRESHOLD;
+      header!.classList.toggle('is-scrolled', scrolled);
+      if (reduced) header!.style.transition = 'none';
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  }
+
   initMenu();
+  initScrollEffect();
   document.addEventListener('astro:after-swap', initMenu);
+  document.addEventListener('astro:after-swap', initScrollEffect);
 </script>

@@ -23,16 +23,8 @@ const { title, description, ogImage } = Astro.props;
     <meta property="og:title" content={title} />
     {description && <meta property="og:description" content={description} />}
 
-    <!-- Anti-FOUC: apply theme before first paint -->
-    <script is:inline>
-      (function () {
-        var stored = localStorage.getItem('theme');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        if (stored === 'dark' || (!stored && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-      })();
-    </script>
+    <!-- Anti-FOUC: site is permanently dark -->
+    <script is:inline>document.documentElement.classList.add('dark');</script>
 
     <!-- Font preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
