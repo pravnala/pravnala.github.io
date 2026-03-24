@@ -67,4 +67,4 @@
   - [x] 9.7 Write property test for Property 7: mobile menu nav links have correct staggered delays (fast-check, ≥100 iterations)
   - [x] 9.8 Write property test for Property 8: aria-expanded reflects mobile menu open/closed state (fast-check, ≥100 iterations)
   - [x] 9.9 Write property test for Property 9: focus trap contains all keyboard focus within open mobile menu (fast-check, ≥100 iterations)
-  - [ ] 9.10 Write property test for Property 10: navbar scroll state is a round-trip (fast-check, ≥100 iterations)
+  - [x] 9.10 Write property test for Property 10: navbar scroll state is a round-trip (fast-check, ≥100 iterations)
