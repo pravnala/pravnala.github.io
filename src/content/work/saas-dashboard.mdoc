@@ -1,0 +1,47 @@
+---
+title: SaaS Analytics Dashboard
+projectContext: A B2B SaaS startup had built a powerful data analytics product but was losing customers during onboarding because the dashboard was too complex to navigate. Churn in the first 30 days was running at 34%, and user interviews consistently pointed to the same issue — customers couldn't find the insights they were paying for.
+problem: The dashboard had grown organically over three years of feature development without a coherent information architecture. Power users loved it, but new customers were overwhelmed. The navigation had 47 top-level items, charts lacked context, and there was no guided path to the "aha moment" that made the product valuable. The engineering team had been adding features faster than the UX could absorb them.
+solution: Conducted a full UX audit and information architecture redesign, reducing the primary navigation to 8 items organized around user goals rather than product features. Built a new onboarding flow with progressive disclosure, contextual tooltips, and a "quick wins" dashboard that surfaced the three most actionable insights for each customer's data profile.
+outcome: 30-day churn dropped from 34% to 11% within two quarters of the redesign launch. Time-to-first-insight (the key activation metric) fell from an average of 4.2 days to 18 hours. Net Promoter Score increased by 22 points, and the sales team reported that demo-to-close rates improved because prospects could understand the product value in a single session.
+technologies:
+  - React
+  - TypeScript
+  - D3.js
+  - Recharts
+  - Zustand
+  - Tanstack Query
+  - Storybook
+isPublic: true
+order: 3
+---
+
+## Overview
+
+Data products live or die by their ability to make complexity feel manageable. This project was a case study in the tension between feature richness and usability — and how resolving that tension requires making hard decisions about what to show and what to hide.
+
+## The Challenge
+
+The startup had a genuinely differentiated product. Their data processing pipeline could surface insights that competitors couldn't match. But the dashboard that presented those insights had been built incrementally, with each new feature added wherever there was space. The result was a UI that reflected the product's internal architecture rather than the user's mental model.
+
+The challenge wasn't technical — the underlying data was solid. The challenge was translating that data into a coherent experience that new users could navigate without a training session.
+
+## Approach
+
+I started by analyzing usage data. Mixpanel showed that 80% of active users spent 90% of their time in three sections of the dashboard. The other 44 sections were either rarely used or used only by a small segment of power users. This gave me a clear signal: the navigation needed to be restructured around the common case, with advanced features accessible but not prominent.
+
+I ran a card sorting exercise with 24 users to understand how they mentally organized the product's capabilities. The results were clear — users thought in terms of questions they wanted to answer, not features they wanted to use. This insight drove the entire redesign.
+
+## Implementation
+
+The navigation redesign was the most visible change, but the onboarding flow was the most impactful. I built a progressive onboarding system that walked new users through connecting their data source, running their first analysis, and sharing a report — the three actions most correlated with long-term retention.
+
+The "quick wins" dashboard was a new feature built specifically for the redesign. It used the customer's data profile to surface the three most actionable insights on first login, giving new users an immediate sense of the product's value before they'd learned to navigate it themselves.
+
+The component library was rebuilt in Storybook, which gave the engineering team a shared language for UI components and made it easier to maintain consistency as the product continued to evolve.
+
+## Results
+
+The redesign validated a hypothesis that had been debated internally for years: that simplifying the experience for new users wouldn't alienate power users. Engagement among the existing power user segment actually increased after the redesign, because the cleaner information architecture made it easier to find advanced features when needed.
+
+The project also changed how the team approached product development. The UX audit process became a quarterly ritual, and new features now go through an information architecture review before engineering begins.

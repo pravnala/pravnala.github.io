@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="404 — Page Not Found — Alvin Penaflor">
+  <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+
+    <div class="border-t-2 border-[var(--color-ink)] pt-12">
+      <p class="text-xs font-black tracking-[0.2em] uppercase opacity-50 mb-8">
+        Error
+      </p>
+      <h1 class="text-[12rem] md:text-[20rem] font-black tracking-[-0.04em] leading-[0.85] opacity-10 select-none">
+        404
+      </h1>
+    </div>
+
+    <div class="mt-12 md:mt-16">
+      <h2 class="text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05]">
+        Page not found
+      </h2>
+      <p class="mt-6 text-sm tracking-[0.15em] uppercase opacity-50 max-w-prose">
+        This page doesn't exist or has been moved
+      </p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-3 mt-12 font-black text-sm tracking-[0.1em] uppercase border-b-2 border-[var(--color-ink)] pb-1 transition-opacity hover:opacity-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-ink)]"
+      >
+        ← Back to home
+      </a>
+    </div>
+
+  </main>
+</BaseLayout>

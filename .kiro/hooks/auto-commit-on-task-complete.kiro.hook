@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "Auto Commit on Task Completion",
+  "description": "After each spec task is completed, checks for new or changed files and creates a git commit with a conventional commit message.\n\nInstruction:\n\"All git commit messages must follow the Conventional Commits specification. Use the following format: <type>(<scope>): <description>.\n\nAllowed types:\n- feat: A new feature\n- fix: A bug fix\n- docs: Documentation changes\n- style: Formatting, missing semi colons, etc; no code change\n- refactor: Refactoring production code\n- test: Adding missing tests, refactoring tests; no production code change\n- chore: Updating build tasks, package manager configs, etc; no production code change\n\nRules:\n- Use lowercase for the type.\n- The description must be in the imperative, present tense (e.g., 'add' not 'added').\n- Do not capitalize the first letter of the description.\n- No period (.) at the end.\"",
+  "version": "1",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "git diff --quiet && git diff --cached --quiet && git ls-files --others --exclude-standard | grep -q . || exit 0; git add -A; git commit -m \"feat: complete task - $(git diff --cached --name-only | head -5 | tr '\\n' ' ')\"",
+    "timeout": 30
+  },
+  "workspaceFolderName": "alvinpenaflor",
+  "shortName": "auto-commit-on-task-complete"
+}

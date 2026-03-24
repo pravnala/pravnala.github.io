@@ -1,0 +1,60 @@
+/* Inter font — preconnect is handled in BaseLayout; this import uses display=swap to avoid render-blocking */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Colors — monochromatic only */
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-ink-muted: #1a1a1a;
+  --color-paper-muted: #f5f5f5;
+
+  /* Typography */
+  --font-display: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-weight-black: 900;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --spacing-section: 6rem;
+
+  /* Animation */
+  --duration-reveal: 600ms;
+  --easing-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Base styles ─────────────────────────────────────────── */
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+/* ── Dark mode overrides ─────────────────────────────────── */
+
+html.dark body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* ── Reduced motion ──────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

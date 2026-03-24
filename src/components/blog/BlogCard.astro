@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  publishDate: Date;
+  category: 'tech' | 'martial-arts';
+  excerpt?: string;
+}
+
+const { title, slug, publishDate, category, excerpt } = Astro.props;
+
+const formattedDate = publishDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
+---
+
+<article
+  class="group border border-[var(--color-ink)] p-8 md:p-10 flex flex-col gap-6 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors duration-200"
+>
+  <!-- Category badge -->
+  <span
+    class="text-xs font-bold tracking-[0.12em] uppercase border border-current px-2 py-1 self-start"
+    aria-label={`Category: ${categoryLabel}`}
+  >
+    {categoryLabel}
+  </span>
+
+  <!-- Title -->
+  <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
+    <a
+      href={`/blog/${slug}`}
+      class="after:absolute after:inset-0 relative"
+      aria-label={`Read post: ${title}`}
+    >
+      {title}
+    </a>
+  </h2>
+
+  <!-- Publish date -->
+  <time
+    datetime={publishDate.toISOString()}
+    class="text-xs font-bold tracking-[0.12em] uppercase opacity-60 group-hover:opacity-80"
+  >
+    {formattedDate}
+  </time>
+
+  <!-- Excerpt -->
+  {excerpt && (
+    <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-80 max-w-prose">
+      {excerpt}
+    </p>
+  )}
+
+  <!-- Read more -->
+  <a
+    href={`/blog/${slug}`}
+    class="mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    Read Post →
+  </a>
+</article>

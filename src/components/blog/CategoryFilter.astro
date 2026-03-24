@@ -1,0 +1,74 @@
+---
+interface Props {
+  initialCategory?: 'all' | 'tech' | 'martial-arts';
+}
+
+const { initialCategory = 'all' } = Astro.props;
+
+const filters = [
+  { value: 'all', label: 'All' },
+  { value: 'tech', label: 'Tech' },
+  { value: 'martial-arts', label: 'Martial Arts' },
+] as const;
+---
+
+<div class="flex gap-0 border border-[var(--color-ink)] self-start" role="group" aria-label="Filter blog posts by category">
+  {filters.map(({ value, label }) => (
+    <button
+      type="button"
+      data-filter={value}
+      class:list={[
+        'category-filter-btn',
+        'px-5 py-2 text-xs font-bold tracking-[0.12em] uppercase transition-colors duration-150',
+        'border-r border-[var(--color-ink)] last:border-r-0',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-ink)]',
+        value === initialCategory
+          ? 'bg-[var(--color-ink)] text-[var(--color-paper)]'
+          : 'bg-[var(--color-paper)] text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]',
+      ]}
+      aria-pressed={value === initialCategory ? 'true' : 'false'}
+    >
+      {label}
+    </button>
+  ))}
+</div>
+
+<script>
+  function initCategoryFilter() {
+    const buttons = document.querySelectorAll<HTMLButtonElement>('.category-filter-btn');
+    const cards = document.querySelectorAll<HTMLElement>('.blog-card[data-category]');
+
+    function applyFilter(selected: string) {
+      // Update button states
+      buttons.forEach((btn) => {
+        const isActive = btn.dataset.filter === selected;
+        btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        if (isActive) {
+          btn.classList.add('bg-[var(--color-ink)]', 'text-[var(--color-paper)]');
+          btn.classList.remove('bg-[var(--color-paper)]', 'text-[var(--color-ink)]');
+        } else {
+          btn.classList.remove('bg-[var(--color-ink)]', 'text-[var(--color-paper)]');
+          btn.classList.add('bg-[var(--color-paper)]', 'text-[var(--color-ink)]');
+        }
+      });
+
+      // Show/hide cards
+      cards.forEach((card) => {
+        const category = card.dataset.category;
+        const visible = selected === 'all' || category === selected;
+        card.style.display = visible ? '' : 'none';
+      });
+    }
+
+    buttons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filter = btn.dataset.filter ?? 'all';
+        applyFilter(filter);
+      });
+    });
+  }
+
+  // Run on initial load and after Astro view transitions
+  initCategoryFilter();
+  document.addEventListener('astro:after-swap', initCategoryFilter);
+</script>

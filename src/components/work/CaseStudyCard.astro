@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  slug: string;
+  projectContext: string;
+  technologies: string[];
+}
+
+const { title, slug, projectContext, technologies } = Astro.props;
+
+// Truncate projectContext to ~160 chars for the card summary
+const summary =
+  projectContext.length > 160
+    ? projectContext.slice(0, 157).trimEnd() + '…'
+    : projectContext;
+---
+
+<article
+  class="group border border-[var(--color-ink)] p-8 md:p-10 flex flex-col gap-6 hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors duration-200"
+>
+  <!-- Title -->
+  <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
+    <a
+      href={`/work/${slug}`}
+      class="after:absolute after:inset-0 relative"
+      aria-label={`Read case study: ${title}`}
+    >
+      {title}
+    </a>
+  </h2>
+
+  <!-- Project context summary -->
+  <p class="text-sm leading-relaxed opacity-60 group-hover:opacity-80 max-w-prose">
+    {summary}
+  </p>
+
+  <!-- Technologies -->
+  {technologies.length > 0 && (
+    <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
+      {technologies.map((tech) => (
+        <li class="text-xs font-bold tracking-[0.12em] uppercase border border-current px-2 py-1">
+          {tech}
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <!-- Read more -->
+  <a
+    href={`/work/${slug}`}
+    class="mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    Read More →
+  </a>
+</article>

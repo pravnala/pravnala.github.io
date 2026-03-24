@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogFeed from '../../components/blog/BlogFeed.astro';
+
+const allPosts = await getCollection('blog');
+
+const posts = allPosts.filter((entry) => entry.data.draft !== true);
+---
+
+<BaseLayout
+  title="Blog — Alvin Penaflor"
+  description="Writing on web development, technology, and Filipino martial arts."
+>
+  <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+
+    <!-- Page heading -->
+    <header class="mb-16 md:mb-24">
+      <h1 class="text-6xl md:text-8xl font-black tracking-[-0.04em] leading-[1.05]">
+        Writing
+      </h1>
+      <p class="mt-6 text-sm tracking-[0.15em] uppercase opacity-50 max-w-prose">
+        Thoughts on code, craft, and the martial arts
+      </p>
+    </header>
+
+    <!-- Blog feed -->
+    <BlogFeed posts={posts} />
+
+  </main>
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+import BlogCard from './BlogCard.astro';
+import CategoryFilter from './CategoryFilter.astro';
+
+interface BlogPost {
+  id: string;
+  data: {
+    title: string;
+    publishDate: Date;
+    category: 'tech' | 'martial-arts';
+    excerpt?: string;
+    draft: boolean;
+  };
+}
+
+interface Props {
+  posts: BlogPost[];
+  initialCategory?: 'all' | 'tech' | 'martial-arts';
+}
+
+const { posts, initialCategory = 'all' } = Astro.props;
+
+// Sort posts by publishDate descending (newest first)
+const sortedPosts = [...posts].sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
+);
+
+// Derive slug from post.id (strip file extension if present)
+function getSlug(id: string): string {
+  return id.replace(/\.[^/.]+$/, '');
+}
+---
+
+<section class="flex flex-col gap-10">
+  <!-- Category filter -->
+  <CategoryFilter initialCategory={initialCategory} />
+
+  {sortedPosts.length === 0 ? (
+    <!-- Empty state -->
+    <p class="text-sm font-bold tracking-[0.12em] uppercase opacity-60 py-16 text-center border border-[var(--color-ink)]">
+      No posts yet. Check back soon.
+    </p>
+  ) : (
+    <!-- Blog cards grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--color-ink)]">
+      {sortedPosts.map((post) => (
+        <div class="blog-card bg-[var(--color-paper)]" data-category={post.data.category}>
+          <BlogCard
+            title={post.data.title}
+            slug={getSlug(post.id)}
+            publishDate={post.data.publishDate}
+            category={post.data.category}
+            excerpt={post.data.excerpt}
+          />
+        </div>
+      ))}
+    </div>
+  )}
+</section>

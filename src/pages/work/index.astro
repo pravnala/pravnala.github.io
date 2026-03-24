@@ -1,0 +1,85 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CaseStudyCard from '../../components/work/CaseStudyCard.astro';
+import ExperienceTable from '../../components/work/ExperienceTable.astro';
+
+const allWork = await getCollection('work');
+
+const publicWork = allWork
+  .filter((entry) => entry.data.isPublic)
+  .sort((a, b) => {
+    const aOrder = a.data.order ?? Infinity;
+    const bOrder = b.data.order ?? Infinity;
+    return aOrder - bOrder;
+  });
+---
+
+<BaseLayout
+  title="Work — Alvin Penaflor"
+  description="Case studies and selected experience from 20+ years of web development across FinTech, Healthcare, E-Commerce, and more."
+>
+  <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
+
+    <!-- Page heading -->
+    <header class="mb-16 md:mb-24">
+      <h1 class="text-6xl md:text-8xl font-black tracking-[-0.04em] leading-[1.05]">
+        Work
+      </h1>
+      <p class="mt-6 text-sm tracking-[0.15em] uppercase opacity-50 max-w-prose">
+        Selected case studies and project experience
+      </p>
+    </header>
+
+    <!-- Case studies -->
+    {publicWork.length === 0 ? (
+      <p class="text-lg opacity-50 tracking-wide mb-24">
+        Case studies coming soon.
+      </p>
+    ) : (
+      <section aria-labelledby="case-studies-heading" class="mb-24 md:mb-32">
+        <h2
+          id="case-studies-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-10 opacity-50"
+        >
+          Case Studies
+        </h2>
+        <div class="grid gap-px border border-[var(--color-ink)]">
+          {publicWork.map((entry) => (
+            <CaseStudyCard
+              title={entry.data.title}
+              slug={entry.slug}
+              projectContext={entry.data.projectContext}
+              technologies={entry.data.technologies}
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Experience table -->
+    <section class="mb-24 md:mb-32">
+      <ExperienceTable />
+    </section>
+
+    <!-- CTA -->
+    <section
+      aria-labelledby="cta-heading"
+      class="border-t-2 border-[var(--color-ink)] pt-16 flex flex-col md:flex-row md:items-end md:justify-between gap-8"
+    >
+      <h2
+        id="cta-heading"
+        class="text-4xl md:text-5xl font-black tracking-[-0.04em] leading-[1.05]"
+      >
+        Ready to work<br />together?
+      </h2>
+      <a
+        href="/contact"
+        class="inline-block border-2 border-[var(--color-ink)] px-8 py-4 text-xs font-bold tracking-[0.2em] uppercase hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)] transition-colors duration-200 self-start md:self-auto"
+      >
+        Get in Touch →
+      </a>
+    </section>
+
+  </main>
+</BaseLayout>

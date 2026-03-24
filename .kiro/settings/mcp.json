@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "Astro docs": {
+      "type": "http",
+      "url": "https://mcp.docs.astro.build/mcp"
+    },
+    "svelte": {
+      "url": "https://mcp.svelte.dev/mcp"
+    },
+    "context7": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@upstash/context7-mcp",
+        "--api-key",
+        "ctx7sk-a8de3f9c-5925-4761-9aca-9191b9f03e68"
+      ]
+    }
+  }
+}

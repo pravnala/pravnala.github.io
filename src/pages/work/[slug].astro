@@ -1,0 +1,110 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const workEntries = await getCollection('work');
+  return workEntries.map((entry) => ({
+    params: { slug: entry.id.replace(/\.[^.]+$/, '') },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { title, projectContext, problem, solution, outcome, technologies } = entry.data;
+const { Content } = await render(entry);
+---
+
+<BaseLayout title={`${title} — Alvin Penaflor`}>
+  <main class="max-w-4xl mx-auto px-6 py-24 md:py-32">
+
+    <!-- Back link -->
+    <a
+      href="/work"
+      class="inline-block text-xs font-bold tracking-[0.2em] uppercase opacity-50 hover:opacity-100 transition-opacity duration-200 mb-16"
+    >
+      ← Back to Work
+    </a>
+
+    <!-- Title -->
+    <header class="mb-16 md:mb-24 border-b-2 border-[var(--color-ink)] pb-12">
+      <h1 class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05]">
+        {title}
+      </h1>
+    </header>
+
+    <!-- Case study sections -->
+    <div class="space-y-16 md:space-y-20">
+
+      <!-- Project Context -->
+      <section aria-labelledby="context-heading">
+        <h2
+          id="context-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-50"
+        >
+          Project Context
+        </h2>
+        <p class="text-lg leading-relaxed">{projectContext}</p>
+      </section>
+
+      <!-- Problem -->
+      <section aria-labelledby="problem-heading">
+        <h2
+          id="problem-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-50"
+        >
+          Problem
+        </h2>
+        <p class="text-lg leading-relaxed">{problem}</p>
+      </section>
+
+      <!-- Solution -->
+      <section aria-labelledby="solution-heading">
+        <h2
+          id="solution-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-50"
+        >
+          Solution
+        </h2>
+        <p class="text-lg leading-relaxed">{solution}</p>
+      </section>
+
+      <!-- Outcome -->
+      <section aria-labelledby="outcome-heading">
+        <h2
+          id="outcome-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-50"
+        >
+          Outcome
+        </h2>
+        <p class="text-lg leading-relaxed">{outcome}</p>
+      </section>
+
+      <!-- Technologies -->
+      <section aria-labelledby="tech-heading">
+        <h2
+          id="tech-heading"
+          class="text-xs font-bold tracking-[0.2em] uppercase mb-4 opacity-50"
+        >
+          Technologies
+        </h2>
+        <ul class="flex flex-wrap gap-2" role="list">
+          {technologies.map((tech) => (
+            <li class="border border-[var(--color-ink)] px-3 py-1 text-xs font-bold tracking-[0.1em] uppercase">
+              {tech}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <!-- MDX/Markdoc body content -->
+      {Content && (
+        <section aria-label="Full case study" class="prose prose-lg max-w-none border-t border-[var(--color-ink)] pt-12">
+          <Content />
+        </section>
+      )}
+
+    </div>
+
+  </main>
+</BaseLayout>

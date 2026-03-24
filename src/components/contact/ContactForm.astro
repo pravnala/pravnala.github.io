@@ -1,0 +1,207 @@
+---
+// ContactForm.astro — static site contact form with client-side validation
+// No server submission; shows success message on valid submit.
+---
+
+<form
+  id="contact-form"
+  novalidate
+  class="w-full max-w-2xl"
+  aria-label="Contact form"
+>
+  <!-- Name -->
+  <div class="mb-8">
+    <label
+      for="name"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+    >
+      Name
+    </label>
+    <input
+      id="name"
+      name="name"
+      type="text"
+      required
+      autocomplete="name"
+      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors"
+      placeholder="Your full name"
+      aria-describedby="name-error"
+      aria-required="true"
+    />
+    <p
+      id="name-error"
+      role="alert"
+      aria-live="polite"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+    >
+      Name is required.
+    </p>
+  </div>
+
+  <!-- Email -->
+  <div class="mb-8">
+    <label
+      for="email"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+    >
+      Email
+    </label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      required
+      autocomplete="email"
+      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors"
+      placeholder="you@example.com"
+      aria-describedby="email-error"
+      aria-required="true"
+    />
+    <p
+      id="email-error"
+      role="alert"
+      aria-live="polite"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+    >
+      A valid email address is required.
+    </p>
+  </div>
+
+  <!-- Inquiry Type -->
+  <div class="mb-8">
+    <label
+      for="inquiryType"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+    >
+      Inquiry Type
+    </label>
+    <div class="relative">
+      <select
+        id="inquiryType"
+        name="inquiryType"
+        required
+        class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] appearance-none focus:outline-none focus:border-[var(--color-ink)] transition-colors cursor-pointer"
+        aria-describedby="inquiryType-error"
+        aria-required="true"
+      >
+        <option value="" disabled selected class="text-[var(--color-ink)]">Select an inquiry type</option>
+        <option value="web-development" class="bg-[var(--color-paper)] text-[var(--color-ink)]">Web Development</option>
+        <option value="arnis-martial-arts" class="bg-[var(--color-paper)] text-[var(--color-ink)]">Arnis / Martial Arts</option>
+      </select>
+      <!-- Custom chevron -->
+      <span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[var(--color-ink)]" aria-hidden="true">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+    </div>
+    <p
+      id="inquiryType-error"
+      role="alert"
+      aria-live="polite"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+    >
+      Please select an inquiry type.
+    </p>
+  </div>
+
+  <!-- Message -->
+  <div class="mb-12">
+    <label
+      for="message"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+    >
+      Message
+    </label>
+    <textarea
+      id="message"
+      name="message"
+      required
+      rows="5"
+      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors resize-none"
+      placeholder="Tell me about your project or inquiry…"
+      aria-describedby="message-error"
+      aria-required="true"
+    ></textarea>
+    <p
+      id="message-error"
+      role="alert"
+      aria-live="polite"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+    >
+      Message is required.
+    </p>
+  </div>
+
+  <!-- Submit -->
+  <button
+    type="submit"
+    class="inline-block bg-[var(--color-ink)] text-[var(--color-paper)] font-black text-sm tracking-[0.15em] uppercase px-10 py-4 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-ink)]"
+  >
+    Send Message
+  </button>
+
+  <!-- Success message (hidden until valid submit) -->
+  <p
+    id="form-success"
+    role="status"
+    aria-live="polite"
+    class="hidden mt-8 text-sm font-black tracking-[0.1em] uppercase text-[var(--color-ink)]"
+  >
+    Message received — I'll be in touch soon.
+  </p>
+</form>
+
+<script>
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  if (form) {
+    form.addEventListener('submit', (e: Event) => {
+      e.preventDefault();
+
+      const nameEl = document.getElementById('name') as HTMLInputElement;
+      const emailEl = document.getElementById('email') as HTMLInputElement;
+      const inquiryEl = document.getElementById('inquiryType') as HTMLSelectElement;
+      const messageEl = document.getElementById('message') as HTMLTextAreaElement;
+
+      const nameErr = document.getElementById('name-error')!;
+      const emailErr = document.getElementById('email-error')!;
+      const inquiryErr = document.getElementById('inquiryType-error')!;
+      const messageErr = document.getElementById('message-error')!;
+      const successMsg = document.getElementById('form-success')!;
+
+      // Reset errors
+      [nameErr, emailErr, inquiryErr, messageErr].forEach((el) => el.classList.add('hidden'));
+      successMsg.classList.add('hidden');
+
+      let valid = true;
+
+      if (!nameEl.value.trim()) {
+        nameErr.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!emailEl.value.trim() || !EMAIL_RE.test(emailEl.value.trim())) {
+        emailErr.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!inquiryEl.value) {
+        inquiryErr.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (!messageEl.value.trim()) {
+        messageErr.classList.remove('hidden');
+        valid = false;
+      }
+
+      if (valid) {
+        // Static site — no actual submission; show success feedback
+        form.reset();
+        successMsg.classList.remove('hidden');
+      }
+    });
+  }
+</script>
