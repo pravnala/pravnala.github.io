@@ -27,8 +27,8 @@
   - Mark task complete when tests are written, run, and passing on unfixed code
   - _Requirements: 3.1, 3.2, 3.3_
 
-- [~] 3. Fix Keystatic admin and API routes inaccessible in dev
-  - [~] 3.1 Fix `src/pages/keystatic/[...params].astro` to use SSR in dev
+- [x] 3. Fix Keystatic admin and API routes inaccessible in dev
+  - [x] 3.1 Fix `src/pages/keystatic/[...params].astro` to use SSR in dev
     - Remove `export const prerender = true` and the empty `getStaticPaths()` function
     - Replace with `export const prerender = false` so Astro delegates rendering to the `@keystatic/astro` integration at runtime
     - The integration is already conditionally loaded in `astro.config.mjs` when `NODE_ENV !== 'production'`
@@ -37,7 +37,7 @@
     - _Preservation: Non-Keystatic routes must continue to render correctly (3.2, 3.3)_
     - _Requirements: 1.2, 2.1, 2.2_
 
-  - [~] 3.2 Fix `src/pages/api/keystatic/[...params].ts` to delegate to Keystatic API handler
+  - [x] 3.2 Fix `src/pages/api/keystatic/[...params].ts` to delegate to Keystatic API handler
     - Remove `export const prerender = true`, the empty `getStaticPaths()`, and the hardcoded `GET()` 404 handler
     - Replace with `export const prerender = false` so Astro routes requests to the Keystatic API handler provided by the integration
     - _Bug_Condition: isBugCondition(X) where X.path starts with "/keystatic" AND runtime = "dev"_
@@ -45,7 +45,7 @@
     - _Preservation: Production static build must continue to exclude Keystatic routes (3.1)_
     - _Requirements: 1.3, 2.3, 3.1_
 
-  - [~] 3.3 Verify bug condition exploration test now passes
+  - [x] 3.3 Verify bug condition exploration test now passes
     - **Property 1: Expected Behavior** - Keystatic Routes Reachable in Dev
     - **IMPORTANT**: Re-run the SAME test from task 1 - do NOT write a new test
     - The test from task 1 encodes the expected behavior (status != 404, body contains Keystatic admin UI)
@@ -54,7 +54,7 @@
     - **EXPECTED OUTCOME**: Test PASSES (confirms bug is fixed)
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [~] 3.4 Verify preservation tests still pass
+  - [x] 3.4 Verify preservation tests still pass
     - **Property 2: Preservation** - Non-Keystatic Routes Unaffected
     - **IMPORTANT**: Re-run the SAME tests from task 2 - do NOT write new tests
     - Run preservation property tests from step 2
