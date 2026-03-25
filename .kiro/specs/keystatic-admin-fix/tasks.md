@@ -16,7 +16,7 @@
   - Mark task complete when test is written, run, and failure is documented
   - _Requirements: 1.1, 1.2, 1.3_
 
-- [~] 2. Write preservation property tests (BEFORE implementing fix)
+- [x] 2. Write preservation property tests (BEFORE implementing fix)
   - **Property 2: Preservation** - Non-Keystatic Routes Unaffected
   - **IMPORTANT**: Follow observation-first methodology
   - Observe: non-Keystatic pages (e.g., `/`, `/work`, `/blog`, `/arnis`, `/contact`) render correctly on unfixed code
