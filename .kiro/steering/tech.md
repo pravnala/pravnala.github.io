@@ -21,6 +21,7 @@
 - Always read `src/styles/global.css` before styling to discover available design tokens
 - Prefer defined tokens over arbitrary bracket values (e.g., `text-ink` over `text-[#000]`)
 - Prefer standard utilities over arbitrary values (e.g., `h-px` over `h-[1px]`)
+- Never use `[var(--token)]` syntax in class attributes — Tailwind v4 maps `@theme` tokens directly to utilities (e.g., use `text-ink`, `bg-surface`, `border-ink`, `py-section` — never `text-[var(--color-ink)]`, `bg-[var(--color-surface)]`, etc.)
 - For Tailwind v4 syntax questions, consult the latest Tailwind docs
 
 ## Theme

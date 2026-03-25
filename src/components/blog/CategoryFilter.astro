@@ -12,7 +12,7 @@ const filters = [
 ] as const;
 ---
 
-<div class="flex gap-0 border border-[var(--color-ink)] self-start" role="group" aria-label="Filter blog posts by category">
+<div class="flex gap-0 border border-ink self-start" role="group" aria-label="Filter blog posts by category">
   {filters.map(({ value, label }) => (
     <button
       type="button"
@@ -20,11 +20,11 @@ const filters = [
       class:list={[
         'category-filter-btn',
         'px-5 py-2 text-xs font-bold tracking-[0.12em] uppercase transition-colors duration-150',
-        'border-r border-[var(--color-ink)] last:border-r-0',
-        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-ink)]',
+        'border-r border-ink last:border-r-0',
+        'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink',
         value === initialCategory
-          ? 'bg-[var(--color-ink)] text-[var(--color-paper)]'
-          : 'bg-[var(--color-paper)] text-[var(--color-ink)] hover:bg-[var(--color-ink)] hover:text-[var(--color-paper)]',
+          ? 'bg-ink text-paper'
+          : 'bg-paper text-ink hover:bg-ink hover:text-paper',
       ]}
       aria-pressed={value === initialCategory ? 'true' : 'false'}
     >
@@ -44,11 +44,11 @@ const filters = [
         const isActive = btn.dataset.filter === selected;
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         if (isActive) {
-          btn.classList.add('bg-[var(--color-ink)]', 'text-[var(--color-paper)]');
-          btn.classList.remove('bg-[var(--color-paper)]', 'text-[var(--color-ink)]');
+          btn.classList.add('bg-ink', 'text-paper');
+          btn.classList.remove('bg-paper', 'text-ink');
         } else {
-          btn.classList.remove('bg-[var(--color-ink)]', 'text-[var(--color-paper)]');
-          btn.classList.add('bg-[var(--color-paper)]', 'text-[var(--color-ink)]');
+          btn.classList.remove('bg-ink', 'text-paper');
+          btn.classList.add('bg-paper', 'text-ink');
         }
       });
 

@@ -44,7 +44,7 @@ const experiences = [
       aria-label="Selected NDA and private project experience"
     >
       <thead>
-        <tr class="border-b-2 border-[var(--color-ink)]">
+        <tr class="border-b-2 border-ink">
           <th
             scope="col"
             class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-8"
@@ -68,7 +68,7 @@ const experiences = [
       <tbody>
         {experiences.map((entry, i) => (
           <tr
-            class={`border-b border-[var(--color-ink)] ${i % 2 === 0 ? "" : "bg-[var(--color-paper-muted)]"}`}
+            class={`border-b border-ink ${i % 2 === 0 ? "" : "bg-paper-muted"}`}
           >
             <td class="py-5 pr-8 font-bold align-top whitespace-nowrap">
               {entry.industry}
@@ -79,7 +79,7 @@ const experiences = [
             <td class="py-5 align-top">
               <ul class="flex flex-wrap gap-2" aria-label={`Technologies for ${entry.industry} role`}>
                 {entry.technologies.map((tech) => (
-                  <li class="text-xs font-bold tracking-[0.1em] uppercase border border-[var(--color-ink)] px-2 py-1">
+                  <li class="text-xs font-bold tracking-[0.1em] uppercase border border-ink px-2 py-1">
                     {tech}
                   </li>
                 ))}

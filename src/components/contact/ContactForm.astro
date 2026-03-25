@@ -13,7 +13,7 @@
   <div class="mb-8">
     <label
       for="name"
-      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-ink"
     >
       Name
     </label>
@@ -23,7 +23,7 @@
       type="text"
       required
       autocomplete="name"
-      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors"
+      class="w-full border-b-2 border-ink bg-transparent py-3 text-base font-bold text-ink placeholder:opacity-30 focus:outline-none focus:border-ink transition-colors"
       placeholder="Your full name"
       aria-describedby="name-error"
       aria-required="true"
@@ -32,7 +32,7 @@
       id="name-error"
       role="alert"
       aria-live="polite"
-      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-ink opacity-60"
     >
       Name is required.
     </p>
@@ -42,7 +42,7 @@
   <div class="mb-8">
     <label
       for="email"
-      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-ink"
     >
       Email
     </label>
@@ -52,7 +52,7 @@
       type="email"
       required
       autocomplete="email"
-      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors"
+      class="w-full border-b-2 border-ink bg-transparent py-3 text-base font-bold text-ink placeholder:opacity-30 focus:outline-none focus:border-ink transition-colors"
       placeholder="you@example.com"
       aria-describedby="email-error"
       aria-required="true"
@@ -61,7 +61,7 @@
       id="email-error"
       role="alert"
       aria-live="polite"
-      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-ink opacity-60"
     >
       A valid email address is required.
     </p>
@@ -71,7 +71,7 @@
   <div class="mb-8">
     <label
       for="inquiryType"
-      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-ink"
     >
       Inquiry Type
     </label>
@@ -80,16 +80,16 @@
         id="inquiryType"
         name="inquiryType"
         required
-        class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] appearance-none focus:outline-none focus:border-[var(--color-ink)] transition-colors cursor-pointer"
+        class="w-full border-b-2 border-ink bg-transparent py-3 text-base font-bold text-ink appearance-none focus:outline-none focus:border-ink transition-colors cursor-pointer"
         aria-describedby="inquiryType-error"
         aria-required="true"
       >
-        <option value="" disabled selected class="text-[var(--color-ink)]">Select an inquiry type</option>
-        <option value="web-development" class="bg-[var(--color-paper)] text-[var(--color-ink)]">Web Development</option>
-        <option value="arnis-martial-arts" class="bg-[var(--color-paper)] text-[var(--color-ink)]">Arnis / Martial Arts</option>
+        <option value="" disabled selected class="text-ink">Select an inquiry type</option>
+        <option value="web-development" class="bg-paper text-ink">Web Development</option>
+        <option value="arnis-martial-arts" class="bg-paper text-ink">Arnis / Martial Arts</option>
       </select>
       <!-- Custom chevron -->
-      <span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-[var(--color-ink)]" aria-hidden="true">
+      <span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink" aria-hidden="true">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -99,7 +99,7 @@
       id="inquiryType-error"
       role="alert"
       aria-live="polite"
-      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-ink opacity-60"
     >
       Please select an inquiry type.
     </p>
@@ -109,7 +109,7 @@
   <div class="mb-12">
     <label
       for="message"
-      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-[var(--color-ink)]"
+      class="block text-xs font-black tracking-[0.2em] uppercase mb-2 text-ink"
     >
       Message
     </label>
@@ -118,7 +118,7 @@
       name="message"
       required
       rows="5"
-      class="w-full border-b-2 border-[var(--color-ink)] bg-transparent py-3 text-base font-bold text-[var(--color-ink)] placeholder:opacity-30 focus:outline-none focus:border-[var(--color-ink)] transition-colors resize-none"
+      class="w-full border-b-2 border-ink bg-transparent py-3 text-base font-bold text-ink placeholder:opacity-30 focus:outline-none focus:border-ink transition-colors resize-none"
       placeholder="Tell me about your project or inquiry…"
       aria-describedby="message-error"
       aria-required="true"
@@ -127,7 +127,7 @@
       id="message-error"
       role="alert"
       aria-live="polite"
-      class="hidden mt-2 text-xs font-bold tracking-wide text-[var(--color-ink)] opacity-60"
+      class="hidden mt-2 text-xs font-bold tracking-wide text-ink opacity-60"
     >
       Message is required.
     </p>
@@ -136,7 +136,7 @@
   <!-- Submit -->
   <button
     type="submit"
-    class="inline-block bg-[var(--color-ink)] text-[var(--color-paper)] font-black text-sm tracking-[0.15em] uppercase px-10 py-4 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-ink)]"
+    class="inline-block bg-ink text-paper font-black text-sm tracking-[0.15em] uppercase px-10 py-4 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
   >
     Send Message
   </button>
@@ -146,7 +146,7 @@
     id="form-success"
     role="status"
     aria-live="polite"
-    class="hidden mt-8 text-sm font-black tracking-[0.1em] uppercase text-[var(--color-ink)]"
+    class="hidden mt-8 text-sm font-black tracking-[0.1em] uppercase text-ink"
   >
     Message received — I'll be in touch soon.
   </p>

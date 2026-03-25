@@ -37,14 +37,14 @@ function getSlug(id: string): string {
 
   {sortedPosts.length === 0 ? (
     <!-- Empty state -->
-    <p class="text-sm font-bold tracking-[0.12em] uppercase opacity-60 py-16 text-center border border-[var(--color-ink)]">
+    <p class="text-sm font-bold tracking-[0.12em] uppercase opacity-60 py-16 text-center border border-ink">
       No posts yet. Check back soon.
     </p>
   ) : (
     <!-- Blog cards grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--color-ink)]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink">
       {sortedPosts.map((post) => (
-        <div class="blog-card bg-[var(--color-paper)]" data-category={post.data.category}>
+        <div class="blog-card bg-paper" data-category={post.data.category}>
           <BlogCard
             title={post.data.title}
             slug={getSlug(post.id)}

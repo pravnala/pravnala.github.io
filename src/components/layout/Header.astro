@@ -20,7 +20,7 @@ function isActive(href: string): boolean {
     <!-- Wordmark -->
     <a
       href="/"
-      class="font-black text-base tracking-[-0.04em] transition-colors duration-150 ease-out text-[var(--color-ink)] hover:text-[var(--color-ink-muted)]"
+      class="font-black text-base tracking-[-0.04em] transition-colors duration-150 ease-out text-ink hover:text-ink-muted"
       aria-label="Alvin Penaflor — Home"
     >
       AP
@@ -33,7 +33,7 @@ function isActive(href: string): boolean {
           href={href}
           aria-current={isActive(href) ? 'page' : undefined}
           class:list={[
-            'text-xs font-bold uppercase tracking-[0.12em] text-[var(--color-ink-muted)] transition-colors duration-150 ease-out hover:text-[var(--color-ink)]',
+            'text-xs font-bold uppercase tracking-[0.12em] text-ink-muted transition-colors duration-150 ease-out hover:text-ink',
             isActive(href) ? 'nav-link-active' : '',
           ]}
         >
@@ -77,7 +77,7 @@ function isActive(href: string): boolean {
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'text-3xl font-black tracking-[-0.04em] text-[var(--color-ink)] transition-colors duration-150 ease-out hover:text-[var(--color-ink-muted)]',
+              'text-3xl font-black tracking-[-0.04em] text-ink transition-colors duration-150 ease-out hover:text-ink-muted',
               isActive(href) ? 'nav-link-active' : '',
             ]}
           >

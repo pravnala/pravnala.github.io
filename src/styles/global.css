@@ -6,6 +6,8 @@
 @theme {
   /* Colors — dark glassmorphism */
   --color-canvas: #0A0A0A;
+  --color-paper: #0A0A0A;
+  --color-paper-muted: rgba(255, 255, 255, 0.04);
   --color-surface: rgba(255, 255, 255, 0.06);
   --color-surface-hover: rgba(255, 255, 255, 0.10);
   --color-surface-border: rgba(255, 255, 255, 0.12);
@@ -15,15 +17,13 @@
   --color-accent: #E4E4E7;
   --blur-glass: 16px;
   --blur-glass-heavy: 24px;
+  --spacing-section: 6rem;
 
   /* Typography */
   --font-display: 'Inter', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-weight-black: 900;
   --font-weight-bold: 700;
-
-  /* Spacing */
-  --spacing-section: 6rem;
 
   /* Animation */
   --duration-reveal: 700ms;

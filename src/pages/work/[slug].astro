@@ -27,7 +27,7 @@ const { Content } = await render(entry);
     </a>
 
     <!-- Title -->
-    <header class="mb-16 md:mb-24 border-b-2 border-[var(--color-ink)] pb-12">
+    <header class="mb-16 md:mb-24 border-b-2 border-ink pb-12">
       <h1 class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05]">
         {title}
       </h1>
@@ -90,7 +90,7 @@ const { Content } = await render(entry);
         </h2>
         <ul class="flex flex-wrap gap-2" role="list">
           {technologies.map((tech) => (
-            <li class="border border-[var(--color-ink)] px-3 py-1 text-xs font-bold tracking-[0.1em] uppercase">
+            <li class="border border-ink px-3 py-1 text-xs font-bold tracking-[0.1em] uppercase">
               {tech}
             </li>
           ))}
@@ -99,7 +99,7 @@ const { Content } = await render(entry);
 
       <!-- MDX/Markdoc body content -->
       {Content && (
-        <section aria-label="Full case study" class="prose prose-lg max-w-none border-t border-[var(--color-ink)] pt-12">
+        <section aria-label="Full case study" class="prose prose-lg max-w-none border-t border-ink pt-12">
           <Content />
         </section>
       )}

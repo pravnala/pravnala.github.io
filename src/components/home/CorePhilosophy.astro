@@ -23,7 +23,7 @@ const values = [
 
 <AnimatedSection animation="fade-up" delay={200}>
   <section
-    class="px-6 md:px-16 py-[var(--spacing-section)] border-t border-[var(--color-ink)]"
+    class="px-6 md:px-16 py-section border-t border-ink"
     aria-labelledby="philosophy-heading"
   >
     <p class="text-xs font-bold tracking-[0.2em] uppercase opacity-40 mb-6">
@@ -36,9 +36,9 @@ const values = [
       Core<br />Values
     </h2>
 
-    <dl class="grid grid-cols-1 md:grid-cols-2 gap-px border border-[var(--color-ink)]">
+    <dl class="grid grid-cols-1 md:grid-cols-2 gap-px border border-ink">
       {values.map((value) => (
-        <div class="p-8 md:p-10 border-[var(--color-ink)]">
+        <div class="p-8 md:p-10 border-ink">
           <dt class="text-xl font-black tracking-[-0.03em] leading-[1.05] mb-3">
             {value.title}
           </dt>

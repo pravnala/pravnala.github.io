@@ -19,7 +19,7 @@ const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
 ---
 
 <article
-  class="group relative border border-[var(--color-surface-border)] bg-[var(--color-surface)] p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-[var(--color-surface-hover)] hover:-translate-y-0.5 hover:border-white/24"
+  class="group relative border border-surface-border bg-surface p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
 >
   <!-- Category badge -->
   <span
@@ -43,14 +43,14 @@ const categoryLabel = category === 'tech' ? 'Tech' : 'Martial Arts';
   <!-- Publish date -->
   <time
     datetime={publishDate.toISOString()}
-    class="text-xs font-bold tracking-[0.12em] uppercase text-[var(--color-ink-muted)]"
+    class="text-xs font-bold tracking-[0.12em] uppercase text-ink-muted"
   >
     {formattedDate}
   </time>
 
   <!-- Excerpt -->
   {excerpt && (
-    <p class="text-sm leading-relaxed text-[var(--color-ink-muted)] max-w-prose">
+    <p class="text-sm leading-relaxed text-ink-muted max-w-prose">
       {excerpt}
     </p>
   )}
