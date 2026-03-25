@@ -16,65 +16,6 @@ const { animation = 'fade-in', delay = 0, class: className } = Astro.props;
   <slot />
 </div>
 
-<style>
-  .animated-section {
-    --reveal-delay: 0ms;
-    transition:
-      opacity var(--duration-reveal) var(--easing-reveal) var(--reveal-delay),
-      transform var(--duration-reveal) var(--easing-reveal) var(--reveal-delay),
-      clip-path var(--duration-reveal) var(--easing-reveal) var(--reveal-delay);
-  }
-
-  /* will-change lifecycle */
-  .animated-section:not(.is-visible) {
-    will-change: transform;
-  }
-  .animated-section.is-visible {
-    will-change: auto;
-  }
-
-  /* Initial hidden states per animation type */
-  .animated-section[data-animation='fade-up'] {
-    opacity: 0;
-    transform: translateY(2rem);
-  }
-
-  .animated-section[data-animation='fade-in'] {
-    opacity: 0;
-    transform: none;
-  }
-
-  .animated-section[data-animation='slide-left'] {
-    opacity: 0;
-    transform: translateX(-2rem);
-  }
-
-  .animated-section[data-animation='clip-up'] {
-    clip-path: inset(100% 0 0 0);
-    opacity: 1; /* clip-up uses clip-path, not opacity */
-  }
-
-  /* Visible state — applied by IntersectionObserver */
-  .animated-section.is-visible {
-    opacity: 1;
-    transform: none;
-  }
-
-  .animated-section[data-animation='clip-up'].is-visible {
-    clip-path: inset(0% 0 0 0);
-  }
-
-  /* Respect reduced motion — show immediately */
-  @media (prefers-reduced-motion: reduce) {
-    .animated-section {
-      opacity: 1 !important;
-      transform: none !important;
-      clip-path: none !important;
-      transition: none !important;
-    }
-  }
-</style>
-
 <script>
   function initAnimatedSections() {
     // Skip if user prefers reduced motion

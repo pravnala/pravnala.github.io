@@ -38,6 +38,13 @@ Defined in `src/content.config.ts` using Astro's `glob` loader:
 
 Content is authored via Keystatic at `/keystatic` during dev and committed as `.mdoc` files.
 
+## Styling Rules
+
+- Never use `<style>` blocks in `.astro` components
+- Use Tailwind utility classes inline wherever possible
+- When a selector can't be expressed inline (pseudo-elements, attribute selectors, JS-toggled state classes), add it to `src/styles/global.css` using `@apply` with Tailwind utilities
+- Only use plain CSS in `global.css` for rules that Tailwind can't express — complex animations, `transition` with multiple custom values, `clip-path`, `will-change`, `backdrop-filter` with CSS variables, etc.
+
 ## Common Commands
 
 ```bash
