@@ -17,6 +17,7 @@ const workCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     projectContext: z.string(),
+    coverImage: z.string().optional(),
     problem: z.string(),
     solution: z.string(),
     outcome: z.string(),

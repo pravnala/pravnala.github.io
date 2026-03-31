@@ -32,12 +32,17 @@ export default config({
       schema: {
         title: fields.slug({ name: { label: 'Title' } }),
         projectContext: fields.text({ label: 'Project Context', multiline: true }),
+        coverImage: fields.image({
+          label: 'Cover Image',
+          directory: 'public/images/work',
+          publicPath: '/images/work/',
+        }),
         problem: fields.text({ label: 'Problem Statement', multiline: true }),
         solution: fields.text({ label: 'Solution', multiline: true }),
         outcome: fields.text({ label: 'Outcome', multiline: true }),
         technologies: fields.array(fields.text({ label: 'Technology' }), {
           label: 'Technologies',
-          itemLabel: (props) => props.fields.value.value,
+          itemLabel: (props) => props.value,
         }),
         isPublic: fields.checkbox({ label: 'Public', defaultValue: true }),
         order: fields.integer({ label: 'Display Order' }),
