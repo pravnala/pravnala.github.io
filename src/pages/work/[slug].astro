@@ -11,13 +11,13 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title, projectContext, problem, solution, outcome, technologies } = entry.data;
+const { title, projectContext, problem, solution, outcome, technologies } =
+  entry.data;
 const { Content } = await render(entry);
 ---
 
 <BaseLayout title={`${title} — Alvin Penaflor`}>
   <main class="max-w-4xl mx-auto px-6 py-24 md:py-32">
-
     <!-- Back link -->
     <a
       href="/work"
@@ -28,14 +28,15 @@ const { Content } = await render(entry);
 
     <!-- Title -->
     <header class="mb-16 md:mb-24 border-b-2 border-ink pb-12">
-      <h1 class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05]">
+      <h1
+        class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05]"
+      >
         {title}
       </h1>
     </header>
 
     <!-- Case study sections -->
     <div class="space-y-16 md:space-y-20">
-
       <!-- Project Context -->
       <section aria-labelledby="context-heading">
         <h2
@@ -89,22 +90,27 @@ const { Content } = await render(entry);
           Technologies
         </h2>
         <ul class="flex flex-wrap gap-2" role="list">
-          {technologies.map((tech) => (
-            <li class="border border-ink px-3 py-1 text-xs font-bold tracking-[0.1em] uppercase">
-              {tech}
-            </li>
-          ))}
+          {
+            technologies.map((tech) => (
+              <li class="border border-ink px-3 py-1 text-xs font-bold tracking-[0.1em] uppercase">
+                {tech}
+              </li>
+            ))
+          }
         </ul>
       </section>
 
       <!-- MDX/Markdoc body content -->
-      {Content && (
-        <section aria-label="Full case study" class="prose prose-lg max-w-none border-t border-ink pt-12">
-          <Content />
-        </section>
-      )}
-
+      {
+        Content && (
+          <section
+            aria-label="Full case study"
+            class="prose prose-lg max-w-none border-t border-ink pt-12"
+          >
+            <Content />
+          </section>
+        )
+      }
     </div>
-
   </main>
 </BaseLayout>

@@ -1,6 +1,9 @@
 ---
 // Keystatic admin UI — only active in dev mode.
-// The @keystatic/astro integration (conditionally loaded in astro.config.mjs)
-// handles rendering at runtime when prerender = false.
-export const prerender = false;
+// In production this generates no pages via empty getStaticPaths.
+export const prerender = true;
+
+export function getStaticPaths() {
+  return [];
+}
 ---

@@ -27,7 +27,6 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
 
 <BaseLayout title={`${title} — Alvin Penaflor`}>
   <main class="max-w-3xl mx-auto px-6 py-24 md:py-32">
-
     <!-- Back link -->
     <a
       href="/blog"
@@ -39,7 +38,9 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
     <!-- Post header -->
     <header class="mb-16 border-b-2 border-ink pb-12">
       <div class="flex items-center gap-4 mb-6">
-        <span class="text-xs font-bold tracking-[0.2em] uppercase border border-ink px-3 py-1">
+        <span
+          class="text-xs font-bold tracking-[0.2em] uppercase border border-ink px-3 py-1"
+        >
           {categoryLabel}
         </span>
         <time
@@ -49,7 +50,9 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
           {formattedDate}
         </time>
       </div>
-      <h1 class="text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05]">
+      <h1
+        class="text-4xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05]"
+      >
         {title}
       </h1>
     </header>
@@ -58,6 +61,5 @@ const formattedDate = publishDate.toLocaleDateString('en-US', {
     <article class="prose prose-lg max-w-none">
       <Content />
     </article>
-
   </main>
 </BaseLayout>
