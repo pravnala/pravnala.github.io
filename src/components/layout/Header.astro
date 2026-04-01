@@ -20,26 +20,30 @@ function isActive(href: string): boolean {
     <!-- Wordmark -->
     <a
       href="/"
-      class="font-black text-base tracking-[-0.04em] transition-colors duration-150 ease-out text-ink hover:text-ink-muted"
-      aria-label="Alvin Penaflor — Home"
+      class="text-xl tracking-tight font-normal transition-colors duration-500 ease-out text-ink hover:text-ink-muted group"
+      aria-label="pra>nala — Home"
     >
-      Alvin Penaflor
+      pra<span class="text-ink-muted/80 font-bold group-hover:text-ink"
+        >&gt;</span
+      >nala
     </a>
 
     <!-- Desktop nav -->
     <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
-      {navLinks.map(({ href, label }) => (
-        <a
-          href={href}
-          aria-current={isActive(href) ? 'page' : undefined}
-          class:list={[
-            'text-xs font-bold uppercase tracking-[0.12em] text-ink-muted transition-colors duration-200 ease-out hover:text-ink hover-underline-sweep',
-            isActive(href) ? 'nav-link-active' : '',
-          ]}
-        >
-          {label}
-        </a>
-      ))}
+      {
+        navLinks.map(({ href, label }) => (
+          <a
+            href={href}
+            aria-current={isActive(href) ? 'page' : undefined}
+            class:list={[
+              'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink hover-underline-sweep',
+              isActive(href) ? 'text-ink' : 'text-ink-muted',
+            ]}
+          >
+            {label}
+          </a>
+        ))
+      }
     </nav>
 
     <!-- Right side: hamburger (mobile only) -->
@@ -48,11 +52,12 @@ function isActive(href: string): boolean {
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-current transition-opacity hover:opacity-60"
+      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-ink-muted/40 transition-opacity hover:opacity-60"
     >
       <span class="hamburger-bar bar-top block w-4 h-[2px] bg-current"></span>
       <span class="hamburger-bar bar-mid block w-4 h-[2px] bg-current"></span>
-      <span class="hamburger-bar bar-bottom block w-4 h-[2px] bg-current"></span>
+      <span class="hamburger-bar bar-bottom block w-4 h-[2px] bg-current"
+      ></span>
     </button>
   </div>
 </header>
@@ -71,28 +76,31 @@ function isActive(href: string): boolean {
 >
   <nav aria-label="Mobile navigation">
     <ul class="flex flex-col items-center gap-8">
-      {navLinks.map(({ href, label }, i) => (
-        <li style={`--link-delay: ${i * 50}ms`}>
-          <a
-            href={href}
-            aria-current={isActive(href) ? 'page' : undefined}
-            class:list={[
-              'text-3xl font-black tracking-[-0.04em] text-ink transition-colors duration-150 ease-out hover:text-ink-muted',
-              isActive(href) ? 'nav-link-active' : '',
-            ]}
-          >
-            {label}
-          </a>
-        </li>
-      ))}
+      {
+        navLinks.map(({ href, label }, i) => (
+          <li style={`--link-delay: ${i * 50}ms`}>
+            <a
+              href={href}
+              aria-current={isActive(href) ? 'page' : undefined}
+              class:list={[
+                'text-2xl tracking-[-0.04em] transition-colors duration-150 ease-out hover:text-ink',
+                isActive(href) ? 'text-ink' : 'text-ink-muted',
+              ]}
+            >
+              {label}
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 </div>
 
-
 <script>
   function initMenu(): void {
-    const toggle = document.getElementById('menu-toggle') as HTMLButtonElement | null;
+    const toggle = document.getElementById(
+      'menu-toggle'
+    ) as HTMLButtonElement | null;
     const menu = document.getElementById('mobile-menu') as HTMLElement | null;
 
     if (!toggle || !menu) return;
@@ -102,7 +110,7 @@ function isActive(href: string): boolean {
         menu!.querySelectorAll<HTMLElement>(
           'a, button, [tabindex]:not([tabindex="-1"])'
         )
-      ).filter(el => !el.hasAttribute('disabled'));
+      ).filter((el) => !el.hasAttribute('disabled'));
     }
 
     function openMenu(): void {
@@ -121,9 +129,13 @@ function isActive(href: string): boolean {
       toggle!.setAttribute('aria-expanded', 'false');
       toggle!.setAttribute('aria-label', 'Open navigation menu');
       document.body.style.overflow = '';
-      menu!.addEventListener('transitionend', () => {
-        menu!.classList.remove('is-closing');
-      }, { once: true });
+      menu!.addEventListener(
+        'transitionend',
+        () => {
+          menu!.classList.remove('is-closing');
+        },
+        { once: true }
+      );
     }
 
     toggle.addEventListener('click', () => {
@@ -132,13 +144,16 @@ function isActive(href: string): boolean {
     });
 
     // Close on nav link click (with animation)
-    menu.querySelectorAll('a').forEach(link => {
+    menu.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
     });
 
     // Escape key closes menu
     document.addEventListener('keydown', (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      if (
+        e.key === 'Escape' &&
+        toggle.getAttribute('aria-expanded') === 'true'
+      ) {
         closeMenu();
         toggle.focus();
       }
@@ -166,9 +181,11 @@ function isActive(href: string): boolean {
   }
 
   function initScrollEffect(): void {
-    const header = document.querySelector('header.site-header');
+    const header = document.querySelector<HTMLElement>('header.site-header');
     const THRESHOLD = 80;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
 
     if (!header) return;
 

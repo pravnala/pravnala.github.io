@@ -84,15 +84,6 @@ header.site-header.is-scrolled {
   backdrop-filter: blur(var(--blur-glass));
 }
 
-.nav-link-active {
-  @apply relative;
-}
-
-.nav-link-active::after {
-  content: '';
-  @apply absolute -bottom-0.5 left-0 right-0 h-0.5 bg-accent;
-}
-
 /* ── Mobile menu overlay ─────────────────────────────────── */
 
 .mobile-menu {
