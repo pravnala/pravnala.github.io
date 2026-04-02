@@ -8,7 +8,8 @@
   <div class="max-w-6xl mx-auto w-full relative">
     <!-- Positioning statement -->
     <p
-      class="mt-8 text-ink text-lg md:text-xl tracking-tight max-w-xl leading-snug"
+      class="animate-entrance mt-8 text-ink text-lg md:text-xl tracking-tight max-w-xl leading-snug" 
+      style="animation-delay: 200ms;"     
     >
       25+ years of coding and building for the Web.<br />
       15+ years of practice and teaching Lapunti Arnis De Abanico.
@@ -18,15 +19,17 @@
     <div class="mt-10 flex flex-wrap gap-4">
       <a
         href="/work"
-        class="inline-block px-8 py-4 bg-ink text-canvas font-black text-sm uppercase tracking-widest border-2 border-ink transition-colors duration-300 hover:bg-transparent hover:text-ink focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
+        class="animate-entrance inline-block px-8 py-4 bg-ink text-canvas font-black text-sm uppercase tracking-widest border-2 border-ink transition-colors duration-300 hover:bg-transparent hover:text-ink focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
         aria-label="View My Work"
+         style="animation-delay: 400ms;"
       >
         View My Work
       </a>
       <a
         href="/arnis"
-        class="inline-block px-8 py-4 bg-transparent text-ink border-2 border-ink font-black text-sm uppercase tracking-widest transition-colors duration-300 hover:bg-ink hover:text-canvas focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
+        class="animate-entrance inline-block px-8 py-4 bg-transparent text-ink border-2 border-ink font-black text-sm uppercase tracking-widest transition-colors duration-300 hover:bg-ink hover:text-canvas focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
         aria-label="Arnis Training"
+         style="animation-delay: 600ms;"
       >
         Arnis Training
       </a>
@@ -34,19 +37,4 @@
   </div>
 </section>
 
-<style>
-  @keyframes slowPan {
-    0% {
-      transform: scale(1.1) translate(0, 0);
-    }
-    50% {
-      transform: scale(1.15) translate(-1%, -2%);
-    }
-    100% {
-      transform: scale(1.1) translate(0, 0);
-    }
-  }
-  .animate-slow-pan {
-    animation: slowPan 30s ease-in-out infinite;
-  }
-</style>
+

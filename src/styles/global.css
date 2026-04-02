@@ -25,36 +25,176 @@
   --font-weight-black: 900;
   --font-weight-bold: 700;
 
-  /* Animation — reserved for future use */
+  /* Animations */
+  --animate-fade-in-up: fadeInUp 1s ease forwards;
+  --animate-marquee: marquee 30s linear infinite;
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 }
 
 /* ── Base styles ─────────────────────────────────────────── */
+@layer base {
+  body {
+    @apply font-body bg-canvas text-ink;
+  }
 
-body {
-  @apply font-body bg-canvas text-ink;
+  /* Subtle physical grain overlay */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-black tracking-[-0.04em] leading-[1.05];
+  }
 }
 
-/* Subtle physical grain overlay */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.035;
-}
+/* ── Utilities ─────────────────────────────────────────── */
+@layer components {
+  /* ── Animations ──────────────────────────────────────────────── */
+  /* Staggered fade-up entrance — pair with style="animation-delay: Xms;" */
+  /* .animate-entrance {
+    @apply opacity-0 translate-y-8 animate-fade-in-up;
+  } */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-display font-black tracking-[-0.04em] leading-[1.05];
+  .reveal {
+    opacity: 0;
+    transform: translateY(56px);
+    transition: all 1s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered fade-up entrance — pair with style="animation-delay: Xms;" */
+  .animate-entrance {
+    @apply animate-fade-in-up translate-y-8 opacity-0;
+  }
+
+  /* ── Custom Scrollbar ──────────────────────────────────────────────── */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-rdv-black);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #333;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* ── Header ──────────────────────────────────────────────── */
+
+  header.site-header {
+    @apply bg-transparent border-b border-transparent;
+    transition:
+      background 250ms ease-out,
+      border-color 250ms ease-out;
+  }
+
+  header.site-header.is-scrolled {
+    @apply border-b-surface-border;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(var(--blur-glass));
+  }
+
+  /* ── Mobile menu overlay ─────────────────────────────────── */
+
+  .mobile-menu.is-open {
+    @apply opacity-100 pointer-events-auto translate-y-0;
+  }
+
+  .mobile-menu.is-closing {
+    @apply opacity-0;
+    transition:
+      opacity 250ms ease-in,
+      transform 250ms ease-in;
+  }
+
+  /* Staggered link entrance */
+  .mobile-menu nav a {
+    @apply opacity-0;
+    transition:
+      opacity 300ms ease-in var(--link-delay, 300ms),
+      transform 300ms ease-in var(--link-delay, 300ms);
+  }
+
+  .mobile-menu.is-open nav a {
+    @apply opacity-100;
+  }
+
+  /* Hamburger → × */
+  .hamburger-bar {
+    transition:
+      transform 250ms ease-in-out,
+      opacity 250ms ease-in-out;
+  }
+
+  [aria-expanded='true'] .bar-top {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  [aria-expanded='true'] .bar-mid {
+    @apply opacity-0;
+  }
+
+  [aria-expanded='true'] .bar-bottom {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  @media (min-width: 768px) {
+    .mobile-menu {
+      @apply hidden;
+    }
+  }
+
+  /* ── CTA arrow (BlogCard, CaseStudyCard, DualPath) ───────── */
+
+  .cta-arrow {
+    @apply inline-block;
+    transition: transform 150ms ease-out;
+  }
+
+  .cta-link:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+
+  /* ── Hover Sweep Animation ───────────────────────────────────── */
+  .hover-underline-sweep {
+    @apply relative inline-block;
+  }
+  .hover-underline-sweep::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 w-full h-[2px] bg-ink scale-x-0 origin-right transition-transform duration-300 ease-out;
+  }
+  .hover-underline-sweep:hover::after {
+    @apply scale-x-100 origin-left;
+  }
 }
 
 /* ── Reduced motion ──────────────────────────────────────── */
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -64,92 +204,4 @@ h6 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* ── Header ──────────────────────────────────────────────── */
-
-header.site-header {
-  @apply bg-transparent border-b border-transparent;
-  transition:
-    background 250ms ease-out,
-    border-color 250ms ease-out;
-}
-
-header.site-header.is-scrolled {
-  @apply border-b-surface-border;
-  background: rgba(10, 10, 10, 0.8);
-  backdrop-filter: blur(var(--blur-glass));
-}
-
-/* ── Mobile menu overlay ─────────────────────────────────── */
-
-.mobile-menu.is-open {
-  @apply opacity-100 pointer-events-auto translate-y-0;
-}
-
-.mobile-menu.is-closing {
-  @apply opacity-0;
-  transition:
-    opacity 250ms ease-in,
-    transform 250ms ease-in;
-}
-
-/* Staggered link entrance */
-.mobile-menu nav a {
-  @apply opacity-0;
-  transition:
-    opacity 300ms ease-in var(--link-delay, 300ms),
-    transform 300ms ease-in var(--link-delay, 300ms);
-}
-
-.mobile-menu.is-open nav a {
-  @apply opacity-100;
-}
-
-/* Hamburger → × */
-.hamburger-bar {
-  transition:
-    transform 250ms ease-in-out,
-    opacity 250ms ease-in-out;
-}
-
-[aria-expanded='true'] .bar-top {
-  transform: translateY(7px) rotate(45deg);
-}
-
-[aria-expanded='true'] .bar-mid {
-  @apply opacity-0;
-}
-
-[aria-expanded='true'] .bar-bottom {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-@media (min-width: 768px) {
-  .mobile-menu {
-    @apply hidden;
-  }
-}
-
-/* ── CTA arrow (BlogCard, CaseStudyCard, DualPath) ───────── */
-
-.cta-arrow {
-  @apply inline-block;
-  transition: transform 150ms ease-out;
-}
-
-.cta-link:hover .cta-arrow {
-  transform: translateX(4px);
-}
-
-/* ── Hover Sweep Animation ───────────────────────────────────── */
-.hover-underline-sweep {
-  @apply relative inline-block;
-}
-.hover-underline-sweep::after {
-  content: '';
-  @apply absolute left-0 -bottom-1 w-full h-[2px] bg-ink scale-x-0 origin-right transition-transform duration-300 ease-out;
-}
-.hover-underline-sweep:hover::after {
-  @apply scale-x-100 origin-left;
 }
