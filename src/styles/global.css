@@ -83,19 +83,12 @@ header.site-header.is-scrolled {
 
 /* ── Mobile menu overlay ─────────────────────────────────── */
 
-.mobile-menu {
-  @apply -translate-y-2;
-  transition:
-    opacity 350ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
 .mobile-menu.is-open {
   @apply opacity-100 pointer-events-auto translate-y-0;
 }
 
 .mobile-menu.is-closing {
-  @apply opacity-0 -translate-y-2;
+  @apply opacity-0;
   transition:
     opacity 250ms ease-in,
     transform 250ms ease-in;
@@ -103,14 +96,14 @@ header.site-header.is-scrolled {
 
 /* Staggered link entrance */
 .mobile-menu nav a {
-  @apply opacity-0 -translate-y-2;
+  @apply opacity-0;
   transition:
-    opacity 350ms cubic-bezier(0.16, 1, 0.3, 1) var(--link-delay, 0ms),
-    transform 350ms cubic-bezier(0.16, 1, 0.3, 1) var(--link-delay, 0ms);
+    opacity 300ms ease-in var(--link-delay, 300ms),
+    transform 300ms ease-in var(--link-delay, 300ms);
 }
 
 .mobile-menu.is-open nav a {
-  @apply opacity-100 translate-y-0;
+  @apply opacity-100;
 }
 
 /* Hamburger → × */

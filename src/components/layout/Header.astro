@@ -78,13 +78,13 @@ function isActive(href: string): boolean {
     <ul class="flex flex-col items-center gap-8">
       {
         navLinks.map(({ href, label }, i) => (
-          <li style={`--link-delay: ${i * 50}ms`}>
+          <li style={`--link-delay: ${i * 100}ms`}>
             <a
               href={href}
               aria-current={isActive(href) ? 'page' : undefined}
               class:list={[
-                'text-2xl tracking-[-0.04em] transition-colors duration-150 ease-out hover:text-ink',
-                isActive(href) ? 'text-ink' : 'text-ink-muted',
+                'text-2xl tracking-[-0.04em] transition-colors duration-300 ease-out hover:text-ink-muted',
+                isActive(href) ? 'text-ink-muted/70' : 'text-ink',
               ]}
             >
               {label}
