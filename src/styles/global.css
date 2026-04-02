@@ -25,9 +25,7 @@
   --font-weight-black: 900;
   --font-weight-bold: 700;
 
-  /* Animation */
-  --duration-reveal: 700ms;
-  --easing-reveal: cubic-bezier(0.16, 1, 0.3, 1);
+  /* Animation — reserved for future use */
 }
 
 /* ── Base styles ─────────────────────────────────────────── */
@@ -43,7 +41,6 @@ body::after {
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  /* background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); */
   opacity: 0.035;
 }
 
@@ -138,59 +135,6 @@ header.site-header.is-scrolled {
 @media (min-width: 768px) {
   .mobile-menu {
     @apply hidden;
-  }
-}
-
-/* ── AnimatedSection ─────────────────────────────────────── */
-
-.animated-section {
-  --reveal-delay: 0ms;
-  /* Multi-property transition with CSS vars — plain CSS required */
-  transition:
-    opacity var(--duration-reveal) var(--easing-reveal) var(--reveal-delay),
-    transform var(--duration-reveal) var(--easing-reveal) var(--reveal-delay),
-    clip-path var(--duration-reveal) var(--easing-reveal) var(--reveal-delay);
-}
-
-.animated-section:not(.is-visible) {
-  will-change: transform;
-}
-
-.animated-section.is-visible {
-  will-change: auto;
-}
-
-.animated-section[data-animation='fade-up'] {
-  @apply opacity-0 translate-y-8;
-}
-
-.animated-section[data-animation='fade-in'] {
-  @apply opacity-0 translate-y-0;
-}
-
-.animated-section[data-animation='slide-left'] {
-  @apply opacity-0 -translate-x-8;
-}
-
-.animated-section[data-animation='clip-up'] {
-  @apply opacity-100;
-  clip-path: inset(100% 0 0 0);
-}
-
-.animated-section.is-visible {
-  @apply opacity-100 translate-x-0 translate-y-0;
-}
-
-.animated-section[data-animation='clip-up'].is-visible {
-  clip-path: inset(0% 0 0 0);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animated-section {
-    opacity: 1 !important;
-    transform: none !important;
-    clip-path: none !important;
-    transition: none !important;
   }
 }
 

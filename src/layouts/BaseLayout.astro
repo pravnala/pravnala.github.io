@@ -24,7 +24,9 @@ const { title, description, ogImage } = Astro.props;
     {description && <meta property="og:description" content={description} />}
 
     <!-- Anti-FOUC: site is permanently dark -->
-    <script is:inline>document.documentElement.classList.add('dark');</script>
+    <script is:inline>
+      document.documentElement.classList.add('dark');
+    </script>
 
     <!-- Font preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

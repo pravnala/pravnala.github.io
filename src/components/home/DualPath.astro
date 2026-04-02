@@ -1,59 +1,97 @@
 ---
-import AnimatedSection from '../ui/AnimatedSection.astro';
+
 ---
 
-<AnimatedSection animation="fade-in" delay={100}>
-  <section class="grid grid-cols-1 md:grid-cols-2 w-full">
-    {/* Dev_Path */}
-    <a
-      href="/work"
-      class="group relative flex flex-col justify-between p-10 md:p-16 min-h-[28rem] bg-surface text-ink no-underline overflow-hidden border border-surface-border transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
-      aria-label="Explore web development work"
+<section class="grid grid-cols-1 md:grid-cols-2 w-full">
+  {/* Dev_Path */}
+  <a
+    href="/work"
+    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-[28rem] bg-surface text-ink no-underline overflow-hidden border border-surface-border transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
+    aria-label="Explore web development work"
+  >
+    <span class="text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle"
+      >Dev</span
     >
-      <span class="text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle">Dev</span>
-      <div>
-        <h2 class="text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4">
-          Web<br />Development
-        </h2>
-        <p class="text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8">
-          20+ years building digital products. From architecture to deployment — full-stack, client-focused, results-driven.
-        </p>
-        <span class="cta-link inline-flex items-center gap-2 text-sm font-bold tracking-[0.1em] uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm">
-          View Work
-          <span class="cta-arrow">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+    <div>
+      <h2
+        class="text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4"
+      >
+        Web<br />Development
+      </h2>
+      <p
+        class="text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8"
+      >
+        20+ years building digital products. From architecture to deployment —
+        full-stack, client-focused, results-driven.
+      </p>
+      <span
+        class="cta-link inline-flex items-center gap-2 text-sm font-bold tracking-[0.1em] uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm"
+      >
+        View Work
+        <span class="cta-arrow">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            class="transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
         </span>
-      </div>
-    </a>
+      </span>
+    </div>
+  </a>
 
-    {/* Arnis_Path */}
-    <a
-      href="/arnis"
-      class="group relative flex flex-col justify-between p-10 md:p-16 min-h-[28rem] bg-surface text-ink no-underline overflow-hidden border border-surface-border transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
-      aria-label="Explore Arnis martial arts instruction"
+  {/* Arnis_Path */}
+  <a
+    href="/arnis"
+    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-[28rem] bg-surface text-ink no-underline overflow-hidden border border-surface-border transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
+    aria-label="Explore Arnis martial arts instruction"
+  >
+    <span class="text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle"
+      >Arnis</span
     >
-      <span class="text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle">Arnis</span>
-      <div>
-        <h2 class="text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4">
-          Martial<br />Arts
-        </h2>
-        <p class="text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8">
-          16 years of Lapunti Arnis de Abanico mastery. Seminars, training, and instruction for students and organizations.
-        </p>
-        <span class="cta-link inline-flex items-center gap-2 text-sm font-bold tracking-[0.1em] uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm">
-          Explore Arnis
-          <span class="cta-arrow">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">
-              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
+    <div>
+      <h2
+        class="text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4"
+      >
+        Martial<br />Arts
+      </h2>
+      <p
+        class="text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8"
+      >
+        16 years of Lapunti Arnis de Abanico mastery. Seminars, training, and
+        instruction for students and organizations.
+      </p>
+      <span
+        class="cta-link inline-flex items-center gap-2 text-sm font-bold tracking-[0.1em] uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm"
+      >
+        Explore Arnis
+        <span class="cta-arrow">
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 16 16"
+            fill="none"
+            aria-hidden="true"
+            class="transition-transform duration-300 group-hover:translate-x-1"
+          >
+            <path
+              d="M3 8h10M9 4l4 4-4 4"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
         </span>
-      </div>
-    </a>
-  </section>
-</AnimatedSection>
-
-
+      </span>
+    </div>
+  </a>
+</section>
