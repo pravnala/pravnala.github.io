@@ -36,8 +36,8 @@ function isActive(href: string): boolean {
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink hover-underline-sweep',
-              isActive(href) ? 'text-ink' : 'text-ink-muted',
+              'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink',
+              isActive(href) ? 'text-ink' : 'text-ink-muted hover-underline-sweep',
             ]}
           >
             {label}
