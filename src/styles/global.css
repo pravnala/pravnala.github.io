@@ -140,15 +140,22 @@
 
   /* ── Mobile menu overlay ─────────────────────────────────── */
 
+  .mobile-menu {
+    @apply opacity-0 pointer-events-none;
+    transform: translateY(-8px);
+    transition:
+      opacity 250ms ease-out,
+      transform 250ms ease-out;
+  }
+
   .mobile-menu.is-open {
-    @apply opacity-100 pointer-events-auto translate-y-0;
+    @apply opacity-100 pointer-events-auto;
+    transform: translateY(0);
   }
 
   .mobile-menu.is-closing {
     @apply opacity-0;
-    transition:
-      opacity 250ms ease-in,
-      transform 250ms ease-in;
+    transform: translateY(-8px);
   }
 
   /* Staggered link entrance */
