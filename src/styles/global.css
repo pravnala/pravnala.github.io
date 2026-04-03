@@ -69,6 +69,20 @@
   h6 {
     @apply font-display font-black tracking-[-0.04em] leading-[1.05];
   }
+
+  /* ── Typography ─────────────────────────────────────────── */
+  .text-eyebrow {
+    @apply text-xs font-bold tracking-[0.2em] uppercase;
+  }
+
+  .text-heading {
+    @apply font-display font-black tracking-[-0.04em] leading-[1.05];
+    @apply text-5xl md:text-7xl;
+  }
+
+  .text-body {
+    @apply text-sm md:text-base leading-relaxed;
+  }
 }
 
 /* ── Utilities ─────────────────────────────────────────── */

@@ -1,4 +1,6 @@
 ---
+import Button from '../common/Button.astro';
+
 const webDevYears = new Date().getFullYear() - 2000;
 const fmaYears = new Date().getFullYear() - 2010;
 ---
@@ -6,32 +8,20 @@ const fmaYears = new Date().getFullYear() - 2010;
 <section class="grid grid-cols-1 md:grid-cols-2 w-full">
   {/* Dev_Path */}
   <div
-    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-112 bg-surface text-ink no-underline overflow-hidden transition-[background-color,transform] duration-500 ease-in-out hover:bg-surface-hover"
+    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-112 bg-ink/20 text-ink no-underline overflow-hidden transition-[background-color,transform] duration-500 ease-in-out hover:bg-surface-hover"
     aria-label="Explore web development work"
   >
-    <span
-      class="reveal text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle"
-      style="animation-delay: 200ms;">Dev</span
-    >
-    <div>
-      <h2
-        class="reveal text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4"
-        style="animation-delay: 400ms;"
-      >
+    <span class="reveal text-eyebrow text-ink-subtle">Dev</span>
+    <div class="reveal" style="animation-delay: 400ms;">
+      <h2 class="text-heading mb-4">
         Web<br />Development
       </h2>
-      <p
-        class="reveal text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8"
-        style="animation-delay: 600ms;"
-      >
+      <p class="max-w-xs text-ink-muted mb-8">
         <!-- {webDevYears} years building digital products. From architecture to deployment
         — full-stack, client-focused, results-driven. -->
         {webDevYears} years of coding and building for the web.
       </p>
-      <span
-        class="reveal cta-link inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm"
-        style="animation-delay: 800ms;"
-      >
+      <Button variant="primary" href="/work" class="inline-flex gap-2">
         View Work
         <span class="cta-arrow">
           <svg
@@ -50,7 +40,7 @@ const fmaYears = new Date().getFullYear() - 2010;
               stroke-linejoin="round"></path>
           </svg>
         </span>
-      </span>
+      </Button>
     </div>
   </div>
 
@@ -59,23 +49,15 @@ const fmaYears = new Date().getFullYear() - 2010;
     class="group relative flex flex-col justify-between p-10 md:p-16 min-h-112 bg-surface text-ink no-underline overflow-hidden transition-[background-color,transform] duration-500 ease-in-out hover:bg-surface-hover"
     aria-label="Explore Arnis martial arts instruction"
   >
-    <span class="text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle"
-      >FMA</span
-    >
-    <div>
-      <h2
-        class="text-5xl md:text-6xl font-black tracking-[-0.04em] leading-[1.05] mb-4"
-      >
+    <span class="reveal text-eyebrow text-ink-subtle">FMA</span>
+    <div class="reveal" style="animation-delay: 400ms;">
+      <h2 class="text-heading mb-4">
         Filipino<br />Martial Arts
       </h2>
-      <p
-        class="text-sm md:text-base text-ink-muted max-w-xs leading-relaxed mb-8"
-      >
+      <p class="text-ink-muted max-w-xs mb-8">
         {fmaYears} years of practice and teaching Lapunti Arnis de Abanico.
       </p>
-      <span
-        class="cta-link inline-flex items-center gap-2 text-sm font-bold tracking-widest uppercase pb-1 mt-1 transition-all duration-300 group-hover:bg-ink group-hover:text-canvas px-3 py-1.5 -ml-3 border border-transparent group-hover:border-ink rounded-sm"
-      >
+      <Button variant="secondary" href="/work" class="inline-flex gap-2">
         Explore Arnis
         <span class="cta-arrow">
           <svg
@@ -94,7 +76,7 @@ const fmaYears = new Date().getFullYear() - 2010;
               stroke-linejoin="round"></path>
           </svg>
         </span>
-      </span>
+      </Button>
     </div>
   </div>
 </section>
