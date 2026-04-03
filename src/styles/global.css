@@ -43,6 +43,10 @@
 
 /* ── Base styles ─────────────────────────────────────────── */
 @layer base {
+  html {
+    scrollbar-gutter: stable;
+  }
+
   body {
     @apply font-body bg-canvas text-ink;
   }
@@ -88,7 +92,7 @@
 
   /* Staggered fade-up entrance — pair with style="animation-delay: Xms;" */
   .animate-entrance {
-    @apply animate-fade-in-up translate-y-8 opacity-0;
+    @apply animate-fade-in-up opacity-0;
   }
 
   /* ── Custom Scrollbar ──────────────────────────────────────────────── */
@@ -108,7 +112,7 @@
   /* ── Header ──────────────────────────────────────────────── */
 
   header.site-header {
-    @apply bg-transparent border-b border-transparent;
+    @apply bg-canvas border-b border-transparent;
     transition:
       background 250ms ease-out,
       border-color 250ms ease-out;

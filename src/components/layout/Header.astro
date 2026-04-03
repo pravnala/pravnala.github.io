@@ -23,7 +23,8 @@ function isActive(href: string): boolean {
       class="text-xl tracking-tight font-normal transition-colors duration-500 ease-out text-ink hover:text-ink-muted group"
       aria-label="pra>nala — Home"
     >
-      pra<span class="text-ink-muted/80 text-xl px-px group-hover:text-ink inline-flex items-center justify-center aspect-square leading-0  group-hover:rotate-90 transition-transform duration-300 ease-out"
+      pra<span
+        class="text-ink-muted/80 text-xl px-px group-hover:text-ink inline-flex items-center justify-center aspect-square leading-0 group-hover:rotate-90 transition-transform duration-300 ease-out"
         >&gt;</span
       >nala
     </a>
@@ -37,7 +38,9 @@ function isActive(href: string): boolean {
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
               'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink',
-              isActive(href) ? 'text-ink' : 'text-ink-muted hover-underline-sweep',
+              isActive(href)
+                ? 'text-ink'
+                : 'text-ink-muted hover-underline-sweep',
             ]}
           >
             {label}
@@ -63,7 +66,7 @@ function isActive(href: string): boolean {
 </header>
 
 <!-- Spacer so page content isn't hidden under fixed header -->
-<div class="h-16" aria-hidden="true"></div>
+<!-- <div class="h-16" aria-hidden="true"></div> -->
 
 <!-- Fullscreen mobile menu overlay (sibling to header) -->
 <div

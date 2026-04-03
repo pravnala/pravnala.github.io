@@ -1,40 +1,111 @@
 ---
-
+import { Image } from 'astro:assets';
+import pravnalaSketch from '../../assets/images/pravnala-sketch-alpha.png';
 ---
 
 <section
-  class="relative min-h-screen flex flex-col justify-center px-6 py-24 overflow-hidden bg-canvas"
+  id="hero"
+  class="relative min-h-screen justify-center overflow-hidden bg-ink grid grid-cols-2"
 >
-  <div class="max-w-6xl mx-auto w-full relative">
-    <!-- Positioning statement -->
-    <p
-      class="animate-entrance mt-8 text-ink text-lg md:text-xl tracking-tight max-w-xl leading-snug" 
-      style="animation-delay: 200ms;"     
-    >
-      25+ years of coding and building for the Web.<br />
-      15+ years of practice and teaching Lapunti Arnis De Abanico.
-    </p>
+  <!-- Background Image -->
+  <div class="absolute top-[80px] bottom-[40px] inset-x-0">
+    <Image
+      src={pravnalaSketch}
+      alt="pravnala sketch"
+      class="h-full w-full object-contain"
+      widths={[640, 1024, 1600]}
+      sizes="(max-width: 1023px) 100vw, 70vw"
+      loading="eager"
+      aria-hidden="true"
+    />
+  </div>
 
-    <!-- CTAs -->
-    <div class="mt-10 flex flex-wrap gap-4">
-      <a
-        href="/work"
-        class="animate-entrance inline-block px-8 py-4 bg-ink text-canvas font-black text-sm uppercase tracking-widest border-2 border-ink transition-colors duration-300 hover:bg-transparent hover:text-ink focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
-        aria-label="View My Work"
-         style="animation-delay: 400ms;"
+  <div class="px-5 md:px-20 py-16 grid place-items-center">
+    <!-- <div class="max-w-xl w-full bg-canvas/50 p-5 md:p-10">
+      <p
+        class="text-ink font-normal animate-entrance text-sm md:text-xl tracking-tight max-w-xl leading-snug"
+        style="animation-delay: 200ms;"
       >
-        View My Work
-      </a>
-      <a
-        href="/arnis"
-        class="animate-entrance inline-block px-8 py-4 bg-transparent text-ink border-2 border-ink font-black text-sm uppercase tracking-widest transition-colors duration-300 hover:bg-ink hover:text-canvas focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper"
-        aria-label="Arnis Training"
-         style="animation-delay: 600ms;"
-      >
-        Arnis Training
-      </a>
+        25+ years of coding and building for the Web.<br />
+        15+ years of practice and teaching Lapunti Arnis De Abanico.
+      </p>
+
+      <div class="mt-5 md:mt-10 flex flex-wrap gap-4">
+        <a
+          href="/work"
+          class:list={[
+            'inline-block px-4 md:px-8 py-3 md:py-4 bg-canvas text-ink text-xs md:text-sm uppercase tracking-widest border-2 border-canvas',
+            'animate-entrance transition-colors duration-300 ease-in-out',
+            'hover:bg-transparent hover:text-canvas',
+            'focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper',
+          ]}
+          aria-label="View My Work"
+          style="animation-delay: 400ms;"
+        >
+          View My Work
+        </a>
+        <a
+          href="/arnis"
+          class:list={[
+            'inline-block px-4 md:px-8 py-3 md:py-4 bg-canvas text-ink text-xs md:text-sm uppercase tracking-widest border-2 border-canvas',
+            'animate-entrance transition-colors duration-300 ease-in-out',
+            'hover:bg-transparent hover:text-canvas',
+            'focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper',
+          ]}
+          aria-label="Arnis Training"
+          style="animation-delay: 600ms;"
+        >
+          Arnis Training
+        </a>
+      </div>
+    </div> -->
+  </div>
+  <div class="bg-black/80 p-5 lg:p-20 grid place-items-center">
+    <div
+      class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black tracking-[-0.04em] leading-[1.05] mt-16 space-y-10 text-right text-ink"
+    >
+      <div class="animate-entrance" style="animation-delay: 200ms;">
+        Web Developer
+      </div>
+      <div class="animate-entrance" style="animation-delay: 400ms;">
+        FMA Instructor
+      </div>
+      <div class="animate-entrance font-normal" style="animation-delay: 600ms;">
+        IT Consultant
+      </div>
+      <div class="animate-entrance font-normal" style="animation-delay: 800ms;">
+        Linux and Open Source Advocate
+      </div>
+      <div class="pt-5 md:pt-10 md:mt-10 flex flex-wrap gap-4 justify-end">
+        <a
+          href="/work"
+          class:list={[
+            'inline-block px-3 md:px-8 py-3 md:py-4 bg-canvas text-ink text-xs md:text-sm font-normal uppercase tracking-widest border-2 border-canvas',
+            'animate-entrance transition-colors duration-300 ease-in-out',
+            'hover:bg-ink-muted hover:text-canvas',
+            'focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper',
+            'text-center w-full lg:w-auto',
+          ]}
+          aria-label="View My Work"
+          style="animation-delay: 400ms;"
+        >
+          View My Work
+        </a>
+        <a
+          href="/arnis"
+          class:list={[
+            'inline-block px-3 md:px-8 py-3 md:py-4 bg-canvas text-ink text-xs md:text-sm font-normal uppercase tracking-widest border-2 border-canvas',
+            'animate-entrance transition-colors duration-300 ease-in-out',
+            'hover:bg-ink-muted hover:text-canvas',
+            'focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-paper',
+            'text-center w-full lg:w-auto',
+          ]}
+          aria-label="Arnis Training"
+          style="animation-delay: 600ms;"
+        >
+          Arnis Training
+        </a>
+      </div>
     </div>
   </div>
 </section>
-
-
