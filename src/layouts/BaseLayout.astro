@@ -45,15 +45,20 @@ const { title, description, ogImage } = Astro.props;
     <Header />
     <slot />
     <script>
-      const observerOptions = { threshold: 0.1 };
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add('active');
-        });
-      }, observerOptions);
-      document
-        .querySelectorAll('.reveal')
-        .forEach((el) => observer.observe(el));
+      function initReveal() {
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) entry.target.classList.add('active');
+          });
+        }, observerOptions);
+        document
+          .querySelectorAll('.reveal')
+          .forEach((el) => observer.observe(el));
+      }
+
+      // Runs on initial load and after every View Transition navigation
+      document.addEventListener('astro:page-load', initReveal);
     </script>
   </body>
 </html>
