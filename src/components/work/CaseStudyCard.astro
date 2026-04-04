@@ -16,7 +16,7 @@ const summary =
 ---
 
 <article
-  class="group relative border border-surface-border bg-surface p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
+  class="group relative border bg-surface p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-surface-hover hover:-translate-y-0.5 hover:border-white/24"
 >
   <!-- Title -->
   <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
@@ -35,15 +35,17 @@ const summary =
   </p>
 
   <!-- Technologies -->
-  {technologies.length > 0 && (
-    <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
-      {technologies.map((tech) => (
-        <li class="text-xs font-bold tracking-[0.12em] uppercase border border-current px-2 py-1">
-          {tech}
-        </li>
-      ))}
-    </ul>
-  )}
+  {
+    technologies.length > 0 && (
+      <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
+        {technologies.map((tech) => (
+          <li class="text-xs font-bold tracking-[0.12em] uppercase border border-current px-2 py-1">
+            {tech}
+          </li>
+        ))}
+      </ul>
+    )
+  }
 
   <!-- Read more -->
   <a
@@ -55,5 +57,3 @@ const summary =
     Read More <span class="cta-arrow">→</span>
   </a>
 </article>
-
-

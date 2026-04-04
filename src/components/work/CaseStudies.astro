@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import CaseStudyCard from '../../components/work/CaseStudyCard.astro';
+
+const allWork = await getCollection('work');
+const publicWork = allWork
+  .filter((entry) => entry.data.isPublic)
+  .sort((a, b) => {
+    const aOrder = a.data.order ?? Infinity;
+    const bOrder = b.data.order ?? Infinity;
+    return aOrder - bOrder;
+  });
+---
+
+<!-- Case studies -->{
+  publicWork.length === 0 ? (
+    <p class="text-lg opacity-50 tracking-wide mb-24">
+      Case studies coming soon.
+    </p>
+  ) : (
+    <section aria-labelledby="case-studies-heading" class="mb-24 md:mb-32">
+      <h2
+        id="case-studies-heading"
+        class="text-xs font-bold tracking-[0.2em] uppercase mb-10 opacity-50"
+      >
+        Case Studies
+      </h2>
+      <div class="grid gap-px border border-ink">
+        {publicWork.map((entry) => (
+          <CaseStudyCard
+            title={entry.data.title}
+            slug={entry.id.replace(/\.[^.]+$/, '')}
+            projectContext={entry.data.projectContext}
+            technologies={entry.data.technologies}
+          />
+        ))}
+      </div>
+    </section>
+  )
+}

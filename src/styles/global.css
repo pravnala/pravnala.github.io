@@ -6,11 +6,10 @@
 @theme {
   /* Colors — dark glassmorphism */
   --color-canvas: hsl(240, 4%, 5%);
-  --color-paper: hsl(240, 4%, 5%);
-  --color-paper-muted: rgba(255, 255, 255, 0.04);
+  --color-canvas-muted: rgba(255, 255, 255, 0.04);
   --color-surface: rgba(255, 255, 255, 0.06);
   --color-surface-hover: rgba(255, 255, 255, 0.1);
-  --color-surface-border: rgba(255, 255, 255, 0.12);
+
   --color-ink: #f5f5f5;
   --color-ink-muted: #a1a1aa;
   --color-ink-subtle: #71717a;
@@ -20,7 +19,7 @@
   --spacing-section: 6rem;
 
   /* Typography */
-  --font-display: 'Outfit', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-weight-black: 900;
   --font-weight-bold: 700;
@@ -67,7 +66,12 @@
   h4,
   h5,
   h6 {
-    @apply font-display font-black tracking-[-0.04em] leading-[1.05];
+    @apply font-heading font-black tracking-[-0.04em] leading-[1.05];
+  }
+
+  /* ── Sections ─────────────────────────────────────────── */
+  section {
+    @apply py-section px-6 mx-auto;
   }
 
   /* ── Typography ─────────────────────────────────────────── */
@@ -76,7 +80,7 @@
   }
 
   .text-heading {
-    @apply font-display font-black tracking-[-0.04em] leading-[1.05];
+    @apply font-heading font-black tracking-[-0.04em] leading-[1.05];
     @apply text-5xl md:text-7xl;
   }
 
@@ -88,10 +92,6 @@
 /* ── Utilities ─────────────────────────────────────────── */
 @layer components {
   /* ── Animations ──────────────────────────────────────────────── */
-  /* Staggered fade-up entrance — pair with style="animation-delay: Xms;" */
-  /* .animate-entrance {
-    @apply opacity-0 translate-y-8 animate-fade-in-up;
-  } */
 
   .reveal {
     opacity: 0;
@@ -110,6 +110,7 @@
   }
 
   /* ── Custom Scrollbar ──────────────────────────────────────────────── */
+
   ::-webkit-scrollbar {
     width: 5px;
   }
@@ -193,17 +194,6 @@
     .mobile-menu {
       @apply hidden;
     }
-  }
-
-  /* ── CTA arrow (BlogCard, CaseStudyCard, DualPath) ───────── */
-
-  .cta-arrow {
-    @apply inline-block;
-    transition: transform 150ms ease-out;
-  }
-
-  .cta-link:hover .cta-arrow {
-    transform: translateX(4px);
   }
 
   /* ── Hover Sweep Animation ───────────────────────────────────── */

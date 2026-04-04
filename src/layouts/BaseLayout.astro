@@ -9,7 +9,10 @@ interface Props {
   ogImage?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const webDevYears = new Date().getFullYear() - 2000;
+const fmaYears = new Date().getFullYear() - 2010;
+const defaultDescription = `${webDevYears} years building for the web. ${fmaYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`
+const { title, description = defaultDescription, ogImage } = Astro.props;
 ---
 
 <!doctype html>
@@ -17,7 +20,7 @@ const { title, description, ogImage } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <title>pra&gt;nala | {title}</title>
     {description && <meta name="description" content={description} />}
     {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:title" content={title} />

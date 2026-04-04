@@ -3,29 +3,29 @@
 
 const experiences = [
   {
-    industry: "FinTech",
-    role: "Senior Full-Stack Developer",
-    technologies: ["React", "Node.js", "PostgreSQL", "AWS"],
+    industry: 'FinTech',
+    role: 'Senior Full-Stack Developer',
+    technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
   },
   {
-    industry: "Healthcare",
-    role: "Lead Frontend Engineer",
-    technologies: ["Vue.js", "TypeScript", "REST APIs"],
+    industry: 'Healthcare',
+    role: 'Lead Frontend Engineer',
+    technologies: ['Vue.js', 'TypeScript', 'REST APIs'],
   },
   {
-    industry: "E-Commerce",
-    role: "Full-Stack Developer",
-    technologies: ["Next.js", "Shopify", "GraphQL"],
+    industry: 'E-Commerce',
+    role: 'Full-Stack Developer',
+    technologies: ['Next.js', 'Shopify', 'GraphQL'],
   },
   {
-    industry: "SaaS Platform",
-    role: "Frontend Architect",
-    technologies: ["React", "Redux", "Tailwind CSS"],
+    industry: 'SaaS Platform',
+    role: 'Frontend Architect',
+    technologies: ['React', 'Redux', 'Tailwind CSS'],
   },
   {
-    industry: "Government",
-    role: "Web Developer",
-    technologies: ["PHP", "Laravel", "MySQL"],
+    industry: 'Government',
+    role: 'Web Developer',
+    technologies: ['PHP', 'Laravel', 'MySQL'],
   },
 ] as const;
 ---
@@ -66,32 +66,38 @@ const experiences = [
         </tr>
       </thead>
       <tbody>
-        {experiences.map((entry, i) => (
-          <tr
-            class={`border-b border-ink ${i % 2 === 0 ? "" : "bg-paper-muted"}`}
-          >
-            <td class="py-5 pr-8 font-bold align-top whitespace-nowrap">
-              {entry.industry}
-            </td>
-            <td class="py-5 pr-8 align-top whitespace-nowrap">
-              {entry.role}
-            </td>
-            <td class="py-5 align-top">
-              <ul class="flex flex-wrap gap-2" aria-label={`Technologies for ${entry.industry} role`}>
-                {entry.technologies.map((tech) => (
-                  <li class="text-xs font-bold tracking-[0.1em] uppercase border border-ink px-2 py-1">
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </td>
-          </tr>
-        ))}
+        {
+          experiences.map((entry, i) => (
+            <tr
+              class={`border-b border-ink ${i % 2 === 0 ? '' : 'bg-canvas-muted'}`}
+            >
+              <td class="py-5 pr-8 font-bold align-top whitespace-nowrap">
+                {entry.industry}
+              </td>
+              <td class="py-5 pr-8 align-top whitespace-nowrap">
+                {entry.role}
+              </td>
+              <td class="py-5 align-top">
+                <ul
+                  class="flex flex-wrap gap-2"
+                  aria-label={`Technologies for ${entry.industry} role`}
+                >
+                  {entry.technologies.map((tech) => (
+                    <li class="text-xs font-bold tracking-widest uppercase border border-ink px-2 py-1">
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          ))
+        }
       </tbody>
     </table>
   </div>
 
-  <p class="mt-6 text-xs tracking-[0.1em] uppercase opacity-50">
-    * Project details withheld under NDA. Industry, role, and tech stack listed only.
+  <p class="mt-6 text-xs tracking-widest uppercase opacity-50">
+    * Project details withheld under NDA. Industry, role, and tech stack listed
+    only.
   </p>
 </section>

@@ -44,7 +44,7 @@ function getSlug(id: string): string {
     <!-- Blog cards grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink">
       {sortedPosts.map((post) => (
-        <div class="blog-card bg-paper" data-category={post.data.category}>
+        <div class="blog-card bg-canvas" data-category={post.data.category}>
           <BlogCard
             title={post.data.title}
             slug={getSlug(post.id)}

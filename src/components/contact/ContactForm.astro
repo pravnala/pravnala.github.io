@@ -84,14 +84,34 @@
         aria-describedby="inquiryType-error"
         aria-required="true"
       >
-        <option value="" disabled selected class="text-ink">Select an inquiry type</option>
-        <option value="web-development" class="bg-paper text-ink">Web Development</option>
-        <option value="arnis-martial-arts" class="bg-paper text-ink">Arnis / Martial Arts</option>
+        <option value="" disabled selected class="text-ink"
+          >Select an inquiry type</option
+        >
+        <option value="web-development" class="bg-canvas text-ink"
+          >Web Development</option
+        >
+        <option value="arnis-martial-arts" class="bg-canvas text-ink"
+          >Arnis / Martial Arts</option
+        >
       </select>
       <!-- Custom chevron -->
-      <span class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink" aria-hidden="true">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <span
+        class="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink"
+        aria-hidden="true"
+      >
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4 6L8 10L12 6"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
         </svg>
       </span>
     </div>
@@ -121,8 +141,7 @@
       class="w-full border-b-2 border-ink bg-transparent py-3 text-base font-bold text-ink placeholder:opacity-30 focus:outline-none focus:border-ink transition-colors resize-none"
       placeholder="Tell me about your project or inquiry…"
       aria-describedby="message-error"
-      aria-required="true"
-    ></textarea>
+      aria-required="true"></textarea>
     <p
       id="message-error"
       role="alert"
@@ -136,7 +155,7 @@
   <!-- Submit -->
   <button
     type="submit"
-    class="inline-block bg-ink text-paper font-black text-sm tracking-[0.15em] uppercase px-10 py-4 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+    class="inline-block bg-ink text-canvas font-black text-sm tracking-[0.15em] uppercase px-10 py-4 transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-ink"
   >
     Send Message
   </button>
@@ -146,7 +165,7 @@
     id="form-success"
     role="status"
     aria-live="polite"
-    class="hidden mt-8 text-sm font-black tracking-[0.1em] uppercase text-ink"
+    class="hidden mt-8 text-sm font-black tracking-widest uppercase text-ink"
   >
     Message received — I'll be in touch soon.
   </p>
@@ -155,15 +174,21 @@
 <script>
   const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const form = document.getElementById('contact-form') as HTMLFormElement | null;
+  const form = document.getElementById(
+    'contact-form'
+  ) as HTMLFormElement | null;
   if (form) {
     form.addEventListener('submit', (e: Event) => {
       e.preventDefault();
 
       const nameEl = document.getElementById('name') as HTMLInputElement;
       const emailEl = document.getElementById('email') as HTMLInputElement;
-      const inquiryEl = document.getElementById('inquiryType') as HTMLSelectElement;
-      const messageEl = document.getElementById('message') as HTMLTextAreaElement;
+      const inquiryEl = document.getElementById(
+        'inquiryType'
+      ) as HTMLSelectElement;
+      const messageEl = document.getElementById(
+        'message'
+      ) as HTMLTextAreaElement;
 
       const nameErr = document.getElementById('name-error')!;
       const emailErr = document.getElementById('email-error')!;
@@ -172,7 +197,9 @@
       const successMsg = document.getElementById('form-success')!;
 
       // Reset errors
-      [nameErr, emailErr, inquiryErr, messageErr].forEach((el) => el.classList.add('hidden'));
+      [nameErr, emailErr, inquiryErr, messageErr].forEach((el) =>
+        el.classList.add('hidden')
+      );
       successMsg.classList.add('hidden');
 
       let valid = true;

@@ -2,12 +2,17 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/home/Hero.astro';
 import DualPath from '../components/home/DualPath.astro';
-import CorePhilosophy from '../components/home/CorePhilosophy.astro';
+// import CorePhilosophy from '../components/home/CorePhilosophy.astro';
+
+const webDevYears = new Date().getFullYear() - 2000;
+const fmaYears = new Date().getFullYear() - 2010;
 ---
 
 <BaseLayout
-  title="pra>nala | Web Developer & Arnis Instructor"
-  description="20+ years building for the web. 16 years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything."
+  title="Web Developer & FMA Instructor"
+  description={
+    `${webDevYears} years building for the web. ${fmaYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`
+  }
 >
   <Hero />
   <DualPath />
