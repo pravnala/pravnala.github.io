@@ -106,7 +106,7 @@
 
   /* ── Sections ─────────────────────────────────────────── */
   .section-container {
-    @apply py-section px-10 md:px-16 mx-auto;
+    @apply py-section px-5 md:px-16 mx-auto;
   }
 
   /* ── Typography ─────────────────────────────────────────── */
