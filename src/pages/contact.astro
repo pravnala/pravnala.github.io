@@ -1,12 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHeader from '../components/layout/InnerHeader.astro';
 import ContactForm from '../components/contact/ContactForm.astro';
 ---
 
 <BaseLayout
-  title="Contact — Alvin Penaflor"
-  description="Get in touch with Alvin Penaflor for web development projects or Arnis martial arts inquiries."
+  title="Contact"
+  description="Get in touch with for web development projects or Arnis inquiries."
 >
+  <InnerHeader
+    title="Get in Touch"
+    description="Web development, Arnis training, or just to say hello"
+  />
   <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
     <!-- Page heading -->
     <header class="mb-16 md:mb-24">

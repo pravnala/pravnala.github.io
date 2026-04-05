@@ -1,14 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import WorkHeader from '../../components/work/WorkHeader.astro';
+import InnerHeader from '../../components/layout/InnerHeader.astro';
 import CaseStudies from '../../components/work/CaseStudies.astro';
 import Experience from '../../components/work/Experience.astro';
 import WorkCTA from '../../components/work/WorkCTA.astro';
 ---
 
 <BaseLayout title="Dev Work">
-  <WorkHeader />
+  <InnerHeader
+    title="Work"
+    description="Selected case studies and project experience"
+  />
   <CaseStudies />
-  <!-- <Experience />
-  <WorkCTA /> -->
+  <!-- <Experience /> -->
+  <WorkCTA />
 </BaseLayout>

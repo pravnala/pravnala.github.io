@@ -1,14 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHeader from '../components/layout/InnerHeader.astro';
 import ArnisHero from '../components/arnis/ArnisHero.astro';
 import InstructorBio from '../components/arnis/InstructorBio.astro';
 import SeminarCTA from '../components/arnis/SeminarCTA.astro';
 ---
 
 <BaseLayout
-  title="Arnis — Alvin Penaflor"
+  title="Lapunti Arnis De Abanico"
   description="Lapunti Arnis de Abanico — a Filipino martial art defined by fluid, fan-like striking patterns and precise footwork. Train with Alvin Penaflor."
 >
+  <InnerHeader
+    title="Filipino Martial Arts"
+    description="The Art of Lapunti Arnis De Abanico"
+  />
   <ArnisHero />
   <InstructorBio />
   <SeminarCTA />

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import InnerHeader from '../../components/layout/InnerHeader.astro';
 import BlogFeed from '../../components/blog/BlogFeed.astro';
 
 const allPosts = await getCollection('blog');
@@ -9,9 +10,13 @@ const posts = allPosts.filter((entry) => entry.data.draft !== true);
 ---
 
 <BaseLayout
-  title="Blog — Alvin Penaflor"
+  title="Blog"
   description="Writing on web development, technology, and Filipino martial arts."
 >
+  <InnerHeader
+    title="Writing"
+    description="Thoughts on code, craft, and the martial arts"
+  />
   <main class="max-w-6xl mx-auto px-6 py-24 md:py-32">
     <!-- Page heading -->
     <header class="mb-16 md:mb-24">

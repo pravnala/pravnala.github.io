@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import pravnalaSketch from '../../assets/images/pravnala-sketch-alpha.png';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description }: Props = Astro.props;
+---
+
+<header class="relative bg-ink-50 text-ink-900 pt-16 w-full overflow-hidden">
+  <!-- Background Image -->
+  <div class="fixed w-[440px] h-auto -right-[225px] md:-right-[120px] top-0">
+    <Image
+      src={pravnalaSketch}
+      alt="pravnala sketch"
+      class="w-xl h-auto opacity-60"
+      widths={[640, 1024, 1600]}
+      sizes="(max-width: 1023px) 100vw, 70vw"
+      loading="eager"
+      aria-hidden="true"
+    />
+  </div>
+  <div class="section-container">
+    <h1
+      class="animate-entrance text-6xl md:text-8xl font-black tracking-[-0.04em] leading-[1.05]"
+      style="animation-delay: 200ms;"
+      aria-label="Work"
+    >
+      {title}
+    </h1>
+    <p
+      class="animate-entrance mt-6 text-sm tracking-[0.15em] uppercase max-w-prose text-ink-400"
+      style="animation-delay: 400ms;"
+    >
+      {description}
+    </p>
+  </div>
+</header>
