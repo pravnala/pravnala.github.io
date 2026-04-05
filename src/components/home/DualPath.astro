@@ -1,5 +1,6 @@
 ---
 import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
 
 const webDevYears = new Date().getFullYear() - 2000;
 const fmaYears = new Date().getFullYear() - 2010;
@@ -17,36 +18,18 @@ const fmaYears = new Date().getFullYear() - 2010;
         Web<br />Development
       </h2>
       <p class="max-w-xs text-ink-300 mb-8">
-        <!-- {webDevYears} years building digital products. From architecture to deployment
-        — full-stack, client-focused, results-driven. -->
         {webDevYears} years of coding and building for the web.
       </p>
       <Button variant="primary" href="/work" class="inline-flex gap-2">
         View Work
-        <span class="cta-arrow">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-            class="transition-transform duration-300 group-hover:translate-x-1"
-          >
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </span>
+        <BtnArrow />
       </Button>
     </div>
   </div>
 
   {/* Arnis_Path */}
   <div
-    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-112 bg-ink-900 text-ink-50 no-underline overflow-hidden transition-[background-color,transform] duration-500 ease-in-out hover:bg-ink-600"
+    class="group relative flex flex-col justify-between p-10 md:p-16 min-h-112 bg-ink-900 text-ink-50 no-underline overflow-hidden transition-[background-color,transform] duration-500 ease-in-out hover:bg-ink-800"
     aria-label="Explore Arnis martial arts instruction"
   >
     <span class="reveal text-eyebrow">FMA</span>
@@ -59,23 +42,7 @@ const fmaYears = new Date().getFullYear() - 2010;
       </p>
       <Button variant="secondary" href="/work" class="inline-flex gap-2">
         Explore Arnis
-        <span class="cta-arrow">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            aria-hidden="true"
-            class="transition-transform duration-300 group-hover:translate-x-1"
-          >
-            <path
-              d="M3 8h10M9 4l4 4-4 4"
-              stroke="currentColor"
-              stroke-width="1.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"></path>
-          </svg>
-        </span>
+        <BtnArrow />
       </Button>
     </div>
   </div>

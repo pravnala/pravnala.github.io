@@ -1,4 +1,7 @@
 ---
+import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
+
 interface Props {
   title: string;
   slug: string;
@@ -16,7 +19,11 @@ const summary =
 ---
 
 <article
-  class="group relative border bg-ink-700 p-8 md:p-10 flex flex-col gap-6 transition-[background-color,transform,border-color] duration-200 ease-out hover:bg-ink-600 hover:-translate-y-0.5 hover:border-white/24"
+  class:list={[
+    'group relative border border-ink-600 bg-ink-700 p-8 md:p-10 flex flex-col gap-6',
+    'duration-300 ease-in-out hover:bg-ink-600 hover:-translate-y-2 hover:border-ink-500',
+    'max-w-lg',
+  ]}
 >
   <!-- Title -->
   <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
@@ -30,7 +37,7 @@ const summary =
   </h2>
 
   <!-- Project context summary -->
-  <p class="text-sm leading-relaxed text-ink-300 max-w-prose">
+  <p class="text-sm leading-relaxed text-ink-200 max-w-prose">
     {summary}
   </p>
 
@@ -39,7 +46,7 @@ const summary =
     technologies.length > 0 && (
       <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
         {technologies.map((tech) => (
-          <li class="text-xs font-bold tracking-[0.12em] uppercase border border-current px-2 py-1">
+          <li class="text-xs tracking-[0.12em] leading-5 text-ink-300 uppercase border border-ink-500/50 px-2 py-1.5 bg-ink-800/50 group-hover:border-ink-400/50">
             {tech}
           </li>
         ))}
@@ -48,12 +55,20 @@ const summary =
   }
 
   <!-- Read more -->
-  <a
+  <!-- <a
     href={`/work/${slug}`}
     class="cta-link mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
     tabindex="-1"
     aria-hidden="true"
   >
     Read More <span class="cta-arrow">→</span>
-  </a>
+  </a> -->
+  <Button
+    href={`/work/${slug}`}
+    class="inline-flex gap-2 self-start mt-auto px-2 py-1"
+    tabindex="-1"
+    aria-hidden="true"
+  >
+    Read More <BtnArrow />
+  </Button>
 </article>
