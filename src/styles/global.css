@@ -4,18 +4,61 @@
 @import 'tailwindcss';
 
 @theme {
-  /* Colors — dark glassmorphism */
-  --color-canvas: hsl(240, 4%, 5%);
-  --color-canvas-muted: rgba(255, 255, 255, 0.04);
-  --color-surface: rgba(255, 255, 255, 0.06);
-  --color-surface-hover: rgba(255, 255, 255, 0.1);
+  /* Colors */
+  /* --black-c: 0;
+  --black-h: 0;
 
-  --color-ink: #f5f5f5;
-  --color-ink-muted: #a1a1aa;
-  --color-ink-subtle: #71717a;
-  --color-accent: #e4e4e7;
+  --black-50-l: 98%; 
+  --black-100-l: 90%; 
+  --black-200-l: 80%; 
+  --black-300-l: 70%; 
+  --black-400-l: 60%; 
+  --black-500-l: 50%; 
+  --black-600-l: 40%; 
+  --black-700-l: 30%; 
+  --black-800-l: 20%; 
+  --black-900-l: 12%; 
+  --black-950-l: 4%; 
+
+  --color-black-50: oklch(var(--black-50-l) var(--black-c) var(--black-h));
+  --color-black-100: oklch(var(--black-100-l) var(--black-c) var(--black-h));
+  --color-black-200: oklch(var(--black-200-l) var(--black-c) var(--black-h));
+  --color-black-300: oklch(var(--black-300-l) var(--black-c) var(--black-h));
+  --color-black-400: oklch(var(--black-400-l) var(--black-c) var(--black-h));
+  --color-black-500: oklch(var(--black-500-l) var(--black-c) var(--black-h));
+  --color-black-600: oklch(var(--black-600-l) var(--black-c) var(--black-h));
+  --color-black-700: oklch(var(--black-700-l) var(--black-c) var(--black-h));
+  --color-black-800: oklch(var(--black-800-l) var(--black-c) var(--black-h));
+  --color-black-900: oklch(var(--black-900-l) var(--black-c) var(--black-h));
+  --color-black-950: oklch(var(--black-950-l) var(--black-c) var(--black-h)); */
+
+  --color-ink-50: oklch(98% 0 0);
+  --color-ink-100: oklch(90% 0 0);
+  --color-ink-200: oklch(80% 0 0);
+  --color-ink-300: oklch(70% 0 0);
+  --color-ink-400: oklch(60% 0 0);
+  --color-ink-500: oklch(50% 0 0);
+  --color-ink-600: oklch(40% 0 0);
+  --color-ink-700: oklch(30% 0 0);
+  --color-ink-800: oklch(20% 0 0);
+  --color-ink-900: oklch(12% 0 0);
+  --color-ink-950: oklch(4% 0 0);
+
+  --color-canvas: oklch(12% 0 0);
+  --color-canvas-muted: oklch(100% 0 0 / 0.03);
+  --color-surface: oklch(100% 0 0 / 0.08);
+  --color-surface-hover: oklch(100% 0 0 / 0.15);
+
+  --color-ink: oklch(98% 0 0);
+  --color-ink-muted: oklch(82% 0 0);
+  --color-ink-subtle: oklch(62% 0 0);
+  --color-accent: oklch(90% 0 0);
+
+  /* Blur */
   --blur-glass: 16px;
   --blur-glass-heavy: 24px;
+
+  /* Spacing */
   --spacing-section: 6rem;
 
   /* Typography */
@@ -71,12 +114,12 @@
 
   /* ── Sections ─────────────────────────────────────────── */
   .section-container {
-    @apply py-section px-6 mx-auto;
+    @apply py-section px-10 md:px-16 mx-auto;
   }
 
   /* ── Typography ─────────────────────────────────────────── */
   .text-eyebrow {
-    @apply text-xs font-bold tracking-[0.2em] uppercase;
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle mb-10;
   }
 
   .text-heading {
