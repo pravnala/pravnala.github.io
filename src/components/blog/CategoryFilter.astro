@@ -13,7 +13,7 @@ const filters = [
 ---
 
 <div
-  class="flex gap-0 border border-ink self-start"
+  class="flex gap-0 border border-ink-50 self-start"
   role="group"
   aria-label="Filter blog posts by category"
 >
@@ -25,11 +25,11 @@ const filters = [
         class:list={[
           'category-filter-btn',
           'px-5 py-2 text-xs font-bold tracking-[0.12em] uppercase transition-colors duration-150',
-          'border-r border-ink last:border-r-0',
-          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink',
+          'border-r border-ink-50 last:border-r-0',
+          'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-50',
           value === initialCategory
-            ? 'bg-ink text-canvas'
-            : 'bg-canvas text-ink hover:bg-ink hover:text-canvas',
+            ? 'bg-ink-50 text-ink-900'
+            : 'bg-ink-900 text-ink-50 hover:bg-ink-50 hover:text-ink-900',
         ]}
         aria-pressed={value === initialCategory ? 'true' : 'false'}
       >
@@ -54,11 +54,11 @@ const filters = [
         const isActive = btn.dataset.filter === selected;
         btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         if (isActive) {
-          btn.classList.add('bg-ink', 'text-canvas');
-          btn.classList.remove('bg-canvas', 'text-ink');
+          btn.classList.add('bg-ink-50', 'text-ink-900');
+          btn.classList.remove('bg-ink-900', 'text-ink-50');
         } else {
-          btn.classList.remove('bg-ink', 'text-canvas');
-          btn.classList.add('bg-canvas', 'text-ink');
+          btn.classList.remove('bg-ink-50', 'text-ink-900');
+          btn.classList.add('bg-ink-900', 'text-ink-50');
         }
       });
 

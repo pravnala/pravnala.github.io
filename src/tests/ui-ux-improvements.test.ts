@@ -31,9 +31,9 @@ function computeContrastRatio(hex1: string, hex2: string): number {
 }
 
 const TOKEN_VALUES: Record<string, string> = {
-  '--color-ink': '#FFFFFF',
-  '--color-ink-muted': '#A1A1AA',
-  '--color-ink-subtle': '#71717A',
+  '--color-ink-50': '#FFFFFF',
+  '--color-ink-300': '#A1A1AA',
+  '--color-ink-500': '#71717A',
 };
 
 const CANVAS = '#0A0A0A';
@@ -41,11 +41,11 @@ const CANVAS = '#0A0A0A';
 // ── Property 1: Text contrast meets WCAG AA minimums ─────────────────────────
 
 // WCAG AA: normal text ≥4.5:1, large text ≥3:1
-// --color-ink-subtle is used for tertiary/label text (large text threshold applies)
+// --color-ink-500 is used for tertiary/label text (large text threshold applies)
 const TOKEN_THRESHOLDS: Record<string, number> = {
-  '--color-ink': 4.5,
-  '--color-ink-muted': 4.5,
-  '--color-ink-subtle': 3.0,
+  '--color-ink-50': 4.5,
+  '--color-ink-300': 4.5,
+  '--color-ink-500': 3.0,
 };
 
 describe('Property 1: Text contrast meets WCAG AA minimums', () => {
@@ -53,7 +53,7 @@ describe('Property 1: Text contrast meets WCAG AA minimums', () => {
   it('all ink tokens meet their WCAG AA contrast threshold against canvas', () => {
     fc.assert(
       fc.property(
-        fc.constantFrom('--color-ink', '--color-ink-muted', '--color-ink-subtle'),
+        fc.constantFrom('--color-ink-50', '--color-ink-300', '--color-ink-500'),
         (token) => {
           const ratio = computeContrastRatio(TOKEN_VALUES[token], CANVAS);
           const threshold = TOKEN_THRESHOLDS[token];
@@ -83,21 +83,18 @@ describe('Property 2: No low-opacity text on meaningful content', () => {
   // Feature: ui-ux-improvements, Property 2: No low-opacity text on meaningful content
   it('no opacity class below opacity-50 appears on text-bearing elements', () => {
     fc.assert(
-      fc.property(
-        fc.constantFrom(...fileContents),
-        ({ file, content }) => {
-          // Match opacity-10 through opacity-40 (i.e., opacity-[1-4]0 or opacity-25)
-          // These are the "low opacity" classes that should not appear on text elements
-          const lowOpacityPattern = /\bopacity-(?:10|20|25|30|40)\b/g;
-          const matches = content.match(lowOpacityPattern);
-          if (matches) {
-            throw new Error(
-              `${file} contains low-opacity class(es): ${matches.join(', ')}`
-            );
-          }
-          return true;
+      fc.property(fc.constantFrom(...fileContents), ({ file, content }) => {
+        // Match opacity-10 through opacity-40 (i.e., opacity-[1-4]0 or opacity-25)
+        // These are the "low opacity" classes that should not appear on text elements
+        const lowOpacityPattern = /\bopacity-(?:10|20|25|30|40)\b/g;
+        const matches = content.match(lowOpacityPattern);
+        if (matches) {
+          throw new Error(
+            `${file} contains low-opacity class(es): ${matches.join(', ')}`
+          );
         }
-      ),
+        return true;
+      }),
       { numRuns: 100 }
     );
   });
@@ -171,10 +168,18 @@ describe('Property 4: Only transform and opacity are animated', () => {
       let depth = 0;
       let current = '';
       for (const ch of value) {
-        if (ch === '(') { depth++; current += ch; }
-        else if (ch === ')') { depth--; current += ch; }
-        else if (ch === ',' && depth === 0) { segments.push(current.trim()); current = ''; }
-        else { current += ch; }
+        if (ch === '(') {
+          depth++;
+          current += ch;
+        } else if (ch === ')') {
+          depth--;
+          current += ch;
+        } else if (ch === ',' && depth === 0) {
+          segments.push(current.trim());
+          current = '';
+        } else {
+          current += ch;
+        }
       }
       if (current.trim()) segments.push(current.trim());
 
@@ -193,24 +198,21 @@ describe('Property 4: Only transform and opacity are animated', () => {
   // Feature: ui-ux-improvements, Property 4: Only transform and opacity are animated
   it('transition declarations only reference allowed CSS properties', () => {
     fc.assert(
-      fc.property(
-        fc.constantFrom(...fileContents),
-        ({ file, content }) => {
-          // Extract only the <style> block content
-          const styleMatch = content.match(/<style[^>]*>([\s\S]*?)<\/style>/g);
-          if (!styleMatch) return true;
-          const styleContent = styleMatch.join('\n');
+      fc.property(fc.constantFrom(...fileContents), ({ file, content }) => {
+        // Extract only the <style> block content
+        const styleMatch = content.match(/<style[^>]*>([\s\S]*?)<\/style>/g);
+        if (!styleMatch) return true;
+        const styleContent = styleMatch.join('\n');
 
-          const props = extractTransitionProperties(styleContent);
-          const disallowed = props.filter((p) => !ALLOWED_PROPERTIES.has(p));
-          if (disallowed.length > 0) {
-            throw new Error(
-              `${file} animates disallowed properties: ${disallowed.join(', ')}`
-            );
-          }
-          return true;
+        const props = extractTransitionProperties(styleContent);
+        const disallowed = props.filter((p) => !ALLOWED_PROPERTIES.has(p));
+        if (disallowed.length > 0) {
+          throw new Error(
+            `${file} animates disallowed properties: ${disallowed.join(', ')}`
+          );
         }
-      ),
+        return true;
+      }),
       { numRuns: 100 }
     );
   });
@@ -227,22 +229,19 @@ describe('Property 5: will-change lifecycle is correct', () => {
   // Feature: ui-ux-improvements, Property 5: will-change lifecycle is correct
   it('pre-visible state has will-change: transform; visible state has will-change: auto', () => {
     fc.assert(
-      fc.property(
-        fc.constant(animatedSectionContent),
-        (content) => {
-          // Check that not(.is-visible) has will-change: transform
-          const hasWillChangeTransform =
-            /animated-section:not\(\.is-visible\)\s*\{[^}]*will-change\s*:\s*transform/s.test(
-              content
-            );
-          // Check that .is-visible has will-change: auto
-          const hasWillChangeAuto =
-            /animated-section\.is-visible\s*\{[^}]*will-change\s*:\s*auto/s.test(
-              content
-            );
-          return hasWillChangeTransform && hasWillChangeAuto;
-        }
-      ),
+      fc.property(fc.constant(animatedSectionContent), (content) => {
+        // Check that not(.is-visible) has will-change: transform
+        const hasWillChangeTransform =
+          /animated-section:not\(\.is-visible\)\s*\{[^}]*will-change\s*:\s*transform/s.test(
+            content
+          );
+        // Check that .is-visible has will-change: auto
+        const hasWillChangeAuto =
+          /animated-section\.is-visible\s*\{[^}]*will-change\s*:\s*auto/s.test(
+            content
+          );
+        return hasWillChangeTransform && hasWillChangeAuto;
+      }),
       { numRuns: 100 }
     );
   });
@@ -388,7 +387,10 @@ describe('Property 9: Focus trap contains all keyboard focus within open mobile 
 describe('Property 10: Navbar scroll state is a round-trip', () => {
   const THRESHOLD = 80;
 
-  function getScrollState(scrollY: number, threshold: number = THRESHOLD): boolean {
+  function getScrollState(
+    scrollY: number,
+    threshold: number = THRESHOLD
+  ): boolean {
     return scrollY > threshold;
   }
 
@@ -407,24 +409,18 @@ describe('Property 10: Navbar scroll state is a round-trip', () => {
 
   it('scroll state is true when scrollY > 80', () => {
     fc.assert(
-      fc.property(
-        fc.integer({ min: 81, max: 10000 }),
-        (scrollY) => {
-          return getScrollState(scrollY) === true;
-        }
-      ),
+      fc.property(fc.integer({ min: 81, max: 10000 }), (scrollY) => {
+        return getScrollState(scrollY) === true;
+      }),
       { numRuns: 100 }
     );
   });
 
   it('getScrollState is idempotent (round-trip)', () => {
     fc.assert(
-      fc.property(
-        fc.nat(500),
-        (scrollY) => {
-          return getScrollState(scrollY) === getScrollState(scrollY);
-        }
-      ),
+      fc.property(fc.nat(500), (scrollY) => {
+        return getScrollState(scrollY) === getScrollState(scrollY);
+      }),
       { numRuns: 100 }
     );
   });

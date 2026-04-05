@@ -19,10 +19,7 @@ const values = [
 ];
 ---
 
-<section
-  class="px-6 md:px-16 py-section"
-  aria-labelledby="philosophy-heading"
->
+<section class="px-6 md:px-16 py-section" aria-labelledby="philosophy-heading">
   <p class="text-xs font-bold tracking-[0.2em] uppercase opacity-40 mb-6">
     Philosophy
   </p>
@@ -33,10 +30,10 @@ const values = [
     Core<br />Values
   </h2>
 
-  <dl class="grid grid-cols-1 md:grid-cols-2 gap-px border border-ink">
+  <dl class="grid grid-cols-1 md:grid-cols-2 gap-px border border-ink-50">
     {
       values.map((value) => (
-        <div class="p-8 md:p-10 border-ink">
+        <div class="p-8 md:p-10 border-ink-50">
           <dt class="text-xl font-black tracking-[-0.03em] leading-[1.05] mb-3">
             {value.title}
           </dt>

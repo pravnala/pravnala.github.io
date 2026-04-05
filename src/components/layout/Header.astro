@@ -20,11 +20,11 @@ function isActive(href: string): boolean {
     <!-- Wordmark -->
     <a
       href="/"
-      class="text-xl tracking-tight font-normal transition-colors duration-500 ease-out text-ink hover:text-ink-muted group"
+      class="text-xl tracking-tight font-normal transition-colors duration-500 ease-out text-ink-50 hover:text-ink-300 group"
       aria-label="pra>nala — Home"
     >
       pra<span
-        class="text-ink-muted/80 text-xl px-px group-hover:text-ink inline-flex items-center justify-center aspect-square leading-0 group-hover:rotate-90 transition-transform duration-300 ease-out"
+        class="text-ink-300/80 text-xl px-px group-hover:text-ink-50 inline-flex items-center justify-center aspect-square leading-0 group-hover:rotate-90 transition-transform duration-300 ease-out"
         >&gt;</span
       >nala
     </a>
@@ -37,10 +37,10 @@ function isActive(href: string): boolean {
             href={href}
             aria-current={isActive(href) ? 'page' : undefined}
             class:list={[
-              'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink',
+              'text-xs font-bold uppercase tracking-[0.12em] transition-colors duration-200 ease-out hover:text-ink-50',
               isActive(href)
-                ? 'text-ink'
-                : 'text-ink-muted hover-underline-sweep',
+                ? 'text-ink-50'
+                : 'text-ink-300 hover-underline-sweep',
             ]}
           >
             {label}
@@ -55,7 +55,7 @@ function isActive(href: string): boolean {
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-ink-muted/40 transition-opacity hover:opacity-60"
+      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-ink-300/40 transition-opacity hover:opacity-60"
     >
       <span class="hamburger-bar bar-top block w-4 h-[2px] bg-current"></span>
       <span class="hamburger-bar bar-mid block w-4 h-[2px] bg-current"></span>
@@ -86,8 +86,8 @@ function isActive(href: string): boolean {
               href={href}
               aria-current={isActive(href) ? 'page' : undefined}
               class:list={[
-                'text-2xl tracking-[-0.04em] transition-colors duration-300 ease-out hover:text-ink-muted',
-                isActive(href) ? 'text-ink-muted/70' : 'text-ink',
+                'text-2xl tracking-[-0.04em] transition-colors duration-300 ease-out hover:text-ink-300',
+                isActive(href) ? 'text-ink-300/70' : 'text-ink-50',
               ]}
             >
               {label}

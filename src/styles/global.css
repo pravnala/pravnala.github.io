@@ -5,32 +5,34 @@
 
 @theme {
   /* Colors */
-  /* --black-c: 0;
-  --black-h: 0;
 
-  --black-50-l: 98%; 
-  --black-100-l: 90%; 
-  --black-200-l: 80%; 
-  --black-300-l: 70%; 
-  --black-400-l: 60%; 
-  --black-500-l: 50%; 
-  --black-600-l: 40%; 
-  --black-700-l: 30%; 
-  --black-800-l: 20%; 
-  --black-900-l: 12%; 
-  --black-950-l: 4%; 
+  /* Programmatic color scale template
+  --ink-c: 0;
+  --ink-h: 0;
 
-  --color-black-50: oklch(var(--black-50-l) var(--black-c) var(--black-h));
-  --color-black-100: oklch(var(--black-100-l) var(--black-c) var(--black-h));
-  --color-black-200: oklch(var(--black-200-l) var(--black-c) var(--black-h));
-  --color-black-300: oklch(var(--black-300-l) var(--black-c) var(--black-h));
-  --color-black-400: oklch(var(--black-400-l) var(--black-c) var(--black-h));
-  --color-black-500: oklch(var(--black-500-l) var(--black-c) var(--black-h));
-  --color-black-600: oklch(var(--black-600-l) var(--black-c) var(--black-h));
-  --color-black-700: oklch(var(--black-700-l) var(--black-c) var(--black-h));
-  --color-black-800: oklch(var(--black-800-l) var(--black-c) var(--black-h));
-  --color-black-900: oklch(var(--black-900-l) var(--black-c) var(--black-h));
-  --color-black-950: oklch(var(--black-950-l) var(--black-c) var(--black-h)); */
+  --ink-50-l: 98%; 
+  --ink-100-l: 90%; 
+  --ink-200-l: 80%; 
+  --ink-300-l: 70%; 
+  --ink-400-l: 60%; 
+  --ink-500-l: 50%; 
+  --ink-600-l: 40%; 
+  --ink-700-l: 30%; 
+  --ink-800-l: 20%; 
+  --ink-900-l: 12%; 
+  --ink-950-l: 4%; 
+
+  --color-ink-50: oklch(var(--ink-50-l) var(--ink-c) var(--ink-h));
+  --color-ink-100: oklch(var(--ink-100-l) var(--ink-c) var(--ink-h));
+  --color-ink-200: oklch(var(--ink-200-l) var(--ink-c) var(--ink-h));
+  --color-ink-300: oklch(var(--ink-300-l) var(--ink-c) var(--ink-h));
+  --color-ink-400: oklch(var(--ink-400-l) var(--ink-c) var(--ink-h));
+  --color-ink-500: oklch(var(--ink-500-l) var(--ink-c) var(--ink-h));
+  --color-ink-600: oklch(var(--ink-600-l) var(--ink-c) var(--ink-h));
+  --color-ink-700: oklch(var(--ink-700-l) var(--ink-c) var(--ink-h));
+  --color-ink-800: oklch(var(--ink-800-l) var(--ink-c) var(--ink-h));
+  --color-ink-900: oklch(var(--ink-900-l) var(--ink-c) var(--ink-h));
+  --color-ink-950: oklch(var(--ink-950-l) var(--ink-c) var(--ink-h)); */
 
   --color-ink-50: oklch(98% 0 0);
   --color-ink-100: oklch(90% 0 0);
@@ -43,16 +45,6 @@
   --color-ink-800: oklch(20% 0 0);
   --color-ink-900: oklch(12% 0 0);
   --color-ink-950: oklch(4% 0 0);
-
-  --color-canvas: oklch(12% 0 0);
-  --color-canvas-muted: oklch(100% 0 0 / 0.03);
-  --color-surface: oklch(100% 0 0 / 0.08);
-  --color-surface-hover: oklch(100% 0 0 / 0.15);
-
-  --color-ink: oklch(98% 0 0);
-  --color-ink-muted: oklch(82% 0 0);
-  --color-ink-subtle: oklch(62% 0 0);
-  --color-accent: oklch(90% 0 0);
 
   /* Blur */
   --blur-glass: 16px;
@@ -90,7 +82,7 @@
   }
 
   body {
-    @apply font-body bg-canvas text-ink;
+    @apply font-body bg-ink-900 text-ink-50;
   }
 
   /* Subtle physical grain overlay */
@@ -119,7 +111,7 @@
 
   /* ── Typography ─────────────────────────────────────────── */
   .text-eyebrow {
-    @apply text-xs font-bold tracking-[0.2em] uppercase text-ink-subtle mb-10;
+    @apply text-xs font-bold tracking-[0.2em] uppercase text-ink-500 mb-10;
   }
 
   .text-heading {
@@ -170,7 +162,7 @@
   /* ── Header ──────────────────────────────────────────────── */
 
   header.site-header {
-    @apply bg-canvas border-b border-transparent;
+    @apply bg-ink-900 border-b border-transparent;
     transition:
       background 250ms ease-out,
       border-color 250ms ease-out;
@@ -244,7 +236,7 @@
   }
   .hover-underline-sweep::after {
     content: '';
-    @apply absolute left-0 -bottom-1 w-full h-[2px] bg-ink scale-x-0 origin-right transition-transform duration-300 ease-out;
+    @apply absolute left-0 -bottom-1 w-full h-[2px] bg-ink-50 scale-x-0 origin-right transition-transform duration-300 ease-out;
   }
   .hover-underline-sweep:hover::after {
     @apply scale-x-100 origin-left;
