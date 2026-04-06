@@ -229,11 +229,6 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
 
 <script>
   const formspreeEndpoint = 'https://formspree.io/f/xgvrekpn';
-  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  const form = document.getElementById(
-    'contact-form'
-  ) as HTMLFormElement | null;
 
   async function handleSubmit(data: {
     name: string;
@@ -257,90 +252,102 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
     }
   }
 
-  if (form) {
-    form.addEventListener('submit', async (e: Event) => {
-      e.preventDefault();
+  document.addEventListener('astro:page-load', () => {
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-      const nameEl = document.getElementById('name') as HTMLInputElement;
-      const emailEl = document.getElementById('email') as HTMLInputElement;
-      const inquiryEl = document.getElementById(
-        'inquiryType'
-      ) as HTMLSelectElement;
-      const messageEl = document.getElementById(
-        'message'
-      ) as HTMLTextAreaElement;
-      const matchaInput = document.getElementById('matcha') as HTMLInputElement;
-      const location = document.getElementById('location') as HTMLInputElement;
+    const form = document.getElementById(
+      'contact-form'
+    ) as HTMLFormElement | null;
 
-      const nameErr = document.getElementById('name-error')!;
-      const emailErr = document.getElementById('email-error')!;
-      const inquiryErr = document.getElementById('inquiryType-error')!;
-      const messageErr = document.getElementById('message-error')!;
-      const successMsg = document.getElementById('form-success')!;
-      const matchaErr = document.getElementById('matcha-error')!;
-      const sendingError = document.getElementById('sending-error')!;
+    if (form) {
+      form.addEventListener('submit', async (e: Event) => {
+        e.preventDefault();
 
-      // Reset errors
-      [nameErr, emailErr, inquiryErr, messageErr, matchaErr].forEach((el) =>
-        el.classList.replace('opacity-60', 'opacity-0')
-      );
-      successMsg.classList.add('hidden');
-      sendingError.classList.add('hidden');
+        const nameEl = document.getElementById('name') as HTMLInputElement;
+        const emailEl = document.getElementById('email') as HTMLInputElement;
+        const inquiryEl = document.getElementById(
+          'inquiryType'
+        ) as HTMLSelectElement;
+        const messageEl = document.getElementById(
+          'message'
+        ) as HTMLTextAreaElement;
+        const matchaInput = document.getElementById(
+          'matcha'
+        ) as HTMLInputElement;
+        const location = document.getElementById(
+          'location'
+        ) as HTMLInputElement;
 
-      let valid = true;
-      let sendError = false;
+        const nameErr = document.getElementById('name-error')!;
+        const emailErr = document.getElementById('email-error')!;
+        const inquiryErr = document.getElementById('inquiryType-error')!;
+        const messageErr = document.getElementById('message-error')!;
+        const successMsg = document.getElementById('form-success')!;
+        const matchaErr = document.getElementById('matcha-error')!;
+        const sendingError = document.getElementById('sending-error')!;
 
-      if (!nameEl.value.trim()) {
-        nameErr.classList.replace('opacity-0', 'opacity-60');
-        valid = false;
-      }
+        // Reset errors
+        [nameErr, emailErr, inquiryErr, messageErr, matchaErr].forEach((el) =>
+          el.classList.replace('opacity-60', 'opacity-0')
+        );
+        successMsg.classList.add('hidden');
+        sendingError.classList.add('hidden');
 
-      if (!emailEl.value.trim() || !EMAIL_RE.test(emailEl.value.trim())) {
-        emailErr.classList.replace('opacity-0', 'opacity-60');
-        valid = false;
-      }
+        let valid = true;
+        let sendError = false;
 
-      if (!inquiryEl.value) {
-        inquiryErr.classList.replace('opacity-0', 'opacity-60');
-        valid = false;
-      }
-
-      if (!messageEl.value.trim()) {
-        messageErr.classList.replace('opacity-0', 'opacity-60');
-        valid = false;
-      }
-
-      if (location.value.trim() !== '') {
-        valid = false;
-      }
-
-      if (location.dataset.loc?.trim() !== matchaInput.value.trim()) {
-        matchaErr.classList.replace('opacity-0', 'opacity-60');
-        valid = false;
-      }
-
-      if (valid) {
-        const send = await handleSubmit({
-          name: nameEl.value,
-          email: emailEl.value,
-          message: '[' + inquiryEl.value + '] ' + messageEl.value,
-        });
-
-        if (!send) {
-          sendError = true;
+        if (!nameEl.value.trim()) {
+          nameErr.classList.replace('opacity-0', 'opacity-60');
+          valid = false;
         }
 
-        if (sendError) {
+        if (!emailEl.value.trim() || !EMAIL_RE.test(emailEl.value.trim())) {
+          emailErr.classList.replace('opacity-0', 'opacity-60');
+          valid = false;
+        }
+
+        if (!inquiryEl.value) {
+          inquiryErr.classList.replace('opacity-0', 'opacity-60');
+          valid = false;
+        }
+
+        if (!messageEl.value.trim()) {
+          messageErr.classList.replace('opacity-0', 'opacity-60');
+          valid = false;
+        }
+
+        if (location.value.trim() !== '') {
+          valid = false;
+        }
+
+        if (location.dataset.loc?.trim() !== matchaInput.value.trim()) {
+          matchaErr.classList.replace('opacity-0', 'opacity-60');
+          valid = false;
+        }
+
+        if (valid) {
+          const send = await handleSubmit({
+            name: nameEl.value,
+            email: emailEl.value,
+            message: '[' + inquiryEl.value + '] ' + messageEl.value,
+          });
+
+          if (!send) {
+            sendError = true;
+          }
+
+          if (sendError) {
+            form.reset();
+            form.classList.add('hidden');
+            sendingError.classList.remove('hidden');
+            return;
+          }
+
           form.reset();
           form.classList.add('hidden');
-          sendingError.classList.remove('hidden');
-          return;
+          successMsg.classList.remove('hidden');
         }
-
-        form.reset();
-        form.classList.add('hidden');
-        successMsg.classList.remove('hidden');
-      }
-    });
-  }
+      });
+    }
+  });
 </script>
