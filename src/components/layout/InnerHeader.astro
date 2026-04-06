@@ -10,7 +10,9 @@ interface Props {
 const { title, description }: Props = Astro.props;
 ---
 
-<header class="relative bg-ink-50 text-ink-900 pt-16 w-full overflow-hidden">
+<header
+  class="relative bg-ink-50 text-ink-900 pt-16 w-full overflow-hidden -z-10"
+>
   <!-- Background Image -->
   <div class="fixed w-[440px] h-auto -right-[225px] md:-right-[120px] top-0">
     <Image
