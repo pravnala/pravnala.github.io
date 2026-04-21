@@ -13,7 +13,7 @@ The site is built with Astro v6, Tailwind CSS v4, TypeScript, and Bun, deployed 
 ## Glossary
 
 - **Site**: The Alvin Penaflor personal website at `https://pravnala.github.io/`
-- **Header**: The `src/components/layout/Header.astro` component rendered in `BaseLayout.astro`
+- **Header**: The `src/components/layout/Navbar.astro` component rendered in `BaseLayout.astro`
 - **Navbar**: The navigation bar rendered inside the Header, containing the wordmark, nav links, and hamburger button
 - **Mobile_Menu**: The fullscreen overlay navigation panel shown on viewports narrower than the `md` breakpoint (768px)
 - **Scroll_Effect**: The visual state change applied to the Navbar when the user scrolls past a defined threshold

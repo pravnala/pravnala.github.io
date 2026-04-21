@@ -26,7 +26,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Add `@media (prefers-reduced-motion: reduce)` block disabling non-essential animations
     - _Requirements: 1.4, 10.1, 10.2, 10.3, 10.6, 11.3_
 
-  - [ ]* 2.2 Write unit test: `@theme` tokens present in `global.css`
+  - [ ]\* 2.2 Write unit test: `@theme` tokens present in `global.css`
     - Assert `global.css` contains `@theme` block
     - Assert expected token names (`--color-ink`, `--color-paper`, `--font-display`, `--spacing-section`, `--duration-reveal`) are present
     - Assert `prefers-reduced-motion` media query is present
@@ -45,7 +45,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - On click: flip class on `<html>`, update `localStorage`, update toggle icon
     - _Requirements: 2.1, 2.2, 2.5_
 
-  - [ ]* 3.3 Write property test for theme toggle persistence (Property 1)
+  - [ ]\* 3.3 Write property test for theme toggle persistence (Property 1)
     - // Feature: alvin-penaflor-website, Property 1: Theme toggle persistence round-trip
     - Use `fc.constantFrom('light', 'dark')` — 100 iterations
     - For each initial theme: simulate toggle logic; assert `<html>` class flips and `localStorage` reflects new value
@@ -53,7 +53,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - **Validates: Requirements 2.2, 2.5**
 
 - [x] 4. Header, Navigation, and active-link highlighting
-  - [x] 4.1 Create `src/components/layout/Header.astro`
+  - [x] 4.1 Create `src/components/layout/Navbar.astro`
     - Render nav links to `/`, `/work`, `/arnis`, `/blog`, `/contact`
     - Derive active link from `Astro.url.pathname`; apply active indicator class to matching link only
     - Include `ThemeToggle` component
@@ -65,11 +65,11 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Import and render `Header` inside `BaseLayout` above the `<slot />`
     - _Requirements: 3.1_
 
-  - [ ]* 4.3 Write unit test: Header renders all 5 nav links
+  - [ ]\* 4.3 Write unit test: Header renders all 5 nav links
     - Assert rendered HTML contains links to `/`, `/work`, `/arnis`, `/blog`, `/contact`
     - _Requirements: 3.1_
 
-  - [ ]* 4.4 Write property test for active nav link correctness (Property 2)
+  - [ ]\* 4.4 Write property test for active nav link correctness (Property 2)
     - // Feature: alvin-penaflor-website, Property 2: Active navigation link correctness
     - Use `fc.constantFrom('/', '/work', '/arnis', '/blog', '/contact')` — 100 iterations
     - For each path: render Header with that pathname; assert exactly one link has the active class and its `href` matches the path
@@ -91,7 +91,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
   - Add Keystatic route handler in `src/pages/keystatic/[...params].astro` and API route
   - _Requirements: 9.1, 9.2, 9.3, 9.4, 9.5, 9.6_
 
-  - [ ]* 6.1 Write unit test: Keystatic config correctness
+  - [ ]\* 6.1 Write unit test: Keystatic config correctness
     - Assert `storage.kind === 'local'`
     - Assert `blog` and `work` collections exist
     - Assert `blog` schema has `title`, `publishDate`, `category`, `excerpt`, `draft`, `content` fields
@@ -128,7 +128,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Use `BaseLayout`, compose `Hero`, `DualPath`, `CorePhilosophy`
     - _Requirements: 4.1, 4.2, 4.3_
 
-  - [ ]* 8.5 Write unit test: Home page structure
+  - [ ]\* 8.5 Write unit test: Home page structure
     - Assert page contains Hero section
     - Assert DualPath block contains links to `/work` and `/arnis`
     - Assert Core Philosophy section is present
@@ -157,21 +157,21 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Render full content: title, projectContext, problem, solution, outcome, technologies
     - _Requirements: 5.3, 5.4_
 
-  - [ ]* 9.5 Write property test: Work page shows all public case studies (Property 3)
+  - [ ]\* 9.5 Write property test: Work page shows all public case studies (Property 3)
     - // Feature: alvin-penaflor-website, Property 3: Work page shows all public case studies
     - Use `fc.array(arbitraryCaseStudy(), { minLength: 3 })` — 100 iterations
     - For each generated set: render Work page; assert every public entry appears and total count ≥ 3
     - **Property 3: Work page shows all public case studies**
     - **Validates: Requirements 5.1**
 
-  - [ ]* 9.6 Write property test: Case study detail round-trip (Property 4)
+  - [ ]\* 9.6 Write property test: Case study detail round-trip (Property 4)
     - // Feature: alvin-penaflor-website, Property 4: Case study detail round-trip
     - Use `fc.record({ title, problem, solution, outcome, ... })` — 100 iterations
     - For each generated case study: render `/work/[slug]`; assert title, problem, solution, outcome all appear in output
     - **Property 4: Case study detail round-trip**
     - **Validates: Requirements 5.3**
 
-  - [ ]* 9.7 Write unit test: Work page has CTA to /contact
+  - [ ]\* 9.7 Write unit test: Work page has CTA to /contact
     - Assert rendered Work page contains a link to `/contact`
     - _Requirements: 5.5_
 
@@ -198,7 +198,7 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Use `BaseLayout`, compose `ArnisHero`, `InstructorBio`, `SeminarCTA`
     - _Requirements: 6.1, 6.2, 6.3_
 
-  - [ ]* 11.5 Write unit test: Arnis page structure
+  - [ ]\* 11.5 Write unit test: Arnis page structure
     - Assert page contains philosophy section, bio section, and CTA link to `/contact`
     - _Requirements: 6.1, 6.2, 6.3_
 
@@ -230,21 +230,21 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Render title, publishDate, category, and full body content
     - _Requirements: 7.5, 7.6_
 
-  - [ ]* 12.6 Write property test: Blog feed sort order (Property 5)
+  - [ ]\* 12.6 Write property test: Blog feed sort order (Property 5)
     - // Feature: alvin-penaflor-website, Property 5: Blog feed sort order
     - Use `fc.array(arbitraryBlogPost(), { minLength: 2 })` — 100 iterations
     - For each generated array: run sort logic; assert adjacent posts satisfy `posts[i].publishDate >= posts[i+1].publishDate`
     - **Property 5: Blog feed sort order**
     - **Validates: Requirements 7.1**
 
-  - [ ]* 12.7 Write property test: Blog category filter correctness (Property 6)
+  - [ ]\* 12.7 Write property test: Blog category filter correctness (Property 6)
     - // Feature: alvin-penaflor-website, Property 6: Blog category filter correctness
     - Use `fc.tuple(fc.array(arbitraryBlogPost()), fc.constantFrom('tech', 'martial-arts'))` — 100 iterations
     - For each tuple: apply filter; assert every returned post has `category === selectedCategory`
     - **Property 6: Blog category filter correctness**
     - **Validates: Requirements 7.2, 7.3**
 
-  - [ ]* 12.8 Write property test: Blog post detail round-trip (Property 7)
+  - [ ]\* 12.8 Write property test: Blog post detail round-trip (Property 7)
     - // Feature: alvin-penaflor-website, Property 7: Blog post detail round-trip
     - Use `fc.record({ title, publishDate, category, body })` — 100 iterations
     - For each generated post: render `/blog/[slug]`; assert title, publishDate, category, body all appear in output
@@ -263,20 +263,20 @@ Incremental build of a dual-purpose Astro v6 static site (Dev + Arnis paths) dep
     - Include LinkedIn and GitHub profile links
     - _Requirements: 8.1, 8.3_
 
-  - [ ]* 13.3 Write unit test: Contact page fields and links
+  - [ ]\* 13.3 Write unit test: Contact page fields and links
     - Assert form has `name`, `email`, `inquiryType`, `message` fields
     - Assert inquiry type select has "Web Development" and "Arnis / Martial Arts" options
     - Assert page contains LinkedIn and GitHub links
     - _Requirements: 8.1, 8.2, 8.3_
 
-  - [ ]* 13.4 Write property test: Required field validation (Property 8)
+  - [ ]\* 13.4 Write property test: Required field validation (Property 8)
     - // Feature: alvin-penaflor-website, Property 8: Contact form required-field validation
     - Use `fc.constantFrom('name', 'email', 'inquiryType', 'message')` — 100 iterations
     - For each field: simulate form submission with that field empty; assert form is blocked and inline error identifies the field
     - **Property 8: Contact form required-field validation**
     - **Validates: Requirements 8.4**
 
-  - [ ]* 13.5 Write property test: Email format validation (Property 9)
+  - [ ]\* 13.5 Write property test: Email format validation (Property 9)
     - // Feature: alvin-penaflor-website, Property 9: Contact form email format validation
     - Use `fc.string()` filtered to exclude valid email patterns — 100 iterations
     - For each invalid email string: submit form; assert validation error is shown on the email field

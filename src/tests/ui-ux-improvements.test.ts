@@ -148,7 +148,7 @@ describe('Property 4: Only transform and opacity are animated', () => {
     'src/components/blog/BlogCard.astro',
     'src/components/home/DualPath.astro',
     'src/components/ui/AnimatedSection.astro',
-    'src/components/layout/Header.astro',
+    'src/components/layout/Navbar.astro',
   ];
 
   const fileContents = componentFiles.map((f) => ({

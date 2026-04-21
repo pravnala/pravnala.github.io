@@ -1,7 +1,7 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
-import Header from '../components/layout/Header.astro';
+import Navbar from '../components/layout/Navbar.astro';
 import Footer from '../components/layout/Footer.astro';
 
 interface Props {
@@ -46,7 +46,7 @@ const { title, description = defaultDescription, ogImage } = Astro.props;
     <ClientRouter />
   </head>
   <body class="flex flex-col min-h-dvh">
-    <Header />
+    <Navbar />
     <main class="grow">
       <slot />
     </main>

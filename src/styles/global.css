@@ -159,7 +159,7 @@
     background: #555;
   }
 
-  /* ── Header ──────────────────────────────────────────────── */
+  /* ── Navbar ──────────────────────────────────────────────── */
 
   header.site-header {
     @apply bg-ink-900 border-b border-transparent;
