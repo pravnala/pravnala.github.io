@@ -5,7 +5,7 @@ const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/work', label: 'Work' },
   { href: '/lapunti', label: 'FMA' },
-  // { href: '/blog', label: 'Blog' },
+  { href: '/blog', label: 'Blog' },
   { href: '/contact', label: 'Contact' },
 ];
 
@@ -18,7 +18,7 @@ function isActive(href: string): boolean {
 <header class="site-header fixed top-0 left-0 right-0 z-60">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
     <!-- Wordmark -->
-    <a
+    <!-- <a
       href="/"
       class="text-xl tracking-tight font-normal transition-colors duration-500 ease-out text-ink-50 hover:text-ink-300 group"
       aria-label="pra>nala — Home"
@@ -26,6 +26,17 @@ function isActive(href: string): boolean {
       pra<span
         class="text-ink-300/80 text-xl px-px group-hover:text-ink-50 inline-flex items-center justify-center aspect-square leading-0 group-hover:rotate-90 transition-transform duration-300 ease-out"
         >&gt;</span
+      >nala
+    </a> -->
+
+    <a
+      href="/"
+      class="text-xl transition-colors duration-500 ease-out text-ink-50 hover:text-ink-300 group"
+      aria-label="pra>nala — Home"
+    >
+      pra<span
+        class="text-ink-300/80 transition-transform duration-300 ease-out group-hover:text-ink-50"
+        >v</span
       >nala
     </a>
 

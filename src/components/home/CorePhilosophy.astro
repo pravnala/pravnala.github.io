@@ -1,47 +1,71 @@
 ---
 const values = [
   {
-    title: 'Precision',
-    body: 'Every line of code and every strike is deliberate. Sloppy work — in software or in practice — compounds into failure.',
-  },
-  {
-    title: 'Discipline',
-    body: 'Mastery is not a destination. It is a daily commitment to showing up, doing the work, and refining what came before.',
-  },
-  {
     title: 'Craftsmanship',
-    body: 'The difference between good and great is invisible to most — and essential to me. Details are not optional.',
+    body: "What separates good enough and great is invisible to most. It's the attention to details.",
   },
   {
-    title: 'Continuous Improvement',
-    body: 'Twenty years of web development and sixteen years of Arnis share one truth: there is always a better way. Find it.',
+    title: 'Simplicity, Precision & Directness',
+    body: 'Every line of code, every movement, should be deliberate. Sloppiness compounds into failure.',
+  },
+  {
+    title: 'Discipline & Mastery',
+    body: "Mastery makes difficult things look easy or effortless. But the path to mastery is far from easy. It's showing up daily, doing the work, and refining what came before.",
+  },
+  {
+    title: 'Continuous Flow & Improvement',
+    body: "Close-mindedness leads to stagnation. Failing to move in a fight could be fatal. If it's not working don't force it. There's always a better way. Find it.",
   },
 ];
 ---
 
-<section class="px-6 md:px-16 py-section" aria-labelledby="philosophy-heading">
-  <p class="text-xs font-bold tracking-[0.2em] uppercase opacity-40 mb-6">
+<section
+  class="px-6 md:px-16 py-section bg-ink-50 text-ink-900"
+  aria-labelledby="philosophy-heading"
+>
+  <p
+    class="reveal text-xs font-bold tracking-[0.2em] uppercase opacity-40 mb-6"
+  >
     Philosophy
   </p>
-  <h2
-    id="philosophy-heading"
-    class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05] mb-16 max-w-2xl"
-  >
-    Core<br />Values
-  </h2>
+  <div class="reveal grid grid-cols-1 md:grid-cols-[250px_1fr] gap-0 md:gap-10">
+    <div class="grid md:block grid-cols-2 md:grid-cols-1">
+      <h2
+        id="philosophy-heading"
+        class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05] mb-10 max-w-2xl"
+      >
+        Core<br />Values
+      </h2>
+      <p class="text-ink-500">
+        Combining Lapunti martial philosophy and technical craftsmanship.
+      </p>
+    </div>
 
-  <dl class="grid grid-cols-1 md:grid-cols-2 gap-px border border-ink-50">
-    {
-      values.map((value) => (
-        <div class="p-8 md:p-10 border-ink-50">
-          <dt class="text-xl font-black tracking-[-0.03em] leading-[1.05] mb-3">
-            {value.title}
-          </dt>
-          <dd class="text-sm leading-relaxed opacity-60 max-w-sm">
-            {value.body}
-          </dd>
-        </div>
-      ))
-    }
-  </dl>
+    <dl
+      class="grid grid-cols-1 md:grid-cols-2 gap-8 border-3 border-ink-400/30 p-8 md:p-10 bg-ink-600/30 text-ink-900"
+    >
+      <div class="">
+        <p class="text-lg mb-1">"From one thing, know ten thousand things."</p>
+        <p class="text-xs text-ink-600 italic">
+          Miyamoto Musashi (The Book of Five Rings)
+        </p>
+      </div>
+      <div class="">
+        <p class="text-lg mb-1">"Simple is not easy."</p>
+        <p class="text-xs text-ink-600 italic">Rich Hickey (creator of Clojure)</p>
+      </div>
+      {
+        values.map((value) => (
+          <div class="">
+            <dt class="text-2xl font-black text-ink-800 tracking-[-0.03em] leading-[1.05] mb-3">
+              {value.title}
+            </dt>
+            <dd class="text-sm leading-relaxed opacity-60 max-w-sm">
+              {value.body}
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
 </section>
