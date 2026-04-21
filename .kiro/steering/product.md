@@ -24,7 +24,7 @@ Two distinct audiences, one site:
 - Permanently dark canvas (`bg-ink-900` = `oklch(12% 0 0)`), no light mode
 - Color system is a neutral oklch grayscale scale: `ink-50` (near-white) through `ink-950` (near-black) — no glassmorphism, no frosted surfaces
 - Hero uses a high-contrast split layout: light panel (`bg-ink-50`) with a fixed background sketch image, dark panel (`bg-ink-950/80`) with staggered text entrance
-- Inner page headers (`InnerHeader`) use `bg-ink-50 text-ink-900` — inverted from the dark body — with the sketch image as a decorative fixed element
+- Inner page headers (`InnerHero`) use `bg-ink-50 text-ink-900` — inverted from the dark body — with the sketch image as a decorative fixed element
 - Typography: ultra-bold headers (`font-black`, `tracking-[-0.04em]`, `leading-[1.05]`), `Outfit` for headings, `Inter` for body
 - Buttons use a bordered, uppercase, small-tracking style with color-swap hover (no scale transforms)
 - Section reveal animations via `.reveal` / `.reveal.active` (IntersectionObserver), staggered entrance via `.animate-entrance` with `animation-delay`

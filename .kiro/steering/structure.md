@@ -9,7 +9,7 @@ src/
     contact/          # Contact form and socials
     form/             # Form field primitives (TextInput, TextArea, SelectInput)
     home/             # Homepage sections (Hero, DualPath, CorePhilosophy)
-    layout/           # Site-wide layout: Header, InnerHeader
+    layout/           # Site-wide layout: Header, InnerHero
     ui/               # Generic UI primitives
     work/             # Work/portfolio: CaseStudies, CaseStudyCard, Experience, WorkCTA
   content/            # Keystatic-managed content (committed as .mdoc files)
@@ -46,7 +46,7 @@ Root layout for all pages. Provides: anti-FOUC dark class, font preconnects, `Cl
 
 Fixed top nav (`z-60`). Scrolls to `is-scrolled` state (backdrop blur) after 80px. Includes hamburger → fullscreen mobile menu overlay with focus trap and keyboard handling. Re-initializes on `astro:after-swap`.
 
-### `InnerHeader.astro`
+### `InnerHero.astro`
 
 Used on inner pages (`/work`, etc.) as the page hero. Inverted colors: `bg-ink-50 text-ink-900`. Accepts `title` and `description` props. Features the `pravnala-sketch` image as a fixed decorative element.
 
