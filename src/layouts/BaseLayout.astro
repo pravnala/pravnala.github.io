@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from 'astro:transitions';
+import { Font } from 'astro:assets';
 import '../styles/global.css';
 import Navbar from '../components/layout/Navbar.astro';
 import Footer from '../components/layout/Footer.astro';
@@ -32,16 +33,11 @@ const { title, description = defaultDescription, ogImage } = Astro.props;
       document.documentElement.classList.add('dark');
     </script>
 
-    <!-- Font preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Inter font preload (400, 700, 900) -->
-    <link
-      rel="preload"
-      as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap"
-    />
+    <!-- Preload fonts -->
+    <Font cssVariable="--font-outfit" preload />
+    <Font cssVariable="--font-inter" preload />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
 
     <ClientRouter />
   </head>

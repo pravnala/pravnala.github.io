@@ -1,5 +1,5 @@
 /* Inter font for body, Outfit for headings */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Outfit:wght@400;700;900&display=swap'); */
 
 @import 'tailwindcss';
 
@@ -54,8 +54,10 @@
   --spacing-section: 6rem;
 
   /* Typography */
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  /* --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif; */
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-inter);
   --font-weight-black: 900;
   --font-weight-bold: 700;
 

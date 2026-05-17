@@ -6,10 +6,11 @@ import Button from '../common/Button.astro';
 
 <section
   id="hero"
-  class="relative min-h-screen justify-center overflow-hidden bg-ink-50 grid grid-cols-2 -z-10"
+  class="relative min-h-screen justify-center overflow-hidden bg-ink-50 grid grid-cols-2"
+  style="clip-path: inset(0);"
 >
   <!-- Background Image -->
-  <div class="fixed top-[80px] bottom-[40px] inset-x-0">
+  <div class="fixed top-[80px] bottom-[40px] inset-x-0 pointer-events-none">
     <Image
       src={pravnalaSketch}
       alt="pravnala sketch"
