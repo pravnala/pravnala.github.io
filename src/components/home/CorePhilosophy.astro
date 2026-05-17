@@ -23,17 +23,10 @@ const values = [
   class="px-6 md:px-16 py-section bg-ink-50 text-ink-900"
   aria-labelledby="philosophy-heading"
 >
-  <p
-    class="reveal text-xs font-bold tracking-[0.2em] uppercase opacity-40 mb-6"
-  >
-    Philosophy
-  </p>
+  <p class="reveal text-eyebrow">Philosophy</p>
   <div class="reveal grid grid-cols-1 md:grid-cols-[250px_1fr] gap-0 md:gap-10">
     <div class="grid md:block grid-cols-2 md:grid-cols-1">
-      <h2
-        id="philosophy-heading"
-        class="text-5xl md:text-7xl font-black tracking-[-0.04em] leading-[1.05] mb-10 max-w-2xl"
-      >
+      <h2 id="philosophy-heading" class="text-heading mb-4">
         Core<br />Values
       </h2>
       <p class="text-ink-500">
@@ -52,7 +45,9 @@ const values = [
       </div>
       <div class="">
         <p class="text-lg mb-1">"Simple is not easy."</p>
-        <p class="text-xs text-ink-600 italic">Rich Hickey (creator of Clojure)</p>
+        <p class="text-xs text-ink-600 italic">
+          Rich Hickey (creator of Clojure)
+        </p>
       </div>
       {
         values.map((value) => (
