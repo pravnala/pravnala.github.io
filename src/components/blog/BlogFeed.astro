@@ -25,9 +25,9 @@ const sortedPosts = [...posts].sort(
   (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime()
 );
 
-// Derive slug from post.id (strip file extension if present)
+// With Astro's glob loader, entry.id is already the slug (no extension)
 function getSlug(id: string): string {
-  return id.replace(/\.[^/.]+$/, '');
+  return id;
 }
 ---
 

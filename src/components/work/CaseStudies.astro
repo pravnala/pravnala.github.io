@@ -25,7 +25,7 @@ const publicWork = allWork
           {publicWork.map((entry) => (
             <CaseStudyCard
               title={entry.data.title}
-              slug={entry.id.replace(/\.[^.]+$/, '')}
+              slug={entry.id}
               projectContext={entry.data.projectContext}
               technologies={entry.data.technologies}
             />

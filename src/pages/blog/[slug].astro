@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   return allPosts
     .filter((entry) => entry.data.draft !== true)
     .map((entry) => ({
-      params: { slug: entry.id.replace(/\.[^.]+$/, '') },
+      params: { slug: entry.id },
       props: { entry },
     }));
 }

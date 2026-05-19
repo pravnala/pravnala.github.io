@@ -5,7 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 export async function getStaticPaths() {
   const workEntries = await getCollection('work');
   return workEntries.map((entry) => ({
-    params: { slug: entry.id.replace(/\.[^.]+$/, '') },
+    params: { slug: entry.id },
     props: { entry },
   }));
 }

@@ -12,16 +12,14 @@ src/
     layout/           # Site-wide layout: Header, InnerHero
     ui/               # Generic UI primitives
     work/             # Work/portfolio: CaseStudies, CaseStudyCard, Experience, WorkCTA
-  content/            # Keystatic-managed content (committed as .mdoc files)
-    blog/             # Blog post .mdoc files
-    work/             # Case study .mdoc files
+  content/            # Markdown content files
+    blog/             # Blog post .md files
+    work/             # Case study .md files
   layouts/
     BaseLayout.astro  # Root layout — anti-FOUC script, fonts, ClientRouter, Header, reveal observer
   pages/
-    api/keystatic/    # Keystatic API route (dev only)
     blog/             # [slug].astro + index.astro
     work/             # [slug].astro + index.astro
-    keystatic/        # Keystatic admin UI (dev only)
     index.astro       # Homepage
     contact.astro
     lapunti.astro     # FMA/Arnis page (route is /lapunti, not /arnis)
@@ -32,7 +30,6 @@ src/
 
 public/               # Static assets (favicon, etc.)
 src/assets/images/    # Optimized images (used via astro:assets Image component)
-keystatic.config.ts   # Keystatic CMS schema (mirrors content.config.ts)
 astro.config.mjs      # Astro config — integrations, Vite plugins, output mode
 ```
 
@@ -64,7 +61,6 @@ Inline SVG arrow icon. Animates `translate-x-1` via `group-hover:translate-x-1` 
 - Shared primitives (no page-specific logic) go in `src/components/common/` or `src/components/ui/`
 - All pages use `BaseLayout.astro` as the root layout
 - FMA/Arnis page route is `/lapunti` (not `/arnis`)
-- Content is authored as `.mdoc` via Keystatic; avoid manual edits to `.mdoc` files
+- Content is authored as `.md` files with YAML frontmatter in `src/content/`
 - Design tokens are defined once in `src/styles/global.css` under `@theme` — always check before adding new styles
-- Keystatic config in `keystatic.config.ts` must stay in sync with `src/content.config.ts`
 - Section entrance: use `.reveal` class for scroll-triggered fade-up, `.animate-entrance` with `animation-delay` for immediate staggered entrance on load

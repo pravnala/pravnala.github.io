@@ -5,14 +5,12 @@
 - **Framework**: Astro v6 (SSG — fully static output)
 - **Runtime**: Bun
 - **Styling**: Tailwind CSS v4 (via `@tailwindcss/vite` plugin)
-- **CMS**: Keystatic (local-only mode, dev only — excluded from production builds)
 - **Language**: TypeScript (strict mode)
 - **Deployment**: GitHub Pages
 
 ## Key Libraries
 
-- `@astrojs/markdoc` + `@astrojs/mdx` — content authoring
-- `@keystatic/astro` + `@keystatic/core` — local CMS UI at `/keystatic` (dev only)
+- `@astrojs/mdx` — content authoring (MDX support for components in markdown)
 - `astro:transitions` (`ClientRouter`) — View Transitions API for page navigation
 - `astro:assets` (`Image`) — optimized image component
 
@@ -58,10 +56,10 @@
 
 Defined in `src/content.config.ts` using Astro's `glob` loader:
 
-- `blog`: `.mdoc` files in `src/content/blog/` — fields: `title`, `publishDate`, `category` (`tech` | `martial-arts`), `excerpt`, `draft`
-- `work`: `.mdoc` files in `src/content/work/` — fields: `title`, `projectContext`, `problem`, `solution`, `outcome`, `technologies[]`, `isPublic`, `order`
+- `blog`: `.md` files in `src/content/blog/` — fields: `title`, `publishDate`, `category` (`tech` | `martial-arts`), `excerpt`, `draft`
+- `work`: `.md` files in `src/content/work/` — fields: `title`, `projectContext`, `problem`, `solution`, `outcome`, `technologies[]`, `isPublic`, `order`
 
-Content is authored via Keystatic at `/keystatic` during dev and committed as `.mdoc` files.
+Content is authored directly as `.md` files with YAML frontmatter.
 
 ## Styling Rules
 
@@ -73,10 +71,10 @@ Content is authored via Keystatic at `/keystatic` during dev and committed as `.
 ## Common Commands
 
 ```bash
-# Development server (with Keystatic CMS at /keystatic)
+# Development server
 bun run dev
 
-# Production build (static, Keystatic excluded)
+# Production build (static)
 bun run build
 
 # Preview production build locally
