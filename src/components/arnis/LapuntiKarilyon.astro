@@ -1,0 +1,90 @@
+---
+import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
+import data from '../../data/arnis/karilyon.json';
+
+const { eyebrow, heading, description, details, training, link } = data;
+const headingLines = heading.split('\n');
+---
+
+<section
+  class="reveal section-container bg-ink-700"
+  aria-labelledby="karilyon-heading"
+>
+  <h2 id="karilyon-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-6">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  <p class="text-sm md:text-base leading-relaxed text-ink-200 max-w-3xl mb-12">
+    {description}
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <!-- Details -->
+    <div class="space-y-4">
+      {
+        details.map((detail) => (
+          <p class="text-sm leading-relaxed text-ink-300">{detail}</p>
+        ))
+      }
+    </div>
+
+    <!-- Training Info -->
+    <div
+      class="border border-ink-600 p-8 hover:border-ink-500 transition-colors duration-500"
+    >
+      <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
+        Regular Training
+      </h3>
+      <dl class="space-y-4">
+        <div>
+          <dt
+            class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
+          >
+            Schedule
+          </dt>
+          <dd class="text-sm text-ink-100">{training.schedule}</dd>
+        </div>
+        <div>
+          <dt
+            class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
+          >
+            Venue
+          </dt>
+          <dd class="text-sm text-ink-100">{training.venue}</dd>
+        </div>
+        <div>
+          <dt
+            class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
+          >
+            Location
+          </dt>
+          <dd class="text-sm text-ink-100">{training.location}</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+
+  <!-- Link to Lapunti site -->
+  <div class="mt-12">
+    <Button
+      variant="secondary"
+      href={link.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex gap-2"
+    >
+      {link.label}
+      <BtnArrow />
+    </Button>
+  </div>
+</section>

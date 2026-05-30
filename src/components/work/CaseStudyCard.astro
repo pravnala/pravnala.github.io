@@ -1,15 +1,28 @@
 ---
+import { Image } from 'astro:assets';
 import Button from '../common/Button.astro';
 import BtnArrow from '../common/BtnArrow.astro';
+import placeholderImage from '../../assets/images/case-study-placeholder.png';
 
 interface Props {
   title: string;
   slug: string;
   projectContext: string;
   technologies: string[];
+  externalUrl?: string;
+  externalLabel?: string;
+  hasDetailPage?: boolean;
 }
 
-const { title, slug, projectContext, technologies } = Astro.props;
+const {
+  title,
+  slug,
+  projectContext,
+  technologies,
+  externalUrl,
+  externalLabel = 'View Project',
+  hasDetailPage = true,
+} = Astro.props;
 
 // Truncate projectContext to ~160 chars for the card summary
 const summary =
@@ -20,55 +33,85 @@ const summary =
 
 <article
   class:list={[
-    'group relative border border-ink-600 bg-ink-700 p-8 md:p-10 flex flex-col gap-6',
-    'duration-300 ease-in-out hover:bg-ink-600 hover:-translate-y-2 hover:border-ink-500',
-    'max-w-lg',
+    'group relative border border-ink-600 bg-ink-700 flex flex-col',
+    'transition-all duration-500 ease-in-out hover:bg-ink-600 hover:-translate-y-2 hover:border-ink-500',
+    'max-w-lg overflow-hidden',
   ]}
 >
-  <!-- Title -->
-  <h2 class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]">
-    <a
-      href={`/work/${slug}`}
-      class="after:absolute after:inset-0 relative"
-      aria-label={`Read case study: ${title}`}
+  <!-- Cover image -->
+  <div class="w-full h-64 md:h-72 overflow-hidden">
+    <Image
+      src={placeholderImage}
+      alt={`${title} project screenshot`}
+      class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
+      widths={[400, 800]}
+      sizes="(max-width: 768px) 100vw, 400px"
+    />
+  </div>
+
+  <div class="p-8 md:p-10 flex flex-col gap-6 grow">
+    <!-- Title -->
+    <h3
+      class="text-3xl md:text-4xl font-black tracking-[-0.04em] leading-[1.05]"
     >
       {title}
-    </a>
-  </h2>
+    </h3>
 
-  <!-- Project context summary -->
-  <p class="text-sm leading-relaxed text-ink-200 max-w-prose">
-    {summary}
-  </p>
+    <!-- Project context summary -->
+    <p class="text-sm leading-relaxed text-ink-200 max-w-prose">
+      {summary}
+    </p>
 
-  <!-- Technologies -->
-  {
-    technologies.length > 0 && (
-      <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
-        {technologies.map((tech) => (
-          <li class="text-xs tracking-[0.12em] leading-5 text-ink-300 uppercase border border-ink-500/50 px-2 py-1.5 bg-ink-800/50 group-hover:border-ink-400/50">
-            {tech}
-          </li>
-        ))}
-      </ul>
-    )
-  }
+    <!-- Technologies -->
+    {
+      technologies.length > 0 && (
+        <ul class="flex flex-wrap gap-2" aria-label="Technologies used">
+          {technologies.map((tech) => (
+            <li class="text-xs tracking-[0.12em] leading-5 text-ink-300 uppercase border border-ink-500/50 px-2 py-1.5 bg-ink-800/50 group-hover:border-ink-400/50 transition-colors duration-500">
+              {tech}
+            </li>
+          ))}
+        </ul>
+      )
+    }
 
-  <!-- Read more -->
-  <!-- <a
-    href={`/work/${slug}`}
-    class="cta-link mt-auto text-xs font-bold tracking-[0.2em] uppercase underline underline-offset-4 self-start"
-    tabindex="-1"
-    aria-hidden="true"
-  >
-    Read More <span class="cta-arrow">→</span>
-  </a> -->
-  <Button
-    href={`/work/${slug}`}
-    class="inline-flex gap-2 self-start mt-auto px-2 py-1"
-    tabindex="-1"
-    aria-hidden="true"
-  >
-    Read More <BtnArrow />
-  </Button>
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-3 mt-auto pt-2">
+      {
+        hasDetailPage && (
+          <Button href={`/dev/${slug}`} class="inline-flex gap-2 px-2 py-1">
+            View Details <BtnArrow />
+          </Button>
+        )
+      }
+      {
+        externalUrl && (
+          <Button
+            href={externalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="secondary"
+            class="inline-flex gap-2 px-2 py-1"
+          >
+            {externalLabel}
+            <svg
+              width="12"
+              height="12"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+          </Button>
+        )
+      }
+    </div>
+  </div>
 </article>

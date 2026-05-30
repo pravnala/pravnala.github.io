@@ -1,0 +1,15 @@
+{
+  "heading": "Good Fit",
+  "description": "I do my best work when the project and working relationship are right.",
+  "items": [
+    "Projects with clear goals and accessible decision-makers",
+    "Teams that value async communication with focused syncs",
+    "Engagements of 2 weeks or longer — quality takes time",
+    "Startups or established teams that need senior front-end expertise"
+  ],
+  "notFit": [
+    "Quick logo jobs or WordPress theme installs",
+    "Equity-only compensation",
+    "Projects without a defined scope or timeline"
+  ]
+}

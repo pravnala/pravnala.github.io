@@ -1,0 +1,59 @@
+---
+import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
+import data from '../../data/arnis/media.json';
+
+const { eyebrow, heading, images, galleryLink } = data;
+const headingLines = heading.split('\n');
+---
+
+<section
+  class="reveal section-container bg-ink-900"
+  aria-labelledby="media-gallery-heading"
+>
+  <h2 id="media-gallery-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  {
+    images.length > 0 ? (
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+        {images.map((image: { src: string; alt: string }) => (
+          <div class="aspect-square overflow-hidden border border-ink-700">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-500"
+              loading="lazy"
+            />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="border border-ink-700 border-dashed p-12 text-center mb-12">
+        <p class="text-sm text-ink-500">Training photos coming soon.</p>
+      </div>
+    )
+  }
+
+  <!-- Gallery Link -->
+  <Button
+    variant="secondary"
+    href={galleryLink.url}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-flex gap-2"
+  >
+    {galleryLink.label}
+    <BtnArrow />
+  </Button>
+</section>

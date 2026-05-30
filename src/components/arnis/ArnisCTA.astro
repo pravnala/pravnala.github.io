@@ -1,0 +1,36 @@
+---
+import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
+import data from '../../data/arnis/cta.json';
+
+const { eyebrow, heading, offerings, note, buttonLabel, buttonHref } = data;
+---
+
+<section
+  class="section-container bg-ink-50 text-ink-900"
+  aria-labelledby="arnis-cta-heading"
+>
+  <h2 id="arnis-cta-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-12">{heading}</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+    {
+      offerings.map(({ title, description }) => (
+        <div class="border-3 border-ink-400/30 bg-ink-600/30 p-8 hover:border-ink-600 hover:-translate-y-1 transition-all duration-500 cursor-default">
+          <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-3">
+            {title}
+          </h3>
+          <p class="text-sm leading-relaxed text-ink-500">{description}</p>
+        </div>
+      ))
+    }
+  </div>
+
+  {note && <p class="text-sm text-ink-500 italic mb-12">{note}</p>}
+
+  <Button variant="primary" href={buttonHref} class="inline-flex gap-2">
+    {buttonLabel}
+    <BtnArrow />
+  </Button>
+</section>

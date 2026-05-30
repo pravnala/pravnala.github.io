@@ -1,13 +1,7 @@
 ---
-const pathname = Astro.url.pathname;
+import navLinks from '../../data/navLinks.json';
 
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/work', label: 'Work' },
-  { href: '/lapunti', label: 'FMA' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
-];
+const pathname = Astro.url.pathname;
 
 function isActive(href: string): boolean {
   if (href === '/') return pathname === '/';

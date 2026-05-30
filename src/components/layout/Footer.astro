@@ -1,13 +1,8 @@
 ---
+import navLinks from '../../data/navLinks.json';
+
 const pathname = Astro.url.pathname;
 const currentYear = new Date().getFullYear();
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/work', label: 'Work' },
-  { href: '/lapunti', label: 'FMA' },
-  { href: '/blog', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
-];
 
 function isActive(href: string): boolean {
   if (href === '/') return pathname === '/';

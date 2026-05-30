@@ -13,15 +13,18 @@ const blogCollection = defineCollection({
 });
 
 const workCollection = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/data/work' }),
+  loader: glob({ pattern: '**/*.md', base: './src/data/dev/case-studies' }),
   schema: z.object({
     title: z.string(),
     projectContext: z.string(),
     coverImage: z.string().optional(),
-    problem: z.string(),
-    solution: z.string(),
-    outcome: z.string(),
+    problem: z.string().optional(),
+    solution: z.string().optional(),
+    outcome: z.string().optional(),
     technologies: z.array(z.string()),
+    externalUrl: z.string().url().optional(),
+    externalLabel: z.string().default('View Project'),
+    hasDetailPage: z.boolean().default(true),
     isPublic: z.boolean().default(true),
     order: z.number().optional(),
   }),

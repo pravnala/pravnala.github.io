@@ -1,0 +1,7 @@
+[
+  { "href": "/", "label": "Home" },
+  { "href": "/dev", "label": "Dev" },
+  { "href": "/arnis", "label": "Arnis" },
+  { "href": "/blog", "label": "Blog" },
+  { "href": "/contact", "label": "Contact" }
+]

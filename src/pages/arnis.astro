@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import InnerHero from '../components/layout/InnerHero.astro';
+import AboutTheArt from '../components/arnis/AboutTheArt.astro';
+import InstructorProfile from '../components/arnis/InstructorProfile.astro';
+import TrainingPhilosophy from '../components/arnis/TrainingPhilosophy.astro';
+import Curriculum from '../components/arnis/Curriculum.astro';
+import LapuntiKarilyon from '../components/arnis/LapuntiKarilyon.astro';
+import ArnisTestimonials from '../components/arnis/ArnisTestimonials.astro';
+import MediaGallery from '../components/arnis/MediaGallery.astro';
+import ArnisCTA from '../components/arnis/ArnisCTA.astro';
+import heroData from '../data/arnis/hero.json';
+
+const fmaPracticeYears = new Date().getFullYear() - 2010;
+const fmaTeachingYears = new Date().getFullYear() - 2015;
+const heroDescription = heroData.description
+  .replace('{fmaPracticeYears}', String(fmaPracticeYears))
+  .replace('{fmaTeachingYears}', String(fmaTeachingYears));
+---
+
+<BaseLayout
+  title="Lapunti Arnis De Abanico"
+  description={`${fmaPracticeYears} years of practice and ${fmaTeachingYears} years of teaching Lapunti Arnis De Abanico — a Filipino martial art. Train with Guro Alvin Penaflor.`}
+>
+  <InnerHero title={heroData.title} description={heroDescription} />
+  <AboutTheArt />
+  <InstructorProfile />
+  <TrainingPhilosophy />
+  <Curriculum />
+  <LapuntiKarilyon />
+  <ArnisTestimonials />
+  <MediaGallery />
+  <ArnisCTA />
+</BaseLayout>

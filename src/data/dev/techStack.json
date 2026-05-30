@@ -1,0 +1,34 @@
+[
+  {
+    "label": "Frameworks",
+    "items": [
+      "Astro",
+      "Svelte",
+      "SvelteKit",
+      "Tailwind CSS",
+      "Shadcn UI",
+      "NextJS",
+      "Vue.js",
+      "Alpine.js",
+      "MJML"
+    ]
+  },
+  {
+    "label": "Languages",
+    "items": ["Svelte", "Javascript", "HTML", "CSS", "Typescript", "PHP"]
+  },
+  {
+    "label": "Cloud & Services",
+    "items": [
+      "Appwrite",
+      "Render",
+      "PostHog",
+      "Google Analytics",
+      "Google Tag Manager",
+      "Resend",
+      "Formspree",
+      "Vultr",
+      "DigitalOcean"
+    ]
+  }
+]

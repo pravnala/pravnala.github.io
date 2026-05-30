@@ -1,0 +1,25 @@
+---
+import props from '../../data/dev/valueProps.json';
+---
+
+<section
+  class="reveal section-container bg-ink-50 text-ink-900"
+  aria-labelledby="value-props-heading"
+>
+  <h2 id="value-props-heading" class="text-eyebrow">Services</h2>
+
+  <p class="text-heading text-ink-900 mb-12">What I<br />Bring</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    {
+      props.map(({ title, description }) => (
+        <div class="border-3 border-ink-400/30 bg-ink-600/30 p-8 hover:border-ink-600 hover:-translate-y-1 transition-all duration-500 cursor-default">
+          <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-3">
+            {title}
+          </h3>
+          <p class="text-sm leading-relaxed text-ink-500">{description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,118 @@
+---
+import data from '../../data/arnis/instructorProfile.json';
+
+const { eyebrow, heading, narrative, credentials, lineage, timeline } = data;
+const headingLines = heading.split('\n');
+---
+
+<section
+  class="reveal section-container bg-ink-800"
+  aria-labelledby="instructor-profile-heading"
+>
+  <h2 id="instructor-profile-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <!-- Narrative -->
+    <div class="space-y-4">
+      {
+        narrative.map((paragraph) => (
+          <p class="text-sm md:text-base leading-relaxed text-ink-200">
+            {paragraph}
+          </p>
+        ))
+      }
+
+      <!-- Credentials -->
+      <div class="pt-8 space-y-3">
+        <p class="text-sm text-ink-50 font-bold">{credentials.rank}</p>
+        <p class="text-sm text-ink-300">{credentials.promotedBy}</p>
+        <div class="flex flex-wrap gap-3 pt-2">
+          {
+            credentials.organizations.map(({ name, url }) =>
+              url ? (
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs font-bold tracking-[0.1em] uppercase px-3 py-1.5 border border-ink-600 text-ink-300 hover:border-ink-400 hover:text-ink-100 transition-colors duration-500"
+                >
+                  {name}
+                </a>
+              ) : (
+                <span class="text-xs font-bold tracking-[0.1em] uppercase px-3 py-1.5 border border-ink-600 text-ink-400">
+                  {name}
+                </span>
+              )
+            )
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline & Lineage -->
+    <div>
+      <!-- Lineage -->
+      <div class="mb-12">
+        <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
+          Lineage
+        </h3>
+        <ol class="relative ml-2">
+          <span
+            class="absolute left-0 top-2 bottom-2 w-px bg-ink-600"
+            aria-hidden="true"></span>
+          {
+            lineage.map(({ names, title }, i) => (
+              <li class={`relative pl-8 ${i > 0 ? 'mt-4' : ''}`}>
+                <span
+                  class="absolute left-0 top-2 w-2 h-2 -translate-x-1/2 rounded-full bg-ink-400"
+                  aria-hidden="true"
+                />
+                <p class="text-sm font-bold text-ink-100">
+                  {names.join(' & ')}
+                </p>
+                <p class="text-xs text-ink-400">{title}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+
+      <!-- Timeline -->
+      <div>
+        <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
+          Timeline
+        </h3>
+        <ol class="relative ml-2">
+          <span
+            class="absolute left-0 top-2 bottom-2 w-px bg-ink-600"
+            aria-hidden="true"></span>
+          {
+            timeline.map(({ year, event }, i) => (
+              <li class={`relative pl-8 ${i > 0 ? 'mt-5' : ''}`}>
+                <span
+                  class="absolute left-0 top-2 w-2 h-2 -translate-x-1/2 rounded-full bg-ink-400"
+                  aria-hidden="true"
+                />
+                <p class="text-xs font-bold tracking-[0.1em] uppercase text-ink-500 mb-1">
+                  {year}
+                </p>
+                <p class="text-sm text-ink-200">{event}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

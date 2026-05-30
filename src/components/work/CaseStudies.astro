@@ -12,15 +12,20 @@ const publicWork = allWork
   });
 ---
 
-<section class="reveal section-container">
+<section class="reveal section-container bg-ink-900">
   {
     publicWork.length === 0 ? (
       <p class="text-eyebrow">Case studies coming soon.</p>
     ) : (
-      <div aria-labelledby="case-studies-heading" class="mb-24 md:mb-32">
+      <div aria-labelledby="case-studies-heading">
         <h2 id="case-studies-heading" class="text-eyebrow">
-          Case Studies
+          Portfolio
         </h2>
+        <p class="text-heading mb-12">
+          Selected
+          <br />
+          Projects
+        </p>
         <div class="flex flex-wrap gap-8 justify-center md:justify-start">
           {publicWork.map((entry) => (
             <CaseStudyCard
@@ -28,6 +33,9 @@ const publicWork = allWork
               slug={entry.id}
               projectContext={entry.data.projectContext}
               technologies={entry.data.technologies}
+              externalUrl={entry.data.externalUrl}
+              externalLabel={entry.data.externalLabel}
+              hasDetailPage={entry.data.hasDetailPage}
             />
           ))}
         </div>

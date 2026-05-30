@@ -1,67 +1,51 @@
 ---
-// No props — static hardcoded data (NDA/private projects, no confidential details)
-
-const experiences = [
-  {
-    industry: 'FinTech',
-    role: 'Senior Full-Stack Developer',
-    technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
-  },
-  {
-    industry: 'Healthcare',
-    role: 'Lead Frontend Engineer',
-    technologies: ['Vue.js', 'TypeScript', 'REST APIs'],
-  },
-  {
-    industry: 'E-Commerce',
-    role: 'Full-Stack Developer',
-    technologies: ['Next.js', 'Shopify', 'GraphQL'],
-  },
-  {
-    industry: 'SaaS Platform',
-    role: 'Frontend Architect',
-    technologies: ['React', 'Redux', 'Tailwind CSS'],
-  },
-  {
-    industry: 'Government',
-    role: 'Web Developer',
-    technologies: ['PHP', 'Laravel', 'MySQL'],
-  },
-] as const;
+import experiences from '../../data/dev/experience.json';
 ---
 
-<section aria-labelledby="experience-heading">
-  <h2
-    id="experience-heading"
-    class="text-4xl md:text-5xl font-black tracking-[-0.04em] leading-[1.05] mb-10"
-  >
-    Selected Experience
-  </h2>
+<section
+  class="reveal section-container bg-ink-700"
+  aria-labelledby="experience-heading"
+>
+  <h2 id="experience-heading" class="text-eyebrow">Career</h2>
+
+  <p class="text-heading mb-12">Selected<br />Experience</p>
 
   <div class="overflow-x-auto">
     <table
       class="w-full border-collapse text-sm"
-      aria-label="Selected NDA and private project experience"
+      aria-label="Professional experience timeline"
     >
       <thead>
-        <tr class="border-b-2 border-ink-50">
+        <tr class="border-b-2 border-ink-600">
           <th
             scope="col"
-            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-8"
+            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pl-4 pr-6"
           >
-            Industry
+            Period
           </th>
           <th
             scope="col"
-            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-8"
+            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-6"
+          >
+            Company
+          </th>
+          <th
+            scope="col"
+            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-6"
           >
             Role
           </th>
           <th
             scope="col"
-            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4"
+            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-6 hidden lg:table-cell"
           >
-            Technologies
+            Scope
+          </th>
+          <th
+            scope="col"
+            class="text-left text-xs font-bold tracking-[0.15em] uppercase pb-4 pr-4"
+          >
+            Tech
           </th>
         </tr>
       </thead>
@@ -69,21 +53,25 @@ const experiences = [
         {
           experiences.map((entry, i) => (
             <tr
-              class={`border-b border-ink-50 ${i % 2 === 0 ? '' : 'bg-ink-800'}`}
+              class={`transition-colors duration-500 cursor-default ${i % 2 === 0 ? 'hover:bg-ink-600/50' : 'bg-ink-800/50 hover:bg-ink-600/70'}`}
             >
-              <td class="py-5 pr-8 font-bold align-top whitespace-nowrap">
-                {entry.industry}
+              <td class="py-5 pl-4 pr-6 align-top whitespace-nowrap text-ink-300 text-xs">
+                {entry.period}
               </td>
-              <td class="py-5 pr-8 align-top whitespace-nowrap">
-                {entry.role}
+              <td class="py-5 pr-6 font-bold align-top whitespace-nowrap">
+                {entry.company}
               </td>
-              <td class="py-5 align-top">
+              <td class="py-5 pr-6 align-top text-ink-200">{entry.role}</td>
+              <td class="py-5 pr-6 align-top text-ink-300 hidden lg:table-cell max-w-xs">
+                {entry.scope}
+              </td>
+              <td class="py-5 pr-4 align-top">
                 <ul
-                  class="flex flex-wrap gap-2"
-                  aria-label={`Technologies for ${entry.industry} role`}
+                  class="flex flex-wrap gap-1.5"
+                  aria-label={`Technologies at ${entry.company}`}
                 >
                   {entry.technologies.map((tech) => (
-                    <li class="text-xs font-bold tracking-widest uppercase border border-ink-50 px-2 py-1">
+                    <li class="text-[10px] font-bold tracking-widest uppercase border border-ink-600 px-2 py-0.5 text-ink-300">
                       {tech}
                     </li>
                   ))}
@@ -95,9 +83,4 @@ const experiences = [
       </tbody>
     </table>
   </div>
-
-  <p class="mt-6 text-xs tracking-widest uppercase opacity-50">
-    * Project details withheld under NDA. Industry, role, and tech stack listed
-    only.
-  </p>
 </section>

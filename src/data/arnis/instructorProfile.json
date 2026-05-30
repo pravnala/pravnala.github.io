@@ -1,0 +1,64 @@
+{
+  "eyebrow": "Instructor",
+  "heading": "Guro Alvin\nPenaflor",
+  "narrative": [
+    "Before finding Lapunti, I wandered the halls of different martial art schools — Karate, Judo and Combat Judo, Aikido, Wonwhado, and Tai Chi. Each left its mark, but none felt like home.",
+    "In 2010, I found Lapunti Arnis De Abanico. The art's blend of fluid striking, precise footwork, and deep principle-based teaching resonated in a way nothing else had. This is the art I will practice towards my old age.",
+    "Now on a path towards what my teachers have set me on to, and which they themselves have embarked on: finding my own Lapunti."
+  ],
+  "credentials": {
+    "rank": "Guro (Lakan Apat — Instructor)",
+    "promotedBy": "Promoted by the art's Supreme Grandmaster, SGM Undo Caburnay, in 2015",
+    "organizations": [
+      {
+        "name": "Lapunti Karilyon",
+        "url": "https://lapunti.org/",
+        "role": "Co-founder & Instructor"
+      },
+      {
+        "name": "Lapunti Arnis De Abanico International (LADAI)",
+        "url": null,
+        "role": "Member"
+      },
+      {
+        "name": "Philippine Eskrima Kali Arnis Federation (PEKAF)",
+        "url": null,
+        "role": "Member"
+      }
+    ]
+  },
+  "lineage": [
+    {
+      "names": ["SGM Prudencio 'Undo' Caburnay"],
+      "title": "Supreme Grandmaster"
+    },
+    { "names": ["GM Cris Ampit"], "title": "Grandmaster" },
+    {
+      "names": ["SM Danilo 'Buboy' Ador Jr.", "SM Edwin 'Nonoy' Doncillo"],
+      "title": "Senior Masters"
+    },
+    { "names": ["Alvin Penaflor"], "title": "Guro" }
+  ],
+  "timeline": [
+    {
+      "year": "Pre-2010",
+      "event": "Training in various martial arts: Karate, Judo/Combat Judo, Aikido, Wonwhado, Tai Chi"
+    },
+    {
+      "year": "2010",
+      "event": "Began training in Lapunti Arnis De Abanico; co-founded the UP Diliman training group"
+    },
+    {
+      "year": "2011",
+      "event": "Group officially recognized as a Lapunti chapter by SGM Undo Caburnay and LADAI Headquarters"
+    },
+    {
+      "year": "2015",
+      "event": "Promoted to Guro (Lakan Apat) by SGM Undo Caburnay during the annual Club Seminar and Promotions"
+    },
+    {
+      "year": "Present",
+      "event": "Active instructor at Lapunti Karilyon, UP Diliman"
+    }
+  ]
+}

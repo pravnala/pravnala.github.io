@@ -243,6 +243,37 @@
   .hover-underline-sweep:hover::after {
     @apply scale-x-100 origin-left;
   }
+
+  /* ── Case Study Content ──────────────────────────────────── */
+
+  .case-study-content h2 {
+    @apply text-2xl md:text-3xl font-black tracking-[-0.03em] leading-[1.05] mt-12 mb-4;
+  }
+
+  .case-study-content h3 {
+    @apply text-xl font-black tracking-[-0.02em] leading-[1.1] mt-8 mb-3;
+  }
+
+  .case-study-content p {
+    @apply text-base md:text-lg leading-relaxed text-ink-200 mb-6;
+  }
+
+  .case-study-content ul,
+  .case-study-content ol {
+    @apply space-y-2 mb-6 pl-6;
+  }
+
+  .case-study-content li {
+    @apply text-base leading-relaxed text-ink-200 list-disc;
+  }
+
+  .case-study-content strong {
+    @apply text-ink-50 font-bold;
+  }
+
+  .case-study-content a {
+    @apply text-ink-50 underline underline-offset-4 hover:opacity-70 transition-opacity duration-500;
+  }
 }
 
 /* ── Reduced motion ──────────────────────────────────────── */

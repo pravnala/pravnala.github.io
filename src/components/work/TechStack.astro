@@ -1,0 +1,31 @@
+---
+import stacks from '../../data/dev/techStack.json';
+---
+
+<section
+  class="reveal section-container bg-ink-900"
+  aria-labelledby="tech-stack-heading"
+>
+  <h2 id="tech-stack-heading" class="text-eyebrow">Tech</h2>
+
+  <p class="text-heading mb-12">Current<br />Stack</p>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+    {
+      stacks.map(({ label, items }) => (
+        <div>
+          <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
+            {label}
+          </h3>
+          <ul class="flex flex-wrap gap-2" aria-label={`${label} technologies`}>
+            {items.map((item) => (
+              <li class="text-xs font-bold tracking-[0.12em] uppercase border border-ink-600 px-3 py-1.5 text-ink-200 hover:border-ink-400 hover:text-ink-50 transition-colors duration-500 cursor-default">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,73 @@
+---
+import testimonials from '../../data/arnis/testimonials.json';
+---
+
+{
+  testimonials.length > 0 && (
+    <section
+      class="reveal section-container bg-ink-800"
+      aria-labelledby="arnis-testimonials-heading"
+    >
+      <h2 id="arnis-testimonials-heading" class="text-eyebrow">
+        Testimonials
+      </h2>
+
+      <p class="text-heading mb-12">
+        What Students
+        <br />
+        Say
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {testimonials.map(({ quote, name, role, affiliation }) => (
+          <blockquote class="relative border border-ink-600 p-8 flex flex-col gap-6 hover:border-ink-500 hover:bg-ink-700/50 hover:-translate-y-1 transition-all duration-500">
+            {/* Quote mark */}
+            <span
+              class="absolute top-4 right-6 text-6xl font-black text-ink-600/50 leading-none select-none pointer-events-none"
+              aria-hidden="true"
+            >
+              &ldquo;
+            </span>
+
+            {/* Quote text */}
+            <p class="text-sm md:text-base leading-relaxed text-ink-200 italic relative z-10">
+              {quote}
+            </p>
+
+            {/* Attribution */}
+            <footer class="flex items-center gap-4 mt-auto pt-2">
+              {/* Avatar placeholder */}
+              <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-ink-500 shrink-0 bg-ink-700 flex items-center justify-center">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="text-ink-400"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="8" r="4" />
+                  <path d="M20 21a8 8 0 1 0-16 0" />
+                </svg>
+              </div>
+
+              {/* Name & role */}
+              <div>
+                <cite class="not-italic text-sm font-bold text-ink-50 block">
+                  {name}
+                </cite>
+                <span class="text-xs text-ink-400">
+                  {role}, {affiliation}
+                </span>
+              </div>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </section>
+  )
+}
