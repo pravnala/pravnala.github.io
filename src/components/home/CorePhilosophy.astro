@@ -1,12 +1,14 @@
 ---
+import Button from '../common/Button.astro';
+import BtnArrow from '../common/BtnArrow.astro';
 import data from '../../data/home/corePhilosophy.json';
 
-const { eyebrow, heading, description, quotes, values } = data;
+const { eyebrow, heading, description, quotes, values, nudge } = data;
 const headingLines = heading.split('\n');
 ---
 
 <section
-  class="px-6 md:px-16 py-section bg-ink-900 text-ink-50"
+  class="px-6 md:px-16 py-section bg-ink-50 text-ink-900"
   aria-labelledby="philosophy-heading"
 >
   <p class="reveal text-eyebrow">{eyebrow}</p>
@@ -22,19 +24,19 @@ const headingLines = heading.split('\n');
           ))
         }
       </h2>
-      <p class="text-ink-400">{description}</p>
+      <p class="text-ink-500">{description}</p>
     </div>
 
-    <div class="border border-ink-700">
+    <div class="border-3 border-ink-400/30 bg-ink-600/30">
       <!-- Values -->
       <dl class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-10">
         {
           values.map(({ title, body }) => (
             <div>
-              <dt class="text-2xl font-black text-ink-50 tracking-[-0.03em] leading-[1.05] mb-3">
+              <dt class="text-2xl font-black text-ink-800 tracking-[-0.03em] leading-[1.05] mb-3">
                 {title}
               </dt>
-              <dd class="text-sm leading-relaxed text-ink-400 max-w-sm">
+              <dd class="text-sm leading-relaxed opacity-60 max-w-sm">
                 {body}
               </dd>
             </div>
@@ -43,11 +45,11 @@ const headingLines = heading.split('\n');
       </dl>
 
       <!-- Quotes — at the bottom -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-700">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400/20">
         {
           quotes.map(({ text, attribution }) => (
-            <div class="p-8 md:p-10 bg-ink-900">
-              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-100 mb-2">
+            <div class="p-8 md:p-10 bg-ink-600/30">
+              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-800 mb-2">
                 &ldquo;{text}&rdquo;
               </p>
               <p class="text-xs text-ink-500 italic">{attribution}</p>
@@ -57,4 +59,23 @@ const headingLines = heading.split('\n');
       </div>
     </div>
   </div>
+
+  <!-- Closing nudge -->
+  {
+    nudge && (
+      <div class="reveal mt-16 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 border-t border-ink-400/30 pt-10">
+        <p class="text-sm md:text-base text-ink-500 max-w-prose">
+          {nudge.text}
+        </p>
+        <Button
+          variant="primary"
+          href={nudge.buttonHref}
+          class="shrink-0 inline-flex gap-2"
+        >
+          {nudge.buttonLabel}
+          <BtnArrow />
+        </Button>
+      </div>
+    )
+  }
 </section>

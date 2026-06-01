@@ -29,5 +29,10 @@
       "title": "Continuous Flow & Improvement",
       "body": "Close-mindedness leads to stagnation. Failing to move in a fight could be fatal. If it's not working don't force it. There's always a better way. Find it."
     }
-  ]
+  ],
+  "nudge": {
+    "text": "If this resonates with how you think about craft and quality, let's talk.",
+    "buttonLabel": "Get in Touch",
+    "buttonHref": "/contact"
+  }
 }
