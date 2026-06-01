@@ -17,6 +17,18 @@ const devSummary = dev.summary.replace('{webDevYears}', String(webDevYears));
 const arnisSummary = arnis.summary
   .replace('{fmaPracticeYears}', String(fmaPracticeYears))
   .replace('{fmaTeachingYears}', String(fmaTeachingYears));
+
+const resolveStats = (stats: { value: string; label: string }[]) =>
+  stats.map((s) => ({
+    ...s,
+    value: s.value
+      .replace('{webDevYears}', String(webDevYears))
+      .replace('{fmaPracticeYears}', String(fmaPracticeYears))
+      .replace('{fmaTeachingYears}', String(fmaTeachingYears)),
+  }));
+
+const devStats = resolveStats(dev.stats);
+const arnisStats = resolveStats(arnis.stats);
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 w-full">
@@ -49,10 +61,42 @@ const arnisSummary = arnis.summary
           {dev.description}
         </p>
       </div>
-      <Button variant="primary" href={dev.buttonHref} class="inline-flex gap-2">
-        {dev.buttonLabel}
-        <BtnArrow />
-      </Button>
+
+      <!-- Stats -->
+      <div class="flex gap-8 mb-8 border-t border-ink-600 pt-6">
+        {
+          devStats.map(({ value, label }) => (
+            <div>
+              <p class="text-4xl md:text-5xl font-black tracking-[-0.04em] leading-none mb-1">
+                {value}
+              </p>
+              <p class="text-[10px] font-bold tracking-[0.15em] uppercase text-ink-400 group-hover:text-ink-300 transition-colors duration-500">
+                {label}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap items-center gap-4">
+        <Button
+          variant="primary"
+          href={dev.primaryButton.href}
+          class="inline-flex gap-2"
+        >
+          {dev.primaryButton.label}
+          <BtnArrow />
+        </Button>
+        <Button
+          variant="secondary"
+          href={dev.secondaryButton.href}
+          class="inline-flex gap-2"
+        >
+          {dev.secondaryButton.label}
+          <BtnArrow />
+        </Button>
+      </div>
     </div>
   </div>
 
@@ -87,14 +131,42 @@ const arnisSummary = arnis.summary
           {arnis.description}
         </p>
       </div>
-      <Button
-        variant="secondary"
-        href={arnis.buttonHref}
-        class="inline-flex gap-2"
-      >
-        {arnis.buttonLabel}
-        <BtnArrow />
-      </Button>
+
+      <!-- Stats -->
+      <div class="flex gap-8 mb-8 border-t border-ink-700 pt-6">
+        {
+          arnisStats.map(({ value, label }) => (
+            <div>
+              <p class="text-4xl md:text-5xl font-black tracking-[-0.04em] leading-none mb-1">
+                {value}
+              </p>
+              <p class="text-[10px] font-bold tracking-[0.15em] uppercase text-ink-500 group-hover:text-ink-400 transition-colors duration-500">
+                {label}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap items-center gap-4">
+        <Button
+          variant="secondary"
+          href={arnis.primaryButton.href}
+          class="inline-flex gap-2"
+        >
+          {arnis.primaryButton.label}
+          <BtnArrow />
+        </Button>
+        <Button
+          variant="primary"
+          href={arnis.secondaryButton.href}
+          class="inline-flex gap-2"
+        >
+          {arnis.secondaryButton.label}
+          <BtnArrow />
+        </Button>
+      </div>
     </div>
   </div>
 </section>

@@ -253,6 +253,21 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
   }
 
   document.addEventListener('astro:page-load', () => {
+    // Pre-select inquiry type from URL query param (?type=web-development etc.)
+    const params = new URLSearchParams(window.location.search);
+    const typeParam = params.get('type');
+    if (typeParam) {
+      const select = document.getElementById(
+        'inquiryType'
+      ) as HTMLSelectElement | null;
+      if (select) {
+        const match = Array.from(select.options).find(
+          (o) => o.value === typeParam
+        );
+        if (match) select.value = typeParam;
+      }
+    }
+
     const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     const form = document.getElementById(

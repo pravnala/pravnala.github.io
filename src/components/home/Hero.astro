@@ -4,7 +4,7 @@ import pravnalaSketch from '../../assets/images/pravnala-sketch-alpha.png';
 import Button from '../common/Button.astro';
 import data from '../../data/home/hero.json';
 
-const { roles, buttons } = data;
+const { name, roles, buttons } = data;
 ---
 
 <section
@@ -33,6 +33,14 @@ const { roles, buttons } = data;
     <div
       class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black tracking-[-0.04em] leading-[1.05] mt-16 space-y-10 text-right text-ink-50"
     >
+      <!-- Name -->
+      <p
+        class="animate-entrance text-eyebrow text-ink-300"
+        style="animation-delay: 100ms;"
+      >
+        {name}
+      </p>
+
       {
         roles.map((role, i) => (
           <div
