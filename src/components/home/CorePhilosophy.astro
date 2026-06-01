@@ -12,7 +12,7 @@ const headingLines = heading.split('\n');
   aria-labelledby="philosophy-heading"
 >
   <p class="reveal text-eyebrow">{eyebrow}</p>
-  <div class="reveal grid grid-cols-1 md:grid-cols-[250px_1fr] gap-0 md:gap-10">
+  <div class="reveal grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-0 md:gap-10">
     <div class="grid md:block grid-cols-2 md:grid-cols-1">
       <h2 id="philosophy-heading" class="text-heading mb-4">
         {
@@ -29,7 +29,7 @@ const headingLines = heading.split('\n');
 
     <div class="border-3 border-ink-400/30 bg-ink-600/30">
       <!-- Values -->
-      <dl class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-10">
+      <dl class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-10">
         {
           values.map(({ title, body }) => (
             <div>
@@ -45,14 +45,14 @@ const headingLines = heading.split('\n');
       </dl>
 
       <!-- Quotes — at the bottom -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-ink-400/20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-px">
         {
           quotes.map(({ text, attribution }) => (
-            <div class="p-8 md:p-10 bg-ink-600/30">
-              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-800 mb-2">
+            <div class="p-8 md:p-10 bg-ink-300">
+              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-700 mb-2">
                 &ldquo;{text}&rdquo;
               </p>
-              <p class="text-xs text-ink-500 italic">{attribution}</p>
+              <p class="text-[13px] text-ink-700 italic">{attribution}</p>
             </div>
           ))
         }

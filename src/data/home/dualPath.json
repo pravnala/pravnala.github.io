@@ -2,11 +2,11 @@
   "dev": {
     "eyebrow": "Dev",
     "heading": "Web\nDevelopment",
-    "summary": "{webDevYears} years of coding and building for the web.",
-    "description": "From legacy systems to modern stacks and frameworks. Now prefers (and enjoys) building projects on Astro and Svelte. There's no web project that can't be built better (and with much less headache) than on Astro or Svelte, and you can't convince me otherwise (heh!).",
+    "summary": "{webDevYears} years of coding applications and building for the web.",
+    "description": "From legacy server systems to modern web stacks and frameworks. Now specializing in building statically generated sites and web applications using Astro and Svelte, or SvelteKit. Have not yet found a web project that could not be built using these frameworks as a base. In my experience, nothing else delivers that level of performance with fewer headaches.",
     "stats": [
-      { "value": "{webDevYears}+", "label": "Years" },
-      { "value": "50+", "label": "Projects" },
+      { "value": "{webDevYears}+", "label": "Years Experience" },
+      { "value": "100+", "label": "Projects" },
       { "value": "SSG", "label": "Specialist" }
     ],
     "primaryButton": { "label": "View Work", "href": "/dev" },
@@ -16,14 +16,14 @@
     }
   },
   "arnis": {
-    "eyebrow": "FMA",
+    "eyebrow": "Arnis",
     "heading": "Filipino\nMartial Arts",
-    "summary": "{fmaPracticeYears} years of practice and {fmaTeachingYears} years of teaching Lapunti Arnis de Abanico.",
-    "description": "Wandered the halls of different martial art schools prior to all that. Found the art that I will practice towards my old age in Lapunti Arnis De Abanico. Now on a path towards what my teachers have set me on to, and which they themselves have embarked on: finding my own Lapunti.",
+    "summary": "{fmaPracticeYears} years of practice in the art of Lapunti Arnis de Abanico.",
+    "description": "Wandered the halls of different martial arts schools prior to all that. Found the art that I will practice for the rest of my life in Lapunti Arnis De Abanico. While taking valuable lessons from other disciplines, I am now on a path that my teachers set me on, and that they themselves have embarked on. A path towards finding my own Lapunti.",
     "stats": [
       { "value": "{fmaPracticeYears}", "label": "Years practice" },
       { "value": "{fmaTeachingYears}", "label": "Years teaching" },
-      { "value": "Guro", "label": "Rank" }
+      { "value": "Guro", "label": "Title / Rank" }
     ],
     "primaryButton": { "label": "Explore Arnis", "href": "/arnis" },
     "secondaryButton": {

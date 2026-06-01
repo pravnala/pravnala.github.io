@@ -1,7 +1,7 @@
 {
   "eyebrow": "Philosophy",
   "heading": "Core\nValues",
-  "description": "Combining Lapunti martial philosophy and technical craftsmanship.",
+  "description": "A merging of Lapunti martial philosophy and technical craftsmanship.",
   "quotes": [
     {
       "text": "From one thing, know ten thousand things.",
@@ -18,7 +18,7 @@
       "body": "What separates good enough and great is invisible to most. It's the attention to details."
     },
     {
-      "title": "Simplicity, Precision & Directness",
+      "title": "Simplicity, Precision, Directness",
       "body": "Every line of code, every movement, should be deliberate. Sloppiness compounds into failure."
     },
     {
@@ -27,11 +27,11 @@
     },
     {
       "title": "Continuous Flow & Improvement",
-      "body": "Close-mindedness leads to stagnation. Failing to move in a fight could be fatal. If it's not working don't force it. There's always a better way. Find it."
+      "body": "Close-mindedness leads to stagnation. Failing to move could be fatal. If it's not working don't force it. There's always a better way. Find it."
     }
   ],
   "nudge": {
-    "text": "If this resonates with how you think about craft and quality, let's talk.",
+    "text": "If this resonates with how you think, either about producing quality work or regarding martial arts training, let's talk.",
     "buttonLabel": "Get in Touch",
     "buttonHref": "/contact"
   }

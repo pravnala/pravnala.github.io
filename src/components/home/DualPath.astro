@@ -31,13 +31,15 @@ const devStats = resolveStats(dev.stats);
 const arnisStats = resolveStats(arnis.stats);
 ---
 
-<section class="grid grid-cols-1 md:grid-cols-2 w-full">
+<section class="grid grid-cols-1 xl:grid-cols-2 w-full">
   {/* Dev_Path */}
   <div
-    class="group relative flex flex-col justify-between px-6 md:px-16 py-16 min-h-112 bg-ink-700 text-ink-50 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-600"
+    class="group relative px-6 md:px-16 py-16 min-h-112 bg-ink-600 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-500"
     aria-label="Explore web development work"
   >
-    <span class="reveal text-eyebrow">{dev.eyebrow}</span>
+    <span class="reveal text-eyebrow mb-8 block text-ink-300"
+      >{dev.eyebrow}</span
+    >
     <div class="reveal">
       <h2 class="text-heading mb-4">
         {
@@ -49,21 +51,21 @@ const arnisStats = resolveStats(arnis.stats);
           ))
         }
       </h2>
-      <div class="max-w-sm text-ink-300 mb-8 space-y-3">
+      <div class="max-w-lg text-ink-300 mb-8 space-y-3">
         <p
-          class="text-ink-50/55 group-hover:text-ink-50/80 transition-opacity duration-500 ease-in-out"
+          class="text-ink-50 group-hover:text-ink-50 transition-opacity duration-500 ease-in-out"
         >
           {devSummary}
         </p>
-        <p
-          class="text-ink-50/30 group-hover:text-ink-50/50 transition-opacity duration-500 ease-in-out"
-        >
+        <p class="text-ink-50/65 transition-opacity duration-500 ease-in-out">
           {dev.description}
         </p>
       </div>
 
       <!-- Stats -->
-      <div class="flex gap-8 mb-8 border-t border-ink-600 pt-6">
+      <div
+        class="flex gap-8 mb-8 border-t border-ink-500 group-hover:border-ink-400 duration-500 ease-in-out pt-6"
+      >
         {
           devStats.map(({ value, label }) => (
             <div>
@@ -102,10 +104,10 @@ const arnisStats = resolveStats(arnis.stats);
 
   {/* Arnis_Path */}
   <div
-    class="group relative flex flex-col justify-between px-6 md:px-16 py-16 min-h-112 bg-ink-900 text-ink-50 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-800"
+    class="group relative px-6 md:px-16 py-16 min-h-112 bg-ink-800 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-700"
     aria-label="Explore Arnis martial arts instruction"
   >
-    <span class="reveal text-eyebrow">{arnis.eyebrow}</span>
+    <span class="reveal text-eyebrow mb-8 block">{arnis.eyebrow}</span>
     <div class="reveal">
       <h2 class="text-heading mb-4">
         {
@@ -118,7 +120,7 @@ const arnisStats = resolveStats(arnis.stats);
         }
       </h2>
       <div
-        class="max-w-sm text-ink-300 mb-8 space-y-3 group-hover:text-ink-100 transition-colors duration-500 ease-in-out"
+        class="max-w-lg text-ink-300 mb-8 space-y-3 group-hover:text-ink-100 transition-colors duration-500 ease-in-out"
       >
         <p
           class="text-ink-50/65 group-hover:text-ink-50/80 transition-opacity duration-500 ease-in-out"
@@ -133,7 +135,9 @@ const arnisStats = resolveStats(arnis.stats);
       </div>
 
       <!-- Stats -->
-      <div class="flex gap-8 mb-8 border-t border-ink-700 pt-6">
+      <div
+        class="flex gap-8 mb-8 border-t border-ink-700 group-hover:border-ink-600 duration-500 ease-in-out pt-6"
+      >
         {
           arnisStats.map(({ value, label }) => (
             <div>
@@ -161,7 +165,7 @@ const arnisStats = resolveStats(arnis.stats);
         <Button
           variant="primary"
           href={arnis.secondaryButton.href}
-          class="inline-flex gap-2"
+          class="inline-flex gap-2 border-ink-600! hover:border-ink-900!"
         >
           {arnis.secondaryButton.label}
           <BtnArrow />
