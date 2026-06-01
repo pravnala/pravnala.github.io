@@ -2,6 +2,9 @@
 import { Image } from 'astro:assets';
 import pravnalaSketch from '../../assets/images/pravnala-sketch-alpha.png';
 import Button from '../common/Button.astro';
+import data from '../../data/home/hero.json';
+
+const { roles, buttons } = data;
 ---
 
 <section
@@ -25,34 +28,35 @@ import Button from '../common/Button.astro';
   <div class="px-5 md:px-20 py-16 grid place-items-center">
     <!-- Left Split Panel -->
   </div>
+
   <div class="bg-ink-950/80 p-5 lg:p-20 grid place-items-center">
     <div
       class="text-xl md:text-2xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-black tracking-[-0.04em] leading-[1.05] mt-16 space-y-10 text-right text-ink-50"
     >
-      <div class="animate-entrance" style="animation-delay: 200ms;">
-        Web Developer
-      </div>
-      <div class="animate-entrance" style="animation-delay: 400ms;">
-        FMA Instructor
-      </div>
-      <div class="animate-entrance font-normal" style="animation-delay: 600ms;">
-        IT Consultant
-      </div>
-      <div class="animate-entrance font-normal" style="animation-delay: 800ms;">
-        Linux and Open Source Advocate
-      </div>
+      {
+        roles.map((role, i) => (
+          <div
+            class={`animate-entrance${role.bold ? '' : ' font-normal'}`}
+            style={`animation-delay: ${(i + 1) * 200}ms;`}
+          >
+            {role.text}
+          </div>
+        ))
+      }
+
       <div class="pt-5 md:pt-10 md:mt-10 flex flex-wrap gap-4 justify-end">
-        <Button
-          href="/dev"
-          class="animate-entrance w-full lg:w-auto"
-          style="animation-delay: 400ms;">Dev Work</Button
-        >
-        <Button
-          href="/arnis"
-          class="animate-entrance w-full lg:w-auto"
-          style="animation-delay: 800ms;"
-          variant="secondary">FMA Training</Button
-        >
+        {
+          buttons.map((btn, i) => (
+            <Button
+              href={btn.href}
+              variant={btn.variant as 'primary' | 'secondary'}
+              class="animate-entrance w-full lg:w-auto"
+              style={`animation-delay: ${(i + 1) * 400}ms;`}
+            >
+              {btn.label}
+            </Button>
+          ))
+        }
       </div>
     </div>
   </div>

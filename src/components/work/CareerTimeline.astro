@@ -1,0 +1,63 @@
+---
+import experiences from '../../data/dev/experience.json';
+import meta from '../../data/dev/careerTimeline.json';
+
+const { eyebrow, heading } = meta;
+const headingLines = heading.split('\n');
+---
+
+<section
+  class="reveal section-container bg-ink-800"
+  aria-labelledby="career-timeline-heading"
+>
+  <h2 id="career-timeline-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  <ol class="relative ml-2">
+    <span
+      class="absolute left-0 top-2 bottom-2 w-px bg-ink-700"
+      aria-hidden="true"></span>
+    {
+      experiences.map((entry, i) => (
+        <li class={`relative pl-10 ${i > 0 ? 'mt-10' : ''}`}>
+          <span
+            class="absolute left-0 top-2 w-2.5 h-2.5 -translate-x-1/2 rounded-full bg-ink-500 border-2 border-ink-900"
+            aria-hidden="true"
+          />
+          <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-2">
+            {entry.period}
+          </p>
+          <p class="text-xl md:text-2xl font-black tracking-[-0.03em] leading-tight text-ink-50 mb-1">
+            {entry.company}
+          </p>
+          <p class="text-sm font-bold text-ink-300 mb-2">{entry.role}</p>
+          <p class="text-sm leading-relaxed text-ink-400 mb-4 max-w-2xl">
+            {entry.scope}
+          </p>
+          {entry.technologies.length > 0 && (
+            <ul
+              class="flex flex-wrap gap-2"
+              aria-label={`Technologies at ${entry.company}`}
+            >
+              {entry.technologies.map((tech) => (
+                <li class="text-[10px] font-bold tracking-[0.12em] uppercase border border-ink-700 px-2.5 py-1 text-ink-400 hover:border-ink-500 hover:text-ink-200 transition-colors duration-500 cursor-default">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</section>

@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InnerHero from '../../components/layout/InnerHero.astro';
-import CaseStudies from '../../components/work/CaseStudies.astro';
-import ExperienceTable from '../../components/work/ExperienceTable.astro';
-import TechStack from '../../components/work/TechStack.astro';
+import DeveloperProfile from '../../components/work/DeveloperProfile.astro';
 import ValueProps from '../../components/work/ValueProps.astro';
+import CaseStudies from '../../components/work/CaseStudies.astro';
+import CareerTimeline from '../../components/work/CareerTimeline.astro';
+import TechStack from '../../components/work/TechStack.astro';
 import Testimonials from '../../components/work/Testimonials.astro';
 import GoodFit from '../../components/work/GoodFit.astro';
 import WorkCTA from '../../components/work/WorkCTA.astro';
@@ -22,10 +23,11 @@ const heroDescription = heroData.description.replace(
   description={`${webDevYears}+ years designing and developing modern, high-performance websites and web applications. Currently specializing in Astro, Svelte/SvelteKit, Tailwind CSS, and cloud platforms.`}
 >
   <InnerHero title={heroData.title} description={heroDescription} />
-  <CaseStudies />
-  <ExperienceTable />
-  <TechStack />
+  <DeveloperProfile />
   <ValueProps />
+  <CaseStudies />
+  <CareerTimeline />
+  <TechStack />
   <Testimonials />
   <GoodFit />
   <WorkCTA />

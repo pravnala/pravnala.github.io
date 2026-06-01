@@ -1,14 +1,26 @@
 ---
-import stacks from '../../data/dev/techStack.json';
+import data from '../../data/dev/techStack.json';
+
+const { eyebrow, heading, stacks } = data;
+const headingLines = heading.split('\n');
 ---
 
 <section
   class="reveal section-container bg-ink-900"
   aria-labelledby="tech-stack-heading"
 >
-  <h2 id="tech-stack-heading" class="text-eyebrow">Tech</h2>
+  <h2 id="tech-stack-heading" class="text-eyebrow">{eyebrow}</h2>
 
-  <p class="text-heading mb-12">Current<br />Stack</p>
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
     {

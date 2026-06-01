@@ -3,7 +3,16 @@ import Button from '../common/Button.astro';
 import BtnArrow from '../common/BtnArrow.astro';
 import data from '../../data/arnis/karilyon.json';
 
-const { eyebrow, heading, description, details, training, link } = data;
+const {
+  eyebrow,
+  heading,
+  description,
+  details,
+  trainingCardHeading,
+  trainingLabels,
+  training,
+  link,
+} = data;
 const headingLines = heading.split('\n');
 ---
 
@@ -43,14 +52,14 @@ const headingLines = heading.split('\n');
       class="border border-ink-600 p-8 hover:border-ink-500 transition-colors duration-500"
     >
       <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
-        Regular Training
+        {trainingCardHeading}
       </h3>
       <dl class="space-y-4">
         <div>
           <dt
             class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
           >
-            Schedule
+            {trainingLabels.schedule}
           </dt>
           <dd class="text-sm text-ink-100">{training.schedule}</dd>
         </div>
@@ -58,7 +67,7 @@ const headingLines = heading.split('\n');
           <dt
             class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
           >
-            Venue
+            {trainingLabels.venue}
           </dt>
           <dd class="text-sm text-ink-100">{training.venue}</dd>
         </div>
@@ -66,7 +75,7 @@ const headingLines = heading.split('\n');
           <dt
             class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-1"
           >
-            Location
+            {trainingLabels.location}
           </dt>
           <dd class="text-sm text-ink-100">{training.location}</dd>
         </div>

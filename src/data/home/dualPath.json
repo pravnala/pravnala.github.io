@@ -1,0 +1,18 @@
+{
+  "dev": {
+    "eyebrow": "Dev",
+    "heading": "Web\nDevelopment",
+    "summary": "{webDevYears} years of coding and building for the web.",
+    "description": "From legacy systems to modern stacks and frameworks. Now prefers (and enjoys) building projects on Astro and Svelte. There's no web project that can't be built better (and with much less headache) than on Astro or Svelte, and you can't convince me otherwise (heh!).",
+    "buttonLabel": "View Work",
+    "buttonHref": "/dev"
+  },
+  "arnis": {
+    "eyebrow": "FMA",
+    "heading": "Filipino\nMartial Arts",
+    "summary": "{fmaPracticeYears} years of practice and {fmaTeachingYears} years of teaching Lapunti Arnis de Abanico.",
+    "description": "Wandered the halls of different martial art schools prior to all that. Found the art that I will practice towards my old age in Lapunti Arnis De Abanico. Now on a path towards what my teachers have set me on to, and which they themselves have embarked on: finding my own Lapunti.",
+    "buttonLabel": "Explore Arnis",
+    "buttonHref": "/arnis"
+  }
+}

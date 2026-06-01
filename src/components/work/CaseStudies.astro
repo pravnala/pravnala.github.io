@@ -1,6 +1,10 @@
 ---
 import { getCollection } from 'astro:content';
 import CaseStudyCard from '../../components/work/CaseStudyCard.astro';
+import meta from '../../data/dev/caseStudies.json';
+
+const { eyebrow, heading, emptyMessage } = meta;
+const headingLines = heading.split('\n');
 
 const allWork = await getCollection('work');
 const publicWork = allWork
@@ -12,19 +16,25 @@ const publicWork = allWork
   });
 ---
 
-<section class="reveal section-container bg-ink-900">
+<section
+  class="reveal section-container bg-ink-900"
+  aria-labelledby="case-studies-heading"
+>
   {
     publicWork.length === 0 ? (
-      <p class="text-eyebrow">Case studies coming soon.</p>
+      <p class="text-eyebrow">{emptyMessage}</p>
     ) : (
-      <div aria-labelledby="case-studies-heading">
+      <>
         <h2 id="case-studies-heading" class="text-eyebrow">
-          Portfolio
+          {eyebrow}
         </h2>
         <p class="text-heading mb-12">
-          Selected
-          <br />
-          Projects
+          {headingLines.map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))}
         </p>
         <div class="flex flex-wrap gap-8 justify-center md:justify-start">
           {publicWork.map((entry) => (
@@ -39,7 +49,7 @@ const publicWork = allWork
             />
           ))}
         </div>
-      </div>
+      </>
     )
   }
 </section>

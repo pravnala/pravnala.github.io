@@ -1,7 +1,16 @@
 ---
 import data from '../../data/arnis/instructorProfile.json';
 
-const { eyebrow, heading, narrative, credentials, lineage, timeline } = data;
+const {
+  eyebrow,
+  heading,
+  lineageHeading,
+  timelineHeading,
+  narrative,
+  credentials,
+  lineage,
+  timeline,
+} = data;
 const headingLines = heading.split('\n');
 ---
 
@@ -65,7 +74,7 @@ const headingLines = heading.split('\n');
       <!-- Lineage -->
       <div class="mb-12">
         <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
-          Lineage
+          {lineageHeading}
         </h3>
         <ol class="relative ml-2">
           <span
@@ -91,7 +100,7 @@ const headingLines = heading.split('\n');
       <!-- Timeline -->
       <div>
         <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
-          Timeline
+          {timelineHeading}
         </h3>
         <ol class="relative ml-2">
           <span

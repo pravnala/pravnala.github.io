@@ -1,6 +1,12 @@
 {
   "eyebrow": "The School",
   "heading": "Lapunti\nKarilyon",
+  "trainingCardHeading": "Regular Training",
+  "trainingLabels": {
+    "schedule": "Schedule",
+    "venue": "Venue",
+    "location": "Location"
+  },
   "description": "The UP Diliman chapter of Lapunti Arnis De Abanico International (LADAI). A family and community for learning, practice, and advancement in the Filipino martial art of Lapunti Arnis De Abanico.",
   "details": [
     "Co-founded in 2010, officially recognized as a Lapunti chapter in 2011 with the personal blessings of SGM Undo Caburnay.",

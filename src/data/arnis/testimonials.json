@@ -1,20 +1,24 @@
-[
-  {
-    "quote": "Guro Alvin breaks down complex movements into principles you can actually understand and apply. Training with him changed how I approach not just arnis, but problem-solving in general.",
-    "name": "Placeholder Name",
-    "role": "Student",
-    "affiliation": "Lapunti Karilyon"
-  },
-  {
-    "quote": "What sets him apart is the patience and structure. You always know where you are in the curriculum and what you're working towards. Every session builds on the last.",
-    "name": "Placeholder Name",
-    "role": "Student",
-    "affiliation": "Lapunti Karilyon"
-  },
-  {
-    "quote": "I came in with zero martial arts experience and never felt out of place. The progressive approach made it possible to keep up while still being challenged.",
-    "name": "Placeholder Name",
-    "role": "Beginner Student",
-    "affiliation": "Lapunti Karilyon"
-  }
-]
+{
+  "eyebrow": "Testimonials",
+  "heading": "What Students\nSay",
+  "items": [
+    {
+      "quote": "Guro Alvin breaks down complex movements into principles you can actually understand and apply. Training with him changed how I approach not just arnis, but problem-solving in general.",
+      "name": "Placeholder Name",
+      "role": "Student",
+      "affiliation": "Lapunti Karilyon"
+    },
+    {
+      "quote": "What sets him apart is the patience and structure. You always know where you are in the curriculum and what you're working towards. Every session builds on the last.",
+      "name": "Placeholder Name",
+      "role": "Student",
+      "affiliation": "Lapunti Karilyon"
+    },
+    {
+      "quote": "I came in with zero martial arts experience and never felt out of place. The progressive approach made it possible to keep up while still being challenged.",
+      "name": "Placeholder Name",
+      "role": "Beginner Student",
+      "affiliation": "Lapunti Karilyon"
+    }
+  ]
+}

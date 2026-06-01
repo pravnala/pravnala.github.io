@@ -1,0 +1,59 @@
+---
+import data from '../../data/dev/developerProfile.json';
+
+const { eyebrow, heading, narrative, stats } = data;
+const headingLines = heading.split('\n');
+
+const webDevYears = new Date().getFullYear() - 2000;
+const resolvedStats = stats.map((stat) => ({
+  ...stat,
+  value: stat.value.replace('{years}', String(webDevYears)),
+}));
+---
+
+<section
+  class="reveal section-container bg-ink-800"
+  aria-labelledby="developer-profile-heading"
+>
+  <h2 id="developer-profile-heading" class="text-eyebrow">{eyebrow}</h2>
+
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <!-- Narrative -->
+    <div class="space-y-5">
+      {
+        narrative.map((paragraph) => (
+          <p class="text-sm md:text-base leading-relaxed text-ink-200">
+            {paragraph}
+          </p>
+        ))
+      }
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-cols-2 gap-px bg-ink-600">
+      {
+        resolvedStats.map(({ value, label }) => (
+          <div class="bg-ink-800 p-8">
+            <p class="text-4xl md:text-5xl font-black tracking-[-0.04em] leading-none mb-2">
+              {value}
+            </p>
+            <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500">
+              {label}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,12 @@
+{
+  "roles": [
+    { "text": "Web Developer", "bold": true },
+    { "text": "FMA Instructor", "bold": true },
+    { "text": "IT Consultant", "bold": false },
+    { "text": "Linux and Open Source Advocate", "bold": false }
+  ],
+  "buttons": [
+    { "label": "Dev Work", "href": "/dev", "variant": "primary" },
+    { "label": "FMA Training", "href": "/arnis", "variant": "secondary" }
+  ]
+}

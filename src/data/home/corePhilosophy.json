@@ -1,0 +1,33 @@
+{
+  "eyebrow": "Philosophy",
+  "heading": "Core\nValues",
+  "description": "Combining Lapunti martial philosophy and technical craftsmanship.",
+  "quotes": [
+    {
+      "text": "From one thing, know ten thousand things.",
+      "attribution": "Miyamoto Musashi (The Book of Five Rings)"
+    },
+    {
+      "text": "Simple is not easy.",
+      "attribution": "Rich Hickey (creator of Clojure)"
+    }
+  ],
+  "values": [
+    {
+      "title": "Craftsmanship",
+      "body": "What separates good enough and great is invisible to most. It's the attention to details."
+    },
+    {
+      "title": "Simplicity, Precision & Directness",
+      "body": "Every line of code, every movement, should be deliberate. Sloppiness compounds into failure."
+    },
+    {
+      "title": "Discipline & Mastery",
+      "body": "Mastery makes difficult things look easy or effortless. But the path to mastery is far from easy. It's showing up daily, doing the work, and refining what came before."
+    },
+    {
+      "title": "Continuous Flow & Improvement",
+      "body": "Close-mindedness leads to stagnation. Failing to move in a fight could be fatal. If it's not working don't force it. There's always a better way. Find it."
+    }
+  ]
+}

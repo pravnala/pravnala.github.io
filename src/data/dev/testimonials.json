@@ -1,16 +1,20 @@
-[
-  {
-    "quote": "Alvin's technical depth and attention to detail made him an invaluable part of our team. He consistently delivered high-quality front-end work on tight timelines.",
-    "name": "Placeholder Name",
-    "role": "Engineering Lead",
-    "company": "WWölfe.io",
-    "image": ""
-  },
-  {
-    "quote": "From concept to working prototype in weeks. His ability to translate ideas into functional, polished products is remarkable.",
-    "name": "Placeholder Name",
-    "role": "Co-founder",
-    "company": "InterStep Technologies",
-    "image": ""
-  }
-]
+{
+  "eyebrow": "Testimonials",
+  "heading": "What Others\nSay",
+  "items": [
+    {
+      "quote": "Alvin's technical depth and attention to detail made him an invaluable part of our team. He consistently delivered high-quality front-end work on tight timelines.",
+      "name": "Placeholder Name",
+      "role": "Engineering Lead",
+      "company": "WWölfe.io",
+      "image": ""
+    },
+    {
+      "quote": "From concept to working prototype in weeks. His ability to translate ideas into functional, polished products is remarkable.",
+      "name": "Placeholder Name",
+      "role": "Co-founder",
+      "company": "InterStep Technologies",
+      "image": ""
+    }
+  ]
+}

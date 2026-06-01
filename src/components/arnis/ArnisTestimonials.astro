@@ -1,5 +1,8 @@
 ---
-import testimonials from '../../data/arnis/testimonials.json';
+import data from '../../data/arnis/testimonials.json';
+
+const { eyebrow, heading, items: testimonials } = data;
+const headingLines = heading.split('\n');
 ---
 
 {
@@ -9,34 +12,31 @@ import testimonials from '../../data/arnis/testimonials.json';
       aria-labelledby="arnis-testimonials-heading"
     >
       <h2 id="arnis-testimonials-heading" class="text-eyebrow">
-        Testimonials
+        {eyebrow}
       </h2>
 
       <p class="text-heading mb-12">
-        What Students
-        <br />
-        Say
+        {headingLines.map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {line}
+          </>
+        ))}
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map(({ quote, name, role, affiliation }) => (
           <blockquote class="relative border border-ink-600 p-8 flex flex-col gap-6 hover:border-ink-500 hover:bg-ink-700/50 hover:-translate-y-1 transition-all duration-500">
-            {/* Quote mark */}
             <span
               class="absolute top-4 right-6 text-6xl font-black text-ink-600/50 leading-none select-none pointer-events-none"
               aria-hidden="true"
             >
               &ldquo;
             </span>
-
-            {/* Quote text */}
             <p class="text-sm md:text-base leading-relaxed text-ink-200 italic relative z-10">
               {quote}
             </p>
-
-            {/* Attribution */}
             <footer class="flex items-center gap-4 mt-auto pt-2">
-              {/* Avatar placeholder */}
               <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-ink-500 shrink-0 bg-ink-700 flex items-center justify-center">
                 <svg
                   width="20"
@@ -54,8 +54,6 @@ import testimonials from '../../data/arnis/testimonials.json';
                   <path d="M20 21a8 8 0 1 0-16 0" />
                 </svg>
               </div>
-
-              {/* Name & role */}
               <div>
                 <cite class="not-italic text-sm font-bold text-ink-50 block">
                   {name}

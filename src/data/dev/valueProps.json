@@ -1,18 +1,22 @@
-[
-  {
-    "title": "Full-Stack Front End",
-    "description": "From design conversion to deployment — building complete, high-performance web experiences across the entire front-end stack."
-  },
-  {
-    "title": "Modern Tech Selection",
-    "description": "Planning, research, testing, and implementation of modern front-end technologies and solutions for diverse web projects."
-  },
-  {
-    "title": "AI-Enhanced Workflows",
-    "description": "Exploring and integrating AI-assisted tools to enhance development workflows, accelerate delivery, and improve code quality."
-  },
-  {
-    "title": "Technical Communication",
-    "description": "Patent documentation, training manuals, system specs — translating complex technical concepts into clear, actionable documents."
-  }
-]
+{
+  "eyebrow": "Services",
+  "heading": "What I\nBring",
+  "items": [
+    {
+      "title": "Full-Stack Front End",
+      "description": "From design conversion to deployment — building complete, high-performance web experiences across the entire front-end stack."
+    },
+    {
+      "title": "Modern Tech Selection",
+      "description": "Planning, research, testing, and implementation of modern front-end technologies and solutions for diverse web projects."
+    },
+    {
+      "title": "AI-Enhanced Workflows",
+      "description": "Exploring and integrating AI-assisted tools to enhance development workflows, accelerate delivery, and improve code quality."
+    },
+    {
+      "title": "Technical Communication",
+      "description": "Patent documentation, training manuals, system specs — translating complex technical concepts into clear, actionable documents."
+    }
+  ]
+}

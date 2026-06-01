@@ -1,10 +1,22 @@
 ---
 import Button from '../common/Button.astro';
 import BtnArrow from '../common/BtnArrow.astro';
+import data from '../../data/home/dualPath.json';
 
 const webDevYears = new Date().getFullYear() - 2000;
 const fmaPracticeYears = new Date().getFullYear() - 2010;
 const fmaTeachingYears = new Date().getFullYear() - 2015;
+
+const dev = data.dev;
+const arnis = data.arnis;
+
+const devHeadingLines = dev.heading.split('\n');
+const arnisHeadingLines = arnis.heading.split('\n');
+
+const devSummary = dev.summary.replace('{webDevYears}', String(webDevYears));
+const arnisSummary = arnis.summary
+  .replace('{fmaPracticeYears}', String(fmaPracticeYears))
+  .replace('{fmaTeachingYears}', String(fmaTeachingYears));
 ---
 
 <section class="grid grid-cols-1 md:grid-cols-2 w-full">
@@ -13,28 +25,32 @@ const fmaTeachingYears = new Date().getFullYear() - 2015;
     class="group relative flex flex-col justify-between px-6 md:px-16 py-16 min-h-112 bg-ink-700 text-ink-50 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-600"
     aria-label="Explore web development work"
   >
-    <span class="reveal text-eyebrow">Dev</span>
+    <span class="reveal text-eyebrow">{dev.eyebrow}</span>
     <div class="reveal">
       <h2 class="text-heading mb-4">
-        Web<br />Development
+        {
+          devHeadingLines.map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))
+        }
       </h2>
       <div class="max-w-sm text-ink-300 mb-8 space-y-3">
         <p
           class="text-ink-50/55 group-hover:text-ink-50/80 transition-opacity duration-500 ease-in-out"
         >
-          {webDevYears} years of coding and building for the web.
+          {devSummary}
         </p>
         <p
           class="text-ink-50/30 group-hover:text-ink-50/50 transition-opacity duration-500 ease-in-out"
         >
-          From legacy systems to modern stacks and frameworks. Now prefers (and
-          enjoys) building projects on Astro and Svelte. There's no web project
-          that can't be built better (and with much less headache) than on Astro
-          or Svelte, and you can't convince me otherwise (heh!).
+          {dev.description}
         </p>
       </div>
-      <Button variant="primary" href="/dev" class="inline-flex gap-2">
-        View Work
+      <Button variant="primary" href={dev.buttonHref} class="inline-flex gap-2">
+        {dev.buttonLabel}
         <BtnArrow />
       </Button>
     </div>
@@ -45,10 +61,17 @@ const fmaTeachingYears = new Date().getFullYear() - 2015;
     class="group relative flex flex-col justify-between px-6 md:px-16 py-16 min-h-112 bg-ink-900 text-ink-50 no-underline overflow-hidden transition duration-500 ease-in-out hover:bg-ink-800"
     aria-label="Explore Arnis martial arts instruction"
   >
-    <span class="reveal text-eyebrow">FMA</span>
+    <span class="reveal text-eyebrow">{arnis.eyebrow}</span>
     <div class="reveal">
       <h2 class="text-heading mb-4">
-        Filipino<br />Martial Arts
+        {
+          arnisHeadingLines.map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))
+        }
       </h2>
       <div
         class="max-w-sm text-ink-300 mb-8 space-y-3 group-hover:text-ink-100 transition-colors duration-500 ease-in-out"
@@ -56,21 +79,20 @@ const fmaTeachingYears = new Date().getFullYear() - 2015;
         <p
           class="text-ink-50/65 group-hover:text-ink-50/80 transition-opacity duration-500 ease-in-out"
         >
-          {fmaPracticeYears} years of practice and {fmaTeachingYears} years of teaching
-          Lapunti Arnis de Abanico.
+          {arnisSummary}
         </p>
         <p
           class="text-ink-50/40 group-hover:text-ink-50/50 transition-opacity duration-500 ease-in-out"
         >
-          Wandered the halls of different martial art schools prior to all that.
-          Found the art that I will practice towards my old age in Lapunti Arnis
-          De Abanico. Now on a path towards what my teachers have set me on to,
-          and which they themselves have embarked on: finding my own Lapunti.
+          {arnis.description}
         </p>
       </div>
-      <div class="max-w-sm text-ink-200 mb-8 space-y-3"></div>
-      <Button variant="secondary" href="/arnis" class="inline-flex gap-2">
-        Explore Arnis
+      <Button
+        variant="secondary"
+        href={arnis.buttonHref}
+        class="inline-flex gap-2"
+      >
+        {arnis.buttonLabel}
         <BtnArrow />
       </Button>
     </div>
