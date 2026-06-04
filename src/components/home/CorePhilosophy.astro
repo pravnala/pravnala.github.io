@@ -14,7 +14,7 @@ const headingLines = heading.split('\n');
   <p class="reveal text-eyebrow">{eyebrow}</p>
   <div class="reveal grid grid-cols-1 lg:grid-cols-[250px_1fr] gap-0 md:gap-10">
     <div class="grid md:block grid-cols-2 md:grid-cols-1">
-      <h2 id="philosophy-heading" class="text-heading mb-4">
+      <h2 id="philosophy-heading" class="reveal text-heading mb-4">
         {
           headingLines.map((line, i) => (
             <>
@@ -24,10 +24,10 @@ const headingLines = heading.split('\n');
           ))
         }
       </h2>
-      <p class="text-ink-500">{description}</p>
+      <p class="reveal text-ink-500">{description}</p>
     </div>
 
-    <div class="border-3 border-ink-400/30 bg-ink-600/30">
+    <div class="reveal border-3 border-ink-400/30 bg-ink-600/30">
       <!-- Values -->
       <dl class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-10">
         {
@@ -70,7 +70,7 @@ const headingLines = heading.split('\n');
         <Button
           variant="primary"
           href={nudge.buttonHref}
-          class="shrink-0 inline-flex gap-2"
+          class="reveal shrink-0 inline-flex gap-2"
         >
           {nudge.buttonLabel}
           <BtnArrow />

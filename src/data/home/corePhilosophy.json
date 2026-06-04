@@ -1,7 +1,7 @@
 {
   "eyebrow": "Philosophy",
   "heading": "Core\nValues",
-  "description": "A merging of Lapunti martial philosophy and technical craftsmanship.",
+  "description": "A merging of Filipino martial philosophy and technical craftsmanship.",
   "quotes": [
     {
       "text": "From one thing, know ten thousand things.",
@@ -18,8 +18,8 @@
       "body": "What separates good enough and great is invisible to most. It's the attention to details."
     },
     {
-      "title": "Simplicity, Precision, Directness",
-      "body": "Every line of code, every movement, should be deliberate. Sloppiness compounds into failure."
+      "title": "Precision, Simplicity & Directness",
+      "body": "Whether in coding or combat, every action must be deliberate. The simplest and most direct path is often the most effective. Unnecessary complexity is sloppiness, and sloppiness compounds into failure."
     },
     {
       "title": "Discipline & Mastery",

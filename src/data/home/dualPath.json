@@ -3,9 +3,9 @@
     "eyebrow": "Dev",
     "heading": "Web\nDevelopment",
     "summary": "{webDevYears} years of coding applications and building for the web.",
-    "description": "From legacy server systems to modern web stacks and frameworks. Now specializing in building statically generated sites and web applications using Astro and Svelte, or SvelteKit. Have not yet found a web project that could not be built using these frameworks as a base. In my experience, nothing else delivers that level of performance with fewer headaches.",
+    "description": "From legacy server systems to modern web stacks. Now specializing in building statically generated sites and web applications using Astro, Svelte, or SvelteKit. Have not yet found a web project that could not be built using these frameworks as a base. In my experience, nothing else delivers that level of performance and with fewer headaches.",
     "stats": [
-      { "value": "{webDevYears}+", "label": "Years Experience" },
+      { "value": "{webDevYears}", "label": "Years Experience" },
       { "value": "100+", "label": "Projects" },
       { "value": "SSG", "label": "Specialist" }
     ],
@@ -19,7 +19,7 @@
     "eyebrow": "Arnis",
     "heading": "Filipino\nMartial Arts",
     "summary": "{fmaPracticeYears} years of practice in the art of Lapunti Arnis de Abanico.",
-    "description": "Wandered the halls of different martial arts schools prior to all that. Found the art that I will practice for the rest of my life in Lapunti Arnis De Abanico. While taking valuable lessons from other disciplines, I am now on a path that my teachers set me on, and that they themselves have embarked on. A path towards finding my own Lapunti.",
+    "description": "Trained in different forms of martial arts before that. Found the art that I will practice for the rest of my life in Lapunti Arnis De Abanico. While taking valuable lessons from other disciplines, I am now on a path that my teachers themselves have embarked on. A path of reflection and discovery, of sharing the art with others, and towards finding my own Lapunti.",
     "stats": [
       { "value": "{fmaPracticeYears}", "label": "Years practice" },
       { "value": "{fmaTeachingYears}", "label": "Years teaching" },
