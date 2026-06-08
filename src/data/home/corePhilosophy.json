@@ -14,16 +14,16 @@
   ],
   "values": [
     {
-      "title": "Craftsmanship",
-      "body": "What separates good enough and great is invisible to most. It's the attention to details."
+      "title": "Artistry & Craftsmanship",
+      "body": "Find enjoyment in what you do and it will show. What separates good enough and great is invisible to most. It's the attention to details."
     },
     {
-      "title": "Precision, Simplicity & Directness",
-      "body": "Whether in coding or combat, every action must be deliberate. The simplest and most direct path is often the most effective. Unnecessary complexity is sloppiness, and sloppiness compounds into failure."
+      "title": "Simplicity & Directness",
+      "body": "Employ only what is necessary and reduce complexity. Every line of code, every action, should be deliberate. Sloppiness compounds into failure."
     },
     {
       "title": "Discipline & Mastery",
-      "body": "Mastery makes difficult things look easy or effortless. But the path to mastery is far from easy. It's showing up daily, doing the work, and refining what came before."
+      "body": "Mastery makes difficult things look effortless. But the path to mastery is far from easy. It's showing up daily, doing the work, and refining what came before."
     },
     {
       "title": "Continuous Flow & Improvement",
@@ -31,7 +31,7 @@
     }
   ],
   "nudge": {
-    "text": "If this resonates with how you think, either about producing quality work or regarding martial arts training, let's talk.",
+    "text": "If this resonates with you, and would like to work or train with me, let's talk.",
     "buttonLabel": "Get in Touch",
     "buttonHref": "/contact"
   }
