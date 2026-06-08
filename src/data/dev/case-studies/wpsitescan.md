@@ -8,6 +8,6 @@ technologies:
   - jQuery
   - Bootstrap
 hasDetailPage: false
-isPublic: true
+isPublic: false
 order: 5
 ---

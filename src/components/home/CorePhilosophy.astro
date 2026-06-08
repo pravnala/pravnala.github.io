@@ -27,7 +27,7 @@ const headingLines = heading.split('\n');
       <p class="reveal text-ink-500">{description}</p>
     </div>
 
-    <div class="reveal border-3 border-ink-400/30 bg-ink-600/30">
+    <div class="reveal border-3 border-ink-800 bg-ink-600/30">
       <!-- Values -->
       <dl class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 md:p-10">
         {
@@ -48,11 +48,11 @@ const headingLines = heading.split('\n');
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-px">
         {
           quotes.map(({ text, attribution }) => (
-            <div class="p-8 md:p-10 bg-ink-300">
-              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-700 mb-2">
+            <div class="p-8 md:p-10 bg-ink-800">
+              <p class="text-lg md:text-xl font-black tracking-[-0.02em] leading-snug text-ink-100 mb-2">
                 &ldquo;{text}&rdquo;
               </p>
-              <p class="text-[13px] text-ink-700 italic">{attribution}</p>
+              <p class="text-[13px] text-ink-400">{attribution}</p>
             </div>
           ))
         }

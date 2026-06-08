@@ -1,14 +1,14 @@
 {
   "eyebrow": "About",
-  "heading": "Craftsman\nFirst",
+  "heading": "Craftsman\nMentality",
   "narrative": [
-    "I think of myself as a craftsman before a coder. Someone who takes pride in producing quality work tailored to each client — where the joy a client derives from the final product is a reward in itself.",
-    "A master craftsman chooses his tools well, chooses his projects deliberately, and brings years of distilled experience into every engagement. The work is never rushed. When finished, it embodies an elegant simplicity — quality visible even in the smallest details.",
-    "Twenty-five years in this craft has taught me one consistent lesson: don't chase hype. Proven tools, time-tested practices, and sound principles outlast every buzzword cycle. Simplicity, performance, and maintainability win every time."
+    "I like to consider myself as a craftsman in the digital age. Someone who takes pride in producing quality work tailored for each client. Where the enjoyment a client derives from the final product is a reward in itself.",
+    "A master craftsman chooses his tools well, even his projects deliberately, and brings years of distilled experience into the job. The work is not rushed. And when finished, embodies an elegant simplicity. Quality visible in the smallest details.",
+    "Decades in this craft has taught me one consistent lesson: don't chase hype. Good and reliable tools, tested practices, and sound principles outlast buzzword cycles. Simplicity, performance, and maintainability win every time."
   ],
   "stats": [
     { "value": "{years}", "label": "Years of experience" },
-    { "value": "50+", "label": "Projects delivered" },
+    { "value": "100+", "label": "Projects delivered" },
     { "value": "SSG", "label": "Preferred architecture" },
     { "value": "∞", "label": "Ongoing learning" }
   ]

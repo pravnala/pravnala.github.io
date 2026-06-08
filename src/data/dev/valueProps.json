@@ -3,12 +3,12 @@
   "heading": "What I\nBring",
   "items": [
     {
-      "title": "Full-Stack Front End",
-      "description": "From design conversion to deployment — building complete, high-performance web experiences across the entire front-end stack."
+      "title": "Front End & Project Management",
+      "description": "From design conversion to deployment. Managing project lifecycles and building complete, high-performance web experiences across the entire front-end stack."
     },
     {
-      "title": "Modern Tech Selection",
-      "description": "Planning, research, testing, and implementation of modern front-end technologies and solutions for diverse web projects."
+      "title": "IT & Tech Consultancy",
+      "description": "Providing guidance in the planning, research, testing, and implementation of modern technologies and solutions for diverse web projects."
     },
     {
       "title": "AI-Enhanced Workflows",
@@ -16,7 +16,7 @@
     },
     {
       "title": "Technical Communication",
-      "description": "Patent documentation, training manuals, system specs — translating complex technical concepts into clear, actionable documents."
+      "description": "Documentation, training manuals, system specs. Translating complex technical concepts into clear, actionable documents."
     }
   ]
 }

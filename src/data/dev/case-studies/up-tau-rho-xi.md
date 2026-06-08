@@ -6,6 +6,6 @@ technologies:
   - Svelte
   - Tailwind CSS
 hasDetailPage: false
-isPublic: true
+isPublic: false
 order: 3
 ---

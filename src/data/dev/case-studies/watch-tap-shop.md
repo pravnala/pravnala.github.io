@@ -17,7 +17,7 @@ technologies:
 externalUrl: https://www.interstep.tech
 externalLabel: Visit Site
 hasDetailPage: true
-isPublic: true
+isPublic: false
 order: 1
 ---
 

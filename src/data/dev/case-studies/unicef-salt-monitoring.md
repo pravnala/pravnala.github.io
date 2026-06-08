@@ -5,6 +5,6 @@ technologies:
   - PHP
   - MySQL
 hasDetailPage: false
-isPublic: true
+isPublic: false
 order: 6
 ---
