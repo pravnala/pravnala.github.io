@@ -1,20 +1,20 @@
 {
   "heading": "Good Fit",
   "pageHeading": "Working\nTogether",
-  "description": "I do my best work when the project calls for craft, not just output — and when the client values the difference.",
+  "description": "I do my best work when the project calls for craft, not just output. And when the client values the difference.",
   "fitHeading": "Where I do my best work",
   "notFitHeading": "Probably not the right match",
   "items": [
     "Clients who want a thoughtful partner, not just a pair of hands",
     "Projects where quality, performance, and maintainability matter long-term",
-    "Teams open to modern, lightweight stacks — Astro, Svelte, Tailwind — over bloated defaults",
-    "Engagements with clear goals and accessible decision-makers",
-    "Startups and small teams that need senior-level front-end expertise without the overhead"
+    "Teams open to modern, lightweight stacks--like Astro, Svelte, and SvelteKit--over bloated defaults.",
+    "Engagements with clear goals and accessible decision-makers.",
+    "Startups and small teams that need senior-level front-end expertise without the overhead."
   ],
   "notFit": [
-    "Projects that need something built fast and cheap — speed and craft rarely coexist",
-    "Clients who want the latest hyped framework regardless of whether it fits the problem",
-    "Equity-only or spec work arrangements",
-    "Vague briefs with no defined scope, timeline, or success criteria"
+    "Projects that need something built fast and cheap. Speed and craft rarely coexist.",
+    "Clients who want the latest hyped framework or technologies regardless of whether it fits the problem.",
+    "Projects paid entirely in company stock (equity) or speculative work arrangements.",
+    "Projects with unclear goals, missing timelines, or loosely defined requirements."
   ]
 }

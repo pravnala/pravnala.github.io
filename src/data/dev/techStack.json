@@ -4,34 +4,24 @@
   "stacks": [
     {
       "label": "Frameworks",
-      "items": [
-        "Astro",
-        "Svelte",
-        "SvelteKit",
-        "Tailwind CSS",
-        "Shadcn UI",
-        "NextJS",
-        "Vue.js",
-        "Alpine.js",
-        "MJML"
-      ]
+      "items": ["Astro", "Svelte", "SvelteKit", "Keystatic", "Vue.js", "NextJS"]
     },
     {
       "label": "Languages",
-      "items": ["Svelte", "Javascript", "HTML", "CSS", "Typescript", "PHP"]
+      "items": ["Typescript", "Javascript", "Python", "HTML", "CSS"]
     },
     {
       "label": "Cloud & Services",
       "items": [
-        "Appwrite",
+        "Netlify",
         "Render",
+        "Appwrite",
         "PostHog",
         "Google Analytics",
         "Google Tag Manager",
+        "Google Searh Console",
         "Resend",
-        "Formspree",
-        "Vultr",
-        "DigitalOcean"
+        "Formspree"
       ]
     }
   ]
