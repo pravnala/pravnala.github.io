@@ -1,12 +1,15 @@
 ---
 title: Lapunti Karilyon
-projectContext: Redesigned and developed the website for Lapunti Karilyon (UP Diliman Lapunti Arnis De Abanico Training Group), a Filipino martial arts organization based in the University of the Philippines.
+projectContext: Website redesign, tech stack migration and development for Lapunti Karilyon (UP Diliman Lapunti Arnis De Abanico Training Group), a Filipino martial arts organization based in the University of the Philippines.
 technologies:
   - Astro
-  - Svelte
-  - Tailwind CSS
-externalUrl: https://lapuntikarilyon.com
-externalLabel: Visit Site
+  - Bun
+  - Tailwind
+  - Typescript
+  - Formspree
+externalUrl: https://lapunti.org
+coverImage: lapunti-karilyon.png
+externalLabel: View Site
 hasDetailPage: false
 isPublic: true
 order: 2

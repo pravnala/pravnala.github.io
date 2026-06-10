@@ -22,13 +22,13 @@ const publicWork = allWork
 >
   {
     publicWork.length === 0 ? (
-      <p class="text-eyebrow">{emptyMessage}</p>
+      <p class="reveal text-eyebrow">{emptyMessage}</p>
     ) : (
       <>
-        <h2 id="case-studies-heading" class="text-eyebrow">
+        <h2 id="case-studies-heading" class="reveal text-eyebrow">
           {eyebrow}
         </h2>
-        <p class="text-heading mb-12">
+        <p class="reveal text-heading mb-7">
           {headingLines.map((line, i) => (
             <>
               {i > 0 && <br />}
@@ -36,13 +36,17 @@ const publicWork = allWork
             </>
           ))}
         </p>
-        <div class="flex flex-wrap gap-8 justify-center md:justify-start">
+        <p class="reveal mb-12 text-ink-300">
+          A showcase of some recent projects not covered by NDA.
+        </p>
+        <div class="reveal flex flex-wrap gap-8 justify-center md:justify-start">
           {publicWork.map((entry) => (
             <CaseStudyCard
               title={entry.data.title}
               slug={entry.id}
               projectContext={entry.data.projectContext}
               technologies={entry.data.technologies}
+              coverImage={entry.data.coverImage}
               externalUrl={entry.data.externalUrl}
               externalLabel={entry.data.externalLabel}
               hasDetailPage={entry.data.hasDetailPage}

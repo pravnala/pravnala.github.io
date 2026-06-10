@@ -4,21 +4,22 @@
 # 2. Uncomment and update the coverImage path below
 # coverImage: /src/assets/images/case-studies/watch-tap-shop.png
 title: Watch!Tap!Shop!
-projectContext: Co-founded InterStep Technologies Inc., a startup building an interactive commerce product for commercialization. Served as technical development lead and consultant for a team entry in the first Gawad Pangulo para sa Natatanging Inobasyon contest of the University of the Philippines. Developed the PoC and prototype that won one of the grand prizes.
+projectContext: Project consultancy, design, technology stack selection and development of a POC and working prototype for Watch!Tap!Shop!. A winning entry in the first Gawad Pangulo Para sa Natatanging Inobasyon contest of the University of the Philippines, a university system-wide competition for innovative ideas or projects.
+# projectContext: Co-founded InterStep Technologies Inc., a startup building an interactive commerce product for commercialization. Served as technical development lead and consultant for a team entry in the first Gawad Pangulo para sa Natatanging Inobasyon contest of the University of the Philippines. Developed the PoC and prototype that won one of the grand prizes.
 problem: Traditional e-commerce relies on static product listings disconnected from the content that inspires purchase intent. Video content drives engagement but offers no direct path to purchase — viewers must leave the video, search for the product, and navigate a separate checkout flow. This friction results in lost conversions and a fragmented shopping experience.
 solution: Designed and built an interactive video commerce platform that overlays shoppable product tags directly onto video content. Viewers can tap on items they see in a video stream and purchase without leaving the viewing experience. The PoC demonstrated real-time product recognition, contextual overlays, and a streamlined checkout flow — all built as a lightweight web application for maximum reach.
 outcome: The prototype won one of the grand prizes in the first Gawad Pangulo para sa Natatanging Inobasyon contest, a university system-wide competition for innovative ideas. The product is now being developed for commercial release under InterStep Technologies Inc.
 technologies:
-  - Astro
-  - Svelte
   - SvelteKit
-  - Tailwind CSS
+  - Typescript
+  - Bun
+  - Tailwind
   - Web Components
-externalUrl: https://www.interstep.tech
+coverImage: wts.png
 externalLabel: Visit Site
-hasDetailPage: true
-isPublic: false
-order: 1
+hasDetailPage: false
+isPublic: true
+order: 3
 ---
 
 ## The Challenge

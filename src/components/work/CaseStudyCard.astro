@@ -9,6 +9,7 @@ interface Props {
   slug: string;
   projectContext: string;
   technologies: string[];
+  coverImage?: string;
   externalUrl?: string;
   externalLabel?: string;
   hasDetailPage?: boolean;
@@ -19,32 +20,44 @@ const {
   slug,
   projectContext,
   technologies,
+  coverImage,
   externalUrl,
   externalLabel = 'View Project',
   hasDetailPage = true,
 } = Astro.props;
 
-// Truncate projectContext to ~160 chars for the card summary
-const summary =
-  projectContext.length > 160
-    ? projectContext.slice(0, 157).trimEnd() + '…'
-    : projectContext;
+// Truncate projectContext to ~200 chars for the card summary
+// const summary =
+//   projectContext.length > 200
+//     ? projectContext.slice(0, 157).trimEnd() + '…'
+//     : projectContext;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/case-studies/*.{jpeg,jpg,png,gif,webp,svg}',
+  { eager: true }
+);
+const imagePath = `/src/assets/images/case-studies/${coverImage}`;
+
+const projectImage =
+  coverImage && images[imagePath]
+    ? images[imagePath].default
+    : placeholderImage;
 ---
 
 <article
   class:list={[
-    'group relative border border-ink-600 bg-ink-700 flex flex-col',
-    'transition-all duration-500 ease-in-out hover:bg-ink-600 hover:-translate-y-2 hover:border-ink-500',
+    'group relative border-4 border-ink-700 bg-ink-700 flex flex-col',
+    'transition-all duration-500 ease-in-out hover:bg-ink-600 hover:-translate-y-3 hover:border-ink-600',
     'max-w-lg overflow-hidden',
   ]}
 >
   <!-- Cover image -->
-  <div class="w-full h-64 md:h-72 overflow-hidden">
+  <div class="w-full h-64 md:h-82 overflow-hidden">
     <Image
-      src={placeholderImage}
+      src={projectImage}
       alt={`${title} project screenshot`}
-      class="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-      widths={[400, 800]}
+      class="w-full h-full object-cover object-top duration-500 group-hover:scale-110"
+      widths={[400, 800, 1200]}
       sizes="(max-width: 768px) 100vw, 400px"
     />
   </div>
@@ -59,7 +72,7 @@ const summary =
 
     <!-- Project context summary -->
     <p class="text-sm leading-relaxed text-ink-200 max-w-prose">
-      {summary}
+      {projectContext}
     </p>
 
     <!-- Technologies -->

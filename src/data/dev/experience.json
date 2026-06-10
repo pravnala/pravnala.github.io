@@ -1,6 +1,6 @@
 [
   {
-    "period": "Apr 2024 – Present",
+    "period": "2024 – Present",
     "company": "Freelance",
     "role": "Web Developer / IT Consultant / Technical Communicator",
     "scope": "Startup co-founder & tech lead, university contest PoC, organization websites",
@@ -13,14 +13,14 @@
     ]
   },
   {
-    "period": "Feb 2020 – Apr 2024",
+    "period": "2020 – 2024",
     "company": "WWölfe.io",
     "role": "Senior Front End Developer",
     "scope": "Remote team servicing international clients across multiple countries",
     "technologies": ["NextJS", "Vue.js", "Shadcn/UI", "Tailwind", "AWS", "MJML"]
   },
   {
-    "period": "Sep 2014 – Feb 2020",
+    "period": "2014 – 2020",
     "company": "Offshorly",
     "role": "Senior Developer",
     "scope": "50+ projects for international clients (USA, UK, Australia)",
@@ -34,7 +34,7 @@
     ]
   },
   {
-    "period": "Mar 2004 – Aug 2014",
+    "period": "2004 – 2014",
     "company": "Freelance",
     "role": "Web Developer / IT Consultant / Technical Communicator",
     "scope": "Organization & company websites, project management apps, patent documentation, UNICEF software",
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "period": "Nov 1999 – Sep 2003",
+    "period": "1999 – 2003",
     "company": "WeServ / Fujitsu Philippines",
     "role": "Supervising Applications Systems Engineer",
     "scope": "Enterprise applications for foreign and local clients, assistant project manager",

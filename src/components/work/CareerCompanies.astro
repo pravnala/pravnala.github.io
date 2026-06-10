@@ -1,0 +1,60 @@
+---
+import companies from '../../data/dev/companies.json';
+import meta from '../../data/dev/careerCompanies.json';
+
+const { eyebrow, heading, description } = meta;
+const headingLines = heading.split('\n');
+---
+
+<section
+  class="reveal section-container bg-ink-200 text-ink-900"
+  aria-labelledby="career-timeline-heading"
+>
+  <h2 id="career-timeline-heading" class="reveal text-eyebrow">{eyebrow}</h2>
+
+  <p class="reveal text-heading mb-7">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
+
+  <p class="reveal mb-12 text-ink-600">{meta.description}</p>
+
+  <div
+    class="reveal relative grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8"
+  >
+    {
+      companies.map((entry, i) => (
+        <div class="group border p-8 hover:bg-ink-300 transition-all duration-500 ease-in-out hover:-translate-y-3">
+          <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-2">
+            {entry.period}
+          </p>
+          <p class="text-xl md:text-2xl font-black tracking-[-0.03em] leading-tight text-ink-900 mb-2">
+            {entry.company}
+          </p>
+          <p class="text-sm font-bold text-ink-600 mb-3">{entry.role}</p>
+          <p class="text-sm leading-relaxed text-ink-700 mb-5 max-w-2xl">
+            {entry.scope}
+          </p>
+          {entry.technologies.length > 0 && (
+            <ul
+              class="flex flex-wrap gap-2"
+              aria-label={`Technologies at ${entry.company}`}
+            >
+              {entry.technologies.map((tech) => (
+                <li class="text-[10px] font-bold tracking-[0.12em] uppercase border border-ink-400 px-2.5 py-1 text-ink-600 hover:border-ink-700 hover:text-ink-800 transition-colors duration-500 ease-in-out cursor-default">
+                  {tech}
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</section>

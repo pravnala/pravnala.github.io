@@ -1,11 +1,16 @@
 ---
-title: Common Wealth Credit Cooperative / Asiapro
-projectContext: Redesigned, developed, and optimized the performance of the company website for Common Wealth Credit Cooperative (Asiapro), a financial services cooperative.
+title: Common Wealth Credit Cooperative
+projectContext: Website consultancy, redesign, modern tech stack migration and development for Common Wealth Credit Cooperative (CWCC), an award-winning financial services cooperative in the Philippines with over 55k members.
 technologies:
   - Astro
-  - Tailwind CSS
-  - Svelte
+  - Bun
+  - Tailwind
+  - Typescript
+  - Formspree
+externalUrl: https://cwcc.ph
+coverImage: cwcc.png
+externalLabel: View Site
 hasDetailPage: false
 isPublic: true
-order: 4
+order: 5
 ---

@@ -1,0 +1,70 @@
+[
+  {
+    "period": "2020 - 2024",
+    "company": "WWölfe.io",
+    "role": "Senior Front End Developer",
+    "scope": "Planning, research, testing, selection, implementation and deployment of modern front end technologies and solutions for various web projects.",
+    "technologies": [
+      "NextJS",
+      "Vue.js",
+      "Typescript",
+      "Tailwind",
+      "Shadcn/UI",
+      "AWS",
+      "MJML"
+    ]
+  },
+  {
+    "period": "2014 - 2020",
+    "company": "Offshorly",
+    "role": "Senior Developer",
+    "scope": "Design, development, and stack migration of corporate/organizational websites, Wordpress plugin development, development of custom web/intranet tools.",
+    "technologies": [
+      "PHP",
+      "WordPress",
+      "Laravel",
+      "jQuery",
+      "Bootstrap",
+      "Foundation"
+    ]
+  },
+  {
+    "period": "2004 - 2011",
+    "company": "Pacific Consulting Services",
+    "role": "IT Consultant / Technical Communicator",
+    "scope": "Consultant and Technical Communicator for various projects. Developed and maintained company website and other web-related solutions.",
+    "technologies": ["PHP", "HTML", "CSS", "Wordpress", "Yii"]
+  },
+  {
+    "period": "2003 - 2004",
+    "company": "Decision Systems Corp.",
+    "role": "IT Projects Consultant",
+    "scope": "Consultant developer for Fujitsu Philippines’ AFPSLAI-IMCS and Globe Telecoms Prospero Backlog projects.",
+    "technologies": ["C", "Visual Basic", "Inhouse Reporting Tools"]
+  },
+  {
+    "period": "1999 - 2003",
+    "company": "WeServ Systems International / Fujitsu Philippines",
+    "role": "Supervising Applications Systems Engineer",
+    "scope": "Served as developer, assistant project manager, support engineer, technical manuals co-author, and crash-course instructor.",
+    "technologies": ["C", "Java", "J2EE", "Visual Basic", ".NET"]
+  },
+  {
+    "period": "2004 - 2014, 2024 - PRESENT",
+    "company": "Various other companies and clients",
+    "role": "Freelance Senior Web Developer / IT Consultant",
+    "scope": "Startup co-founder. Websites and web applications development. Technical consultancy. ",
+    "technologies": [
+      "Astro",
+      "Svelte",
+      "SvelteKit",
+      "Tailwind",
+      "PHP",
+      "Yii",
+      "Wordpress",
+      "Processwire",
+      "Foundation",
+      "Bootstrap"
+    ]
+  }
+]
