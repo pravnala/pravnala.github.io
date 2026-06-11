@@ -9,9 +9,9 @@ const headingLines = heading.split('\n');
   class="reveal section-container bg-ink-900"
   aria-labelledby="about-the-art-heading"
 >
-  <h2 id="about-the-art-heading" class="text-eyebrow">{eyebrow}</h2>
+  <h2 id="about-the-art-heading" class="reveal text-eyebrow">{eyebrow}</h2>
 
-  <p class="text-heading mb-6">
+  <p class="reveal text-heading mb-6">
     {
       headingLines.map((line, i) => (
         <>
@@ -22,31 +22,36 @@ const headingLines = heading.split('\n');
     }
   </p>
 
-  <p class="text-sm md:text-base leading-relaxed text-ink-300 max-w-3xl mb-12">
-    {intro}
-  </p>
+  <p
+    class="reveal text-sm md:text-base leading-relaxed text-ink-300 max-w-3xl mb-12"
+    set:html={intro}
+  />
 
   <!-- Characteristics -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
     {
       characteristics.map(({ title, description }) => (
-        <div class="border-3 border-ink-600 p-8 hover:border-ink-500 hover:-translate-y-1 transition-all duration-500 cursor-default">
-          <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-3">
+        <div class="border-3 border-ink-600 p-8 hover:border-ink-300 hover:-translate-y-3 transition-all duration-500 ease-in-out cursor-default">
+          <h3 class="text-xl md:text-3xl font-black tracking-[-0.02em] mb-3">
             {title}
           </h3>
-          <p class="text-sm leading-relaxed text-ink-300">{description}</p>
+          <p class="text-sm md:text-base leading-relaxed text-ink-300">
+            {description}
+          </p>
         </div>
       ))
     }
   </div>
 
   <!-- Founders -->
-  <p class="text-sm leading-relaxed text-ink-400 max-w-3xl mb-12">
+  <p
+    class="reveal text-sm leading-relaxed text-ink-400 max-w-3xl mb-12 tracking-wide"
+  >
     {founders}
   </p>
 
   <!-- LAPUNTI Acronym -->
-  <div class="border-t border-ink-700 pt-8">
+  <!-- <div class="reveal border-t border-ink-700 pt-8">
     <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-4">
       {acronym.label}
     </p>
@@ -56,6 +61,20 @@ const headingLines = heading.split('\n');
           <span class="text-sm text-ink-200 font-bold">{value}</span>
         ))
       }
+    </div>
+  </div> -->
+
+  <div
+    class="text-sm reveal text-ink-500 border-t border-ink-700 pt-8 tracking-wide"
+  >
+    <p class="leading-relaxed mb-3">
+      <b>LAPUNTI:</b> The three <i>barangays</i> in Cebu where the Caburnays lived
+      and honed the art, and the core ideals every practitioner strives to embody.
+    </p>
+    <div class="mb-3">Labangon • Punta Princesa • Tisa</div>
+    <div class="">
+      Love • Artistry • Philosphy • Unity • Nimbleness • Truthfulness •
+      Integrity
     </div>
   </div>
 </section>

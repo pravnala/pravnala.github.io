@@ -1,7 +1,7 @@
 {
   "eyebrow": "The Art",
   "heading": "Lapunti Arnis\nDe Abanico",
-  "intro": "A Filipino martial art from Cebu, Philippines — a comprehensive weapons-based system built around fast abanico (fan-pattern) strikes and a signature cross-legged stance and footwork.",
+  "intro": "A classic Cebuano system engineered for rapid-fire execution. Lapunti pairs intricate <i>abanico</i> (fan) strikes with a signature cross-legged stance and footwork, maximizing torque, structural stability, and deceptive angles of attack.",
   "characteristics": [
     {
       "title": "Abanico Strikes",
@@ -9,12 +9,12 @@
     },
     {
       "title": "Cross-Legged Footwork",
-      "description": "The only style of arnis that uses cross-legged stance and movement — rooted in Choy Li Fut Kung Fu. Enables swift gap-closing, angling against opponents, effective multi-opponent movement, and combat in tight spaces."
+      "description": "The only style of arnis that uses cross-legged stance and footwork. Enables swift gap-closing, angling against opponents, effective multi-opponent movement, and combat in tight spaces."
     }
   ],
-  "founders": "Developed by the Caburnay family — GM Felimon Caburnay and the late Supreme Grandmaster Prudencio 'Undo' Caburnay — with significant contributions from GM Johnny Chiuten, a master of Choy Li Fut Kung Fu and Balintawak Eskrima. Officially founded in Cebu, 1972.",
+  "founders": "Developed by the Caburnay family: Arsenio Caburnay, GM Felimon Caburnay, and SGM Prudencio 'Undo' Caburnay, with significant contributions from GM Johnny Chiuten, a master of Choy Li Fut Kung Fu and other arnis styles. Officially founded in Cebu, 1972. ",
   "acronym": {
-    "label": "LAPUNTI — the core ideals every practitioner strives to embody:",
+    "label": "LAPUNTI: The 3 <i>barangays</i> in Cebu where the Caburnays practiced and developed the art, and the core ideals every practitioner strives to embody:",
     "values": [
       "Love",
       "Artistry",
