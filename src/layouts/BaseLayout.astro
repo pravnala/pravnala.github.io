@@ -15,6 +15,25 @@ const webDevYears = new Date().getFullYear() - 2000;
 const fmaYears = new Date().getFullYear() - 2010;
 const defaultDescription = `${webDevYears} years building for the web. ${fmaYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`;
 const { title, description = defaultDescription, ogImage } = Astro.props;
+
+// JSON-LD for SEO
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alvin Penaflor',
+  url: 'https://pravnala.github.io/',
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: 'IT Professional and Web Developer',
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Filipino Martial Arts (FMA) Instructor',
+      description: 'Lapunti Arnis De Abanico Instructor teaching at UP Diliman',
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -55,6 +74,11 @@ const { title, description = defaultDescription, ogImage } = Astro.props;
     <Font cssVariable="--font-inter" preload />
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+
+    <!-- JSON-LD for SEO -->
+    <script is:inline type="application/ld+json">
+      {JSON.stringify(personSchema)}
+    </script>
 
     <ClientRouter />
   </head>
