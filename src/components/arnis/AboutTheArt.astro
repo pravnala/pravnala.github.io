@@ -28,11 +28,11 @@ const headingLines = heading.split('\n');
   />
 
   <!-- Characteristics -->
-  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+  <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
     {
       characteristics.map(({ title, description }) => (
-        <div class="border-3 border-ink-600 p-8 hover:border-ink-300 hover:-translate-y-3 transition-all duration-500 ease-in-out cursor-default">
-          <h3 class="text-xl md:text-3xl font-black tracking-[-0.02em] mb-3">
+        <div class="group border-3 border-ink-600 p-8 hover:border-ink-300 hover:-translate-y-3 transition-all duration-500 ease-in-out cursor-default">
+          <h3 class="text-xl text-ink-200 md:text-3xl font-black tracking-[-0.02em] mb-3 group-hover:text-ink-50 transition-colors duration-500 ease-in-out">
             {title}
           </h3>
           <p class="text-sm md:text-base leading-relaxed text-ink-300">
@@ -45,7 +45,7 @@ const headingLines = heading.split('\n');
 
   <!-- Founders -->
   <p
-    class="reveal text-sm leading-relaxed text-ink-400 max-w-3xl mb-12 tracking-wide"
+    class="reveal text-sm leading-relaxed text-ink-400 max-w-3xl mb-8 tracking-wide"
   >
     {founders}
   </p>

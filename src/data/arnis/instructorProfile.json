@@ -1,16 +1,15 @@
 {
-  "eyebrow": "Instructor",
-  "heading": "Guro Alvin\nPenaflor",
+  "eyebrow": "Instructor Profile",
+  "heading": "Guro\nAlvin Penaflor",
   "lineageHeading": "Lineage",
   "timelineHeading": "Timeline",
   "narrative": [
-    "Before finding Lapunti, I wandered the halls of different martial art schools — Karate, Judo and Combat Judo, Aikido, Wonwhado, and Tai Chi. Each left its mark, but none felt like home.",
-    "In 2010, I found Lapunti Arnis De Abanico. The art's blend of fluid striking, precise footwork, and deep principle-based teaching resonated in a way nothing else had. This is the art I will practice towards my old age.",
-    "Now on a path towards what my teachers have set me on to, and which they themselves have embarked on: finding my own Lapunti."
+    "Practiced and dabbled in other forms of martial arts from an early age before finding Lapunti. From Karate, Judo, Aikido, Tai Chi, Jeet Kune Do, Krav Maga to lesser known arts like Zeta Zen Aikido and Wonwhado.",
+    "Co-founded <b>Lapunti Arnis De Abanico UP Diliman Training Group</b> in 2010. Now known as <b>Lapunti Karilyon</b>."
   ],
   "credentials": {
-    "rank": "Guro (Lakan Apat — Instructor)",
-    "promotedBy": "Promoted by the art's Supreme Grandmaster, SGM Undo Caburnay, in 2015",
+    "rank": "<b>Guro</b> (<i>Lakan Apat</i> - Instructor)",
+    "promotedBy": "Promoted by the art's late Supreme Grandmaster, SGM Undo Caburnay, in 2015.",
     "organizations": [
       {
         "name": "Lapunti Karilyon",
@@ -44,7 +43,7 @@
   "timeline": [
     {
       "year": "Pre-2010",
-      "event": "Training in various martial arts: Karate, Judo/Combat Judo, Aikido, Wonwhado, Tai Chi"
+      "event": "Training in various martial arts"
     },
     {
       "year": "2010",
@@ -56,11 +55,11 @@
     },
     {
       "year": "2015",
-      "event": "Promoted to Guro (Lakan Apat) by SGM Undo Caburnay during the annual Club Seminar and Promotions"
+      "event": "Promoted to Guro (Lakan Apat) by SGM Undo Caburnay during the annual club seminar and promotions"
     },
     {
       "year": "Present",
-      "event": "Active instructor at Lapunti Karilyon, UP Diliman"
+      "event": "Active instructor at Lapunti Karilyon, University of the Philippines, Diliman campus"
     }
   ]
 }

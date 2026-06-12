@@ -1,25 +1,25 @@
 {
-  "eyebrow": "Train",
+  "eyebrow": "Training Modes",
   "heading": "Train With Me",
   "offerings": [
     {
       "title": "Private Sessions",
-      "description": "One-on-one or small group instruction at my home location, or yours within Metro Manila and Cavite."
+      "description": "One-on-one or small group instruction. Depending on schedule, location, and travel arrangement."
     },
     {
       "title": "Regular Training",
       "description": "Join Lapunti Karilyon's Sunday sessions at UP Diliman. Beginner-friendly, progressive curriculum."
     },
     {
-      "title": "Group Sessions",
-      "description": "Minimum 4 students. Available within Metro Manila and Cavite. Special session rates plus travel and accommodation expenses apply."
+      "title": "Group Seminar Sessions",
+      "description": "Minimum 10 students. Special session rates plus travel and accommodation expenses apply."
     },
     {
       "title": "Personal Students",
-      "description": "Accepting students who cannot train at Lapunti Karilyon. With permission to establish child groups or schools under the Lapunti Karilyon umbrella."
+      "description": "Accepting students who cannot train at Lapunti Karilyon. With the possibility of establishing a local child group or school under the Lapunti Karilyon umbrella."
     }
   ],
-  "note": "Open to seminar opportunities with sufficient lead time for preparation.",
+  "note": "As with any responsible martial art teacher, I reserve the right to interview or assess potential students, and if necessary, to refuse or discontinue instruction.",
   "buttonLabel": "Get in Touch",
   "buttonHref": "/contact?type=arnis-fma"
 }

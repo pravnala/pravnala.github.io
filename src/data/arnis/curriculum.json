@@ -1,29 +1,29 @@
 {
   "eyebrow": "Training",
   "heading": "What You'll\nLearn",
-  "disciplinesHeading": "Disciplines",
+  "disciplinesHeading": "Areas or Subdisciplines",
   "tracks": [
     {
       "title": "Full Curriculum",
-      "description": "The traditional route — a progressive structure with eligibility for rank promotions up to Guro (Instructor) level. A curriculum I helped design and formalize, currently used by Lapunti Karilyon. Based on traditional Lapunti lessons but structured and supplemented for progressive learning and easier absorption.",
+      "description": "<b>The traditional route</b>. A progressive structure with eligibility for rank promotions. A curriculum currently being used by Lapunti Karilyon and one that I helped design and formalize. Based on traditional Lapunti lessons but structured and supplemented for progressive learning and easier absorption.",
       "badge": "Rank Eligible"
     },
     {
       "title": "Focused Sessions",
-      "description": "Modular training designed for those who want to learn basic self-defense or particular aspects of the art. For those with limited time or who cannot commit to the full curriculum path.",
+      "description": "<b>Modular training</b>. Designed for those who want to learn basic self-defense or focus on particular aspects of the art. For those with limited time or who cannot commit to the full curriculum path.",
       "badge": "Flexible"
     }
   ],
   "weapons": [
     { "name": "Solo Baston", "description": "Single stick or long blade" },
-    { "name": "Doble Baston", "description": "Double stick or blade" },
+    { "name": "Doble Baston", "description": "Double sticks or blades" },
     { "name": "Espada y Daga", "description": "Stick/blade and dagger" },
     { "name": "Daga", "description": "Knife or dagger" },
     { "name": "Mano-Mano", "description": "Empty hand combat" },
     { "name": "Bangkaw", "description": "Long stick or staff" },
     {
-      "name": "Traditional Forms",
-      "description": "Classical drills and patterns"
+      "name": "Traditional Forms & Drills",
+      "description": "Classical drilling patterns"
     }
   ]
 }
