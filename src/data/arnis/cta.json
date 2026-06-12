@@ -1,25 +1,25 @@
 {
-  "eyebrow": "Training Modes",
-  "heading": "Train With Me",
+  "eyebrow": "Training Arrangements",
+  "heading": "Ways to\nTrain With Me",
   "offerings": [
     {
-      "title": "Private Sessions",
-      "description": "One-on-one or small group instruction. Depending on schedule, location, and travel arrangement."
+      "title": "Private Coaching",
+      "description": "Tailored one-on-one or small-group instruction. Scheduling and rates vary depending on your location and travel requirements."
     },
     {
-      "title": "Regular Training",
-      "description": "Join Lapunti Karilyon's Sunday sessions at UP Diliman. Beginner-friendly, progressive curriculum."
+      "title": "Regular Group Classes",
+      "description": "Join the Lapunti Karilyon community for our regular Sunday sessions at UP Diliman. Features a beginner-friendly, progressive curriculum."
     },
     {
-      "title": "Group Seminar Sessions",
-      "description": "Minimum 10 students. Special session rates plus travel and accommodation expenses apply."
+      "title": "Seminars & Workshops",
+      "description": "Intensive group training for clubs, martial arts schools, or organizations (minimum 10 participants). Custom rates plus travel and lodging apply. Please provide adequate lead time for scheduling and curriculum preparation."
     },
     {
-      "title": "Personal Students",
-      "description": "Accepting students who cannot train at Lapunti Karilyon. With the possibility of establishing a local child group or school under the Lapunti Karilyon umbrella."
+      "title": "Distance Mentorship / Affiliate Track",
+      "description": "Designed for dedicated practitioners outside our regular training area. This track combines remote coaching with flexible, custom-negotiated travel arrangements for intensive in-person training, offering a pathway to establish an official local study group or branch under the Lapunti Karilyon umbrella."
     }
   ],
-  "note": "As with any responsible martial art teacher, I reserve the right to interview or assess potential students, and if necessary, to refuse or discontinue instruction.",
+  "note": "To maintain a safe, respectful, and high-quality training environment, all prospective students undergo an initial intake assessment. I reserve the right to select students and manage enrollment to ensure the best fit for our community.",
   "buttonLabel": "Get in Touch",
   "buttonHref": "/contact?type=arnis-fma"
 }

@@ -4,6 +4,7 @@ import BtnArrow from '../common/BtnArrow.astro';
 import data from '../../data/arnis/cta.json';
 
 const { eyebrow, heading, offerings, note, buttonLabel, buttonHref } = data;
+const headingLines = heading.split('\n');
 ---
 
 <section
@@ -12,7 +13,16 @@ const { eyebrow, heading, offerings, note, buttonLabel, buttonHref } = data;
 >
   <h2 id="arnis-cta-heading" class="text-eyebrow">{eyebrow}</h2>
 
-  <p class="text-heading mb-12">{heading}</p>
+  <p class="text-heading mb-12">
+    {
+      headingLines.map((line, i) => (
+        <>
+          {i > 0 && <br />}
+          {line}
+        </>
+      ))
+    }
+  </p>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
     {
@@ -27,7 +37,7 @@ const { eyebrow, heading, offerings, note, buttonLabel, buttonHref } = data;
     }
   </div>
 
-  {note && <p class="text-sm text-ink-500 italic mb-12">{note}</p>}
+  {note && <p class="text-sm text-ink-500 italic mb-12 max-w-3xl">{note}</p>}
 
   <Button variant="primary" href={buttonHref} class="inline-flex gap-2">
     {buttonLabel}

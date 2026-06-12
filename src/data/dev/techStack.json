@@ -19,9 +19,11 @@
         "PostHog",
         "Google Analytics",
         "Google Tag Manager",
-        "Google Searh Console",
+        "Google Search Console",
+        "Google Maps",
         "Resend",
-        "Formspree"
+        "Formspree",
+        "Mapbox"
       ]
     }
   ]
