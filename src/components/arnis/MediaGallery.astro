@@ -8,12 +8,12 @@ const headingLines = heading.split('\n');
 ---
 
 <section
-  class="reveal section-container bg-ink-900"
+  class="section-container bg-ink-900"
   aria-labelledby="media-gallery-heading"
 >
-  <h2 id="media-gallery-heading" class="text-eyebrow">{eyebrow}</h2>
+  <h2 id="media-gallery-heading" class="reveal text-eyebrow">{eyebrow}</h2>
 
-  <p class="text-heading mb-12">
+  <p class="reveal text-heading mb-12">
     {
       headingLines.map((line, i) => (
         <>
@@ -26,7 +26,7 @@ const headingLines = heading.split('\n');
 
   {
     images.length > 0 ? (
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+      <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
         {images.map((image: { src: string; alt: string }) => (
           <div class="aspect-square overflow-hidden border border-ink-700">
             <img
@@ -39,7 +39,7 @@ const headingLines = heading.split('\n');
         ))}
       </div>
     ) : (
-      <div class="border border-ink-700 border-dashed p-12 text-center mb-12">
+      <div class="reveal border border-ink-700 border-dashed p-12 text-center mb-12">
         <p class="text-sm text-ink-500">Training photos coming soon.</p>
       </div>
     )
@@ -51,7 +51,7 @@ const headingLines = heading.split('\n');
     href={galleryLink.url}
     target="_blank"
     rel="noopener noreferrer"
-    class="inline-flex gap-2"
+    class="reveal inline-flex gap-2"
   >
     {galleryLink.label}
     <BtnArrow />

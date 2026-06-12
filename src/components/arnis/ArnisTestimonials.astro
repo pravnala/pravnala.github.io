@@ -8,14 +8,14 @@ const headingLines = heading.split('\n');
 {
   testimonials.length > 0 && (
     <section
-      class="reveal section-container bg-ink-800"
+      class="section-container bg-ink-800"
       aria-labelledby="arnis-testimonials-heading"
     >
-      <h2 id="arnis-testimonials-heading" class="text-eyebrow">
+      <h2 id="arnis-testimonials-heading" class="reveal text-eyebrow">
         {eyebrow}
       </h2>
 
-      <p class="text-heading mb-12">
+      <p class="reveal text-heading mb-12">
         {headingLines.map((line, i) => (
           <>
             {i > 0 && <br />}
@@ -24,7 +24,7 @@ const headingLines = heading.split('\n');
         ))}
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-8">
         {testimonials.map(({ quote, name, role, affiliation }) => (
           <blockquote class="relative border border-ink-600 p-8 flex flex-col gap-6 hover:border-ink-500 hover:bg-ink-700/50 hover:-translate-y-1 transition-all duration-500">
             <span
