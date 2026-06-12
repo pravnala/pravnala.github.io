@@ -228,28 +228,36 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
 </div>
 
 <script>
-  const formspreeEndpoint = 'https://formspree.io/f/xgvrekpn';
+  const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xlgkplkr';
 
-  async function handleSubmit(data: {
+  interface SubmitData {
     name: string;
     email: string;
-    message: any;
-  }) {
-    const res = await fetch(formspreeEndpoint, {
+    inquiryType: string;
+    message: string;
+  }
+
+  async function handleSubmit(data: SubmitData): Promise<boolean> {
+    const inquiryLabels: Record<string, string> = {
+      'web-development': 'Web Development',
+      'arnis-fma': 'Arnis / Filipino Martial Arts',
+      hello: 'Just saying hello',
+    };
+
+    const res = await fetch(FORMSPREE_ENDPOINT, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         name: data.name,
         email: data.email,
+        _replyto: data.email,
+        _subject: `[${inquiryLabels[data.inquiryType] ?? data.inquiryType}] New message from ${data.name}`,
+        'Inquiry Type': inquiryLabels[data.inquiryType] ?? data.inquiryType,
         message: data.message,
       }),
     });
 
-    if (res.ok) {
-      return true;
-    } else {
-      return false;
-    }
+    return res.ok;
   }
 
   document.addEventListener('astro:page-load', () => {
@@ -273,8 +281,11 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
     const form = document.getElementById(
       'contact-form'
     ) as HTMLFormElement | null;
+    const submitBtn = form?.querySelector(
+      'button[type="submit"]'
+    ) as HTMLButtonElement | null;
 
-    if (form) {
+    if (form && submitBtn) {
       form.addEventListener('submit', async (e: Event) => {
         e.preventDefault();
 
@@ -289,7 +300,7 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
         const matchaInput = document.getElementById(
           'matcha'
         ) as HTMLInputElement;
-        const location = document.getElementById(
+        const locationEl = document.getElementById(
           'location'
         ) as HTMLInputElement;
 
@@ -309,7 +320,6 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
         sendingError.classList.add('hidden');
 
         let valid = true;
-        let sendError = false;
 
         if (!nameEl.value.trim()) {
           nameErr.classList.replace('opacity-0', 'opacity-60');
@@ -331,38 +341,58 @@ const { captchaQuestion, captchaAnswer }: Props = Astro.props;
           valid = false;
         }
 
-        if (location.value.trim() !== '') {
+        // Honeypot: hidden field must remain empty
+        if (locationEl.value.trim() !== '') {
           valid = false;
         }
 
-        if (location.dataset.loc?.trim() !== matchaInput.value.trim()) {
+        // Math captcha
+        if (locationEl.dataset.loc?.trim() !== matchaInput.value.trim()) {
           matchaErr.classList.replace('opacity-0', 'opacity-60');
           valid = false;
         }
 
-        if (valid) {
-          const send = await handleSubmit({
-            name: nameEl.value,
-            email: emailEl.value,
-            message: '[' + inquiryEl.value + '] ' + messageEl.value,
-          });
+        if (!valid) return;
 
-          if (!send) {
-            sendError = true;
-          }
+        // Show loading state
+        const originalLabel = submitBtn.textContent ?? 'Send Message';
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending…';
+        submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
 
-          if (sendError) {
-            form.reset();
-            form.classList.add('hidden');
-            sendingError.classList.remove('hidden');
-            return;
-          }
+        const ok = await handleSubmit({
+          name: nameEl.value.trim(),
+          email: emailEl.value.trim(),
+          inquiryType: inquiryEl.value,
+          message: messageEl.value.trim(),
+        });
 
-          form.reset();
-          form.classList.add('hidden');
+        // Restore button regardless of outcome
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalLabel;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+
+        form.reset();
+        form.classList.add('hidden');
+
+        if (ok) {
           successMsg.classList.remove('hidden');
+        } else {
+          sendingError.classList.remove('hidden');
         }
       });
     }
   });
 </script>
+
+<style>
+  /* Disable Chrome's autofill background and text styling */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition:
+      background-color 5000s ease-in-out 0s,
+      color 5000s ease-in-out 0s;
+  }
+</style>
