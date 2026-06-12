@@ -13,6 +13,7 @@
     {
       "label": "Cloud & Services",
       "items": [
+        "Github",
         "Netlify",
         "Render",
         "Appwrite",
