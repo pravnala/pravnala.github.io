@@ -12,8 +12,8 @@ interface Props {
 }
 
 const webDevYears = new Date().getFullYear() - 2000;
-const fmaYears = new Date().getFullYear() - 2010;
-const defaultDescription = `${webDevYears} years building for the web. ${fmaYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`;
+const fmaTeachingYears = new Date().getFullYear() - 2015;
+const defaultDescription = `${webDevYears} years building for the web. ${fmaTeachingYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`;
 const { title, description = defaultDescription, ogImage } = Astro.props;
 
 // JSON-LD for SEO
