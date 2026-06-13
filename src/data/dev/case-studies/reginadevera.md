@@ -1,6 +1,6 @@
 ---
 title: Regina De Vera
-projectContext: Website redesign consultancy, tech stack migration, and development for Regina De Vera, a performing artist and educator. Keystatic CMS. The project also involved automated migration and reformatting of 100+ blog articles using python scripts.
+projectContext: Website redesign consultancy, tech stack migration, and development for Regina De Vera, a performing artist and educator. Keystatic CMS. The project also involved automated migration and reformatting of 100+ blog articles using python scripts. UNDER STAGING REVIEW PENDING GO LIVE.
 technologies:
   - Astro
   - Bun
