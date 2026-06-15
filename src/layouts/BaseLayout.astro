@@ -47,22 +47,20 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pravnala | {title}</title>
     {description && <meta name="description" content={description} />}
-    {ogImage && <meta property="og:image" content={ogImage} />}
     <meta property="og:title" content={title} />
-    {description && <meta property="og:description" content={description} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={siteUrl} />
     <meta property="og:title" content="Alvin Penaflor | IT Professional, Web Developer & FMA Instructor" />
-    <meta property="og:description" content="Explore my IT portfolio or join me for Lapunti Arnis De Abanico FMA training sessions." />
-    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:description" content={description ? description : "Explore my IT portfolio or join me for Lapunti Arnis De Abanico FMA training sessions."} />
+    <meta property="og:image" content={ogImage ? ogImage :ogImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
     <link rel="canonical" href={siteUrl} />
     <meta name="theme-color" content="#111827" />
-    <meta property="og:image:alt" content="Alvin Penaflor - Web Developer & FMA Instructor Portfolio" />
+    <meta property="og:image:alt" content="Alvin Penaflor | Web Developer & FMA Instructor" />
     <meta property="og:site_name" content="Pravnala" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
