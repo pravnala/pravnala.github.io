@@ -4,7 +4,7 @@ import { Font } from 'astro:assets';
 import '../styles/global.css';
 import Navbar from '../components/layout/Navbar.astro';
 import Footer from '../components/layout/Footer.astro';
-import { Seo } from 'astro-seo-meta';
+import { SEO } from 'astro-seo';
 
 interface Props {
   title: string;
@@ -47,7 +47,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <Seo
+    <!-- <Seo
       title={`pravnala | ${title}`}
       description={description}
       keywords={[
@@ -74,6 +74,18 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
       twitter={{
         image: '/og-image.jpg',
         card: 'summary_large_image',
+      }}
+    /> -->
+
+    <SEO
+      title={`pravnala | ${title}`}
+      description={description}
+      openGraph={{
+        basic: {
+          title: 'Alvin Penaflor | Web Developer & FMA Instructor',
+          type: 'website',
+          image: '/og-image.jpg',
+        },
       }}
     />
 
