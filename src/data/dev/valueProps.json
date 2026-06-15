@@ -4,7 +4,7 @@
   "items": [
     {
       "title": "Web Development & Front End",
-      "description": "From website design, design conversion to deployment. Building high-performance web experiences for projects of any size, from simple boutique sites to complex web applications."
+      "description": "From UI/UX design, design conversion and implementation, to deployment. Building high-performance web experiences for projects of any size, from simple boutique sites to complex web applications."
     },
     {
       "title": "Modern Tech Selection",
@@ -20,7 +20,7 @@
     },
     {
       "title": "AI-Enhanced Workflows",
-      "description": "Exploring and integrating AI-assisted tools to enhance development workflows, accelerate delivery, and improve code quality."
+      "description": "Exploring and integrating AI-assisted tools to enhance development workflows, accelerate delivery, and improve code quality and maintainability."
     },
     {
       "title": "Technical Communication",
