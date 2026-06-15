@@ -5,40 +5,25 @@ import '../styles/global.css';
 import Navbar from '../components/layout/Navbar.astro';
 import Footer from '../components/layout/Footer.astro';
 import { SEO } from 'astro-seo';
+import JsonLd from '../components/layout/JsonLd.astro';
+import type { Thing, WithContext } from 'schema-dts';
 
 interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  schema?: WithContext<Thing>;
 }
 
 const webDevYears = new Date().getFullYear() - 2000;
 const fmaTeachingYears = new Date().getFullYear() - 2015;
 const defaultDescription = `${webDevYears} years building for the web. ${fmaTeachingYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`;
-const { title, description = defaultDescription, ogImage } = Astro.props;
-
-// JSON-LD for SEO
-// const personSchema = {
-//   '@context': 'https://schema.org',
-//   '@type': 'Person',
-//   name: 'Alvin Penaflor',
-//   url: 'https://pravnala.github.io/',
-//   hasOccupation: [
-//     {
-//       '@type': 'Occupation',
-//       name: 'IT Professional and Web Developer',
-//     },
-//     {
-//       '@type': 'Occupation',
-//       name: 'Filipino Martial Arts (FMA) Instructor',
-//       description: 'Lapunti Arnis De Abanico Instructor teaching at UP Diliman',
-//     },
-//   ],
-// };
-
-// Open Graph
-const siteUrl = 'https://pravnala.github.io';
-const ogImageUrl = `${siteUrl}/og-image.jpg`;
+const {
+  title,
+  description = defaultDescription,
+  ogImage,
+  schema,
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -47,36 +32,6 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- <Seo
-      title={`pravnala | ${title}`}
-      description={description}
-      keywords={[
-        'web developer',
-        'web development',
-        'website development',
-        'IT consultant',
-        'fma',
-        'filipino martial arts',
-        'arnis',
-        'lapunti',
-        'lapunti arnis de abanico',
-        'arnis instructor',
-        'arnis instruction',
-      ]}
-      themeColor="#060606"
-      colorScheme="dark"
-      robots="index, follow"
-      facebook={{
-        image: '/og-image.jpg',
-        url: 'https://pravnala.github.io',
-        type: 'website',
-      }}
-      twitter={{
-        image: '/og-image.jpg',
-        card: 'summary_large_image',
-      }}
-    /> -->
-
     <SEO
       title={`pravnala | ${title}`}
       description={description}
@@ -84,7 +39,7 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
         basic: {
           title: 'Alvin Penaflor | Web Developer & FMA Instructor',
           type: 'website',
-          image: '/og-image.jpg',
+          image: ogImage ? ogImage : '/og-image.jpg',
         },
         image: {
           type: 'image/jpeg',
@@ -105,20 +60,6 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
       }}
     />
 
-    <!-- 
-    <meta property="og:image:width" content="800" />
-    <meta property="og:image:height" content="630" />
-
-    <link rel="canonical" href={siteUrl} />
-    
-    <meta
-      property="og:image:alt"
-      content="Alvin Penaflor | Web Developer & FMA Instructor"
-    />
-    <meta property="og:site_name" content="Pravnala" />
-    <meta property="og:locale" content="en_US" />
-    -->
-
     <!-- Favicon / App Icon -->
     <link
       rel="icon"
@@ -135,6 +76,9 @@ const ogImageUrl = `${siteUrl}/og-image.jpg`;
     />
     <meta name="apple-mobile-web-app-title" content="Pravnala" />
     <link rel="manifest" href="/site.webmanifest?v=20260612" />
+
+    <!-- JSON-LD -->
+    {schema && <JsonLd schema={schema} />}
 
     <!-- Anti-FOUC: site is permanently dark -->
     <script is:inline>

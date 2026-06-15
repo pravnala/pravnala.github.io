@@ -3,14 +3,36 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/home/Hero.astro';
 import DualPath from '../components/home/DualPath.astro';
 import CorePhilosophy from '../components/home/CorePhilosophy.astro';
+import type { WithContext, Person } from 'schema-dts';
 
 const webDevYears = new Date().getFullYear() - 2000;
 const fmaTeachingYears = new Date().getFullYear() - 2015;
+
+const personSchema: WithContext<Person> = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Alvin Penaflor',
+  url: 'https://pravnala.github.io/',
+  // Links your hosted site to public code footprint
+  sameAs: ['https://github.com/pravnala'],
+  hasOccupation: [
+    {
+      '@type': 'Occupation',
+      name: 'IT Professional and Web Developer',
+    },
+    {
+      '@type': 'Occupation',
+      name: 'Filipino Martial Arts (FMA) / Arnis Instructor',
+      description: 'Lapunti Arnis De Abanico Instructor',
+    },
+  ],
+};
 ---
 
 <BaseLayout
   title="Web Developer & FMA Instructor"
   description={`${webDevYears} years building for the web. ${fmaTeachingYears} years teaching Lapunti Arnis de Abanico. Precision, discipline, and craftsmanship in everything.`}
+  schema={personSchema}
 >
   <Hero />
   <DualPath />

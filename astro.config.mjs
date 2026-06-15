@@ -11,6 +11,7 @@ export default defineConfig({
   site: 'https://pravnala.github.io',
   base: '/',
   vite: {
+    // @ts-ignore
     plugins: [tailwindcss()],
   },
   integrations: [mdx(), sitemap()],

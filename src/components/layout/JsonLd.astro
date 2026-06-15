@@ -1,0 +1,21 @@
+---
+// src/components/JsonLd.astro
+import type { Thing, WithContext } from 'schema-dts';
+
+interface Props {
+  schema: WithContext<Thing> | Thing[];
+}
+
+const { schema } = Astro.props;
+
+// Escaping helper to ensure valid script content and prevent XSS injection
+function safeJsonLd(data: unknown): string {
+  return JSON.stringify(data)
+    .replace(/</g, '\\u003C')
+    .replace(/>/g, '\\u003E')
+    .replace(/&/g, '\\u0026')
+    .replace(/'/g, '\\u0027');
+}
+---
+
+<script type="application/ld+json" set:html={safeJsonLd(schema)} />
