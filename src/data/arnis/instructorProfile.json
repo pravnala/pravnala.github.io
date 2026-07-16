@@ -9,7 +9,7 @@
   ],
   "credentials": {
     "rank": "<b>Guro</b> (<i>Lakan Apat</i> - Instructor)",
-    "promotedBy": "Promoted by the art's late Supreme Grandmaster, SGM Undo Caburnay, in 2015.",
+    "promotedBy": "Promoted and certified by the late Supreme Grandmaster, SGM Undo Caburnay, in 2015.",
     "organizations": [
       {
         "name": "Lapunti Karilyon",
@@ -31,22 +31,28 @@
   "lineage": [
     {
       "names": ["Arsenio Caburnay"],
-      "title": "Main developer & originator of the Caburnay family art"
+      "title": "Main developer & originator of the Caburnay family art. A 'panday' or blacksmith by trade who went around the Visayas and Mindanao to ply his trade and learn from different masters of the area."
     },
     {
       "names": ["GM Felimon Caburnay"],
-      "title": "Established the early Escrima de Abanico group, later became the Lapunti Arnis De Abanico school or style"
+      "title": "Grand Master. Established the early Escrima de Abanico group, later became the Lapunti Arnis De Abanico school or style"
     },
     {
       "names": ["SGM Prudencio 'Undo' Caburnay"],
       "title": "Supreme Grandmaster of Lapunti Arnis De Abanico"
     },
-    { "names": ["GM Cris Ampit"], "title": "Grandmaster" },
+    {
+      "names": ["GM Crisanto 'Cris' Ampit"],
+      "title": "Grandmaster. Direct student of GM Felimon and SGM Undo Caburnay. Brought the art of Lapunti Arnis De Abanico to Luzon."
+    },
     {
       "names": ["SM Danilo 'Buboy' Ador Jr.", "SM Edwin 'Nonoy' Doncillo"],
-      "title": "Senior Masters"
+      "title": "Senior Masters. First cousins and students of GM Cris Ampit from an early age. The most senior practitioners of Lapunti in Luzon."
     },
-    { "names": ["Alvin Penaflor"], "title": "Guro" }
+    {
+      "names": ["Guro Alvin Penaflor"],
+      "title": "Lakan Apat or Guro (teacher/instructor). Direct student of both SM Buboy Ador and SM Nonoy Doncillo."
+    }
   ],
   "timeline": [
     {
@@ -67,7 +73,7 @@
     },
     {
       "year": "Present",
-      "event": "Active instructor at Lapunti Karilyon, University of the Philippines, Diliman campus"
+      "event": "Active instructor at Lapunti Karilyon, University of the Philippines, Diliman campus and teaching a few private students on spare time."
     }
   ]
 }

@@ -1,31 +1,54 @@
 ---
 import data from '../../data/arnis/aboutTheArt.json';
+import { Image } from 'astro:assets';
 
 const { eyebrow, heading, intro, characteristics, founders, acronym } = data;
 const headingLines = heading.split('\n');
+
+import ladaiLogo from '../../assets/images/arnis/LADAI-logo-colored.webp';
 ---
 
 <section
-  class="section-container bg-ink-900"
+  class="section-container relative bg-ink-900"
   aria-labelledby="about-the-art-heading"
 >
   <h2 id="about-the-art-heading" class="reveal text-eyebrow">{eyebrow}</h2>
 
-  <p class="reveal text-heading mb-6">
-    {
-      headingLines.map((line, i) => (
-        <>
-          {i > 0 && <br />}
-          {line}
-        </>
-      ))
-    }
-  </p>
-
-  <p
-    class="reveal text-sm md:text-base leading-relaxed text-ink-300 max-w-3xl mb-12"
-    set:html={intro}
+  <Image
+    src={ladaiLogo}
+    alt="LADAI Logo"
+    width={180}
+    height={180}
+    class="reveal md:hidden mb-6"
   />
+
+  <div class="flex items-start space-x-4 mb-12">
+    <div>
+      <p class="reveal text-heading mb-6">
+        {
+          headingLines.map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))
+        }
+      </p>
+
+      <p
+        class="reveal text-sm md:text-base leading-relaxed text-ink-300 max-w-lg"
+        set:html={intro}
+      />
+    </div>
+
+    <Image
+      src={ladaiLogo}
+      alt="LADAI Logo"
+      width={260}
+      height={260}
+      class="reveal hidden md:inline w-[220px] lg:w-[260px]"
+    />
+  </div>
 
   <!-- Characteristics -->
   <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -51,30 +74,24 @@ const headingLines = heading.split('\n');
   </p>
 
   <!-- LAPUNTI Acronym -->
-  <!-- <div class="reveal border-t border-ink-700 pt-8">
-    <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-500 mb-4">
+  <div class="reveal border-t border-ink-700 pt-8">
+    <p class="text-xs font-bold tracking-[0.15em] uppercase text-ink-300 mb-4">
       {acronym.label}
     </p>
-    <div class="flex flex-wrap gap-x-6 gap-y-2">
+    <div class="mb-3 tracking-wider text-sm uppercase">
+      La<span class="text-ink-400">bangon</span> • Pun<span class="text-ink-400"
+        >ta Princesa</span
+      > • Ti<span class="text-ink-400">sa</span>
+    </div>
+    <div class="flex flex-wrap gap-x-3 gap-y-2 text-sm">
       {
         acronym.values.map((value) => (
-          <span class="text-sm text-ink-200 font-bold">{value}</span>
+          <span class="text-ink-200 font-bold tracking-wider flex">
+            <span class="text-ink-100">{value.charAt(0)}</span>
+            <span class="text-ink-500">{value.substring(1)}</span>
+          </span>
         ))
       }
-    </div>
-  </div> -->
-
-  <div
-    class="text-sm reveal text-ink-500 border-t border-ink-700 pt-8 tracking-wide"
-  >
-    <p class="leading-relaxed mb-3">
-      <b>LAPUNTI:</b> The three <i>barangays</i> in Cebu where the Caburnays lived
-      and honed the art, and the core ideals every practitioner strives to embody.
-    </p>
-    <div class="mb-3">Labangon • Punta Princesa • Tisa</div>
-    <div class="">
-      Love • Artistry • Philosphy • Unity • Nimbleness • Truthfulness •
-      Integrity
     </div>
   </div>
 </section>

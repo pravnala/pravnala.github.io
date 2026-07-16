@@ -1,5 +1,7 @@
 ---
 import data from '../../data/arnis/instructorProfile.json';
+import alvinImg from '../../assets/images/arnis/guro-alvin.png';
+import { Image } from 'astro:assets';
 
 const {
   eyebrow,
@@ -43,13 +45,18 @@ const headingLines = heading.split('\n');
         ))
       }
 
+      <div class="relative mt-5 border-4 border-ink-400 inline-block">
+        <Image src={alvinImg} alt="Guro Alvin Penaflor" />
+        <div class="img-attribution">Photo by Josh Balburias</div>
+      </div>
+
       <!-- Credentials -->
       <div class="reveal pt-8 space-y-3">
-        <p class="text-sm text-ink-700" set:html={credentials.rank} />
-        <p class="text-sm text-ink-700">
+        <p class="text-ink-700 leading-0" set:html={credentials.rank} />
+        <div class="text-sm text-ink-600">
           {credentials.promotedBy}
-        </p>
-        <div class="flex flex-wrap gap-3 pt-2">
+        </div>
+        <div class="flex flex-wrap gap-3 pt-5">
           {
             credentials.organizations.map(({ name, url }) =>
               url ? (

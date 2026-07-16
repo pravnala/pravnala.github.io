@@ -1,6 +1,7 @@
 ---
 import Button from '../common/Button.astro';
-import BtnArrow from '../common/BtnArrow.astro';
+import { Image } from 'astro:assets';
+import karilyonLogo from '../../assets/images/arnis/lapunti-karilyon-logo.webp';
 import data from '../../data/arnis/karilyon.json';
 
 const {
@@ -22,22 +23,40 @@ const headingLines = heading.split('\n');
 >
   <h2 id="karilyon-heading" class="reveal text-eyebrow">{eyebrow}</h2>
 
-  <p class="reveal text-heading mb-6">
-    {
-      headingLines.map((line, i) => (
-        <>
-          {i > 0 && <br />}
-          {line}
-        </>
-      ))
-    }
-  </p>
+  <Image
+    src={karilyonLogo}
+    width={180}
+    alt="LADAI Logo"
+    class="reveal md:hidden mb-6"
+  />
 
-  <p
-    class="reveal text-sm md:text-base leading-relaxed text-ink-200 max-w-3xl mb-12"
-  >
-    {description}
-  </p>
+  <div class="flex items-start space-x-10">
+    <div>
+      <p class="reveal text-heading mb-6">
+        {
+          headingLines.map((line, i) => (
+            <>
+              {i > 0 && <br />}
+              {line}
+            </>
+          ))
+        }
+      </p>
+
+      <p
+        class="reveal text-sm md:text-base max-w-lg leading-relaxed text-ink-200 mb-12"
+      >
+        {description}
+      </p>
+    </div>
+    <Image
+      src={karilyonLogo}
+      alt="LADAI Logo"
+      width={320}
+      height={232}
+      class="reveal hidden md:inline w-[320px]"
+    />
+  </div>
 
   <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
     <!-- Details -->

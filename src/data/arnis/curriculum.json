@@ -1,7 +1,7 @@
 {
   "eyebrow": "Training",
   "heading": "What You'll\nLearn",
-  "disciplinesHeading": "Areas or Subdisciplines",
+  "disciplinesHeading": "Subdisciplines",
   "tracks": [
     {
       "title": "Full Curriculum",
@@ -16,11 +16,10 @@
   ],
   "weapons": [
     { "name": "Solo Baston", "description": "Single stick or long blade" },
-    { "name": "Doble Baston", "description": "Double sticks or blades" },
-    { "name": "Espada y Daga", "description": "Stick/blade and dagger" },
     { "name": "Daga", "description": "Knife or dagger" },
+    { "name": "Espada y Daga", "description": "Stick/blade and dagger" },
+    { "name": "Doble Baston", "description": "Double sticks or blades" },
     { "name": "Mano-Mano", "description": "Empty hand combat" },
-    { "name": "Bangkaw", "description": "Long stick or staff" },
     {
       "name": "Traditional Forms & Drills",
       "description": "Classical drilling patterns"
