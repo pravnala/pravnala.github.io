@@ -9,7 +9,7 @@
   "stats": [
     { "value": "{years}", "label": "Years of experience" },
     { "value": "100+", "label": "Projects delivered" },
-    { "value": "SSG", "label": "Preferred architecture" },
+    { "value": "Astro / Svelte", "label": "Preferred stack" },
     { "value": "∞", "label": "Ongoing learning" }
   ]
 }

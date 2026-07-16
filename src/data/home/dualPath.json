@@ -7,7 +7,7 @@
     "stats": [
       { "value": "{webDevYears}", "label": "Years Experience" },
       { "value": "100+", "label": "Projects" },
-      { "value": "SSG", "label": "Specialist" }
+      { "value": "Astro / Svelte", "label": "Specialist" }
     ],
     "primaryButton": { "label": "View Work", "href": "/dev" },
     "secondaryButton": {
