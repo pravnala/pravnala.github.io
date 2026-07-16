@@ -1,5 +1,23 @@
 [
   {
+    "period": "2004 - 2014, 2024 - PRESENT",
+    "company": "Various companies and organizations",
+    "role": "Freelance Senior Web Developer / IT Consultant",
+    "scope": "Startup co-founder. Websites and web applications development. Technical consultancy. ",
+    "technologies": [
+      "Astro",
+      "Svelte",
+      "SvelteKit",
+      "Tailwind",
+      "PHP",
+      "Yii",
+      "Wordpress",
+      "Processwire",
+      "Foundation",
+      "Bootstrap"
+    ]
+  },
+  {
     "period": "2020 - 2024",
     "company": "WWölfe.io",
     "role": "Senior Front End Developer",
@@ -16,7 +34,7 @@
   },
   {
     "period": "2014 - 2020",
-    "company": "Offshorly",
+    "company": "Offshorly / Coapperative",
     "role": "Senior Developer",
     "scope": "Design, development, and stack migration of corporate/organizational websites, Wordpress plugin development, development of custom web/intranet tools.",
     "technologies": [
@@ -48,23 +66,5 @@
     "role": "Supervising Applications Systems Engineer",
     "scope": "Served as developer, assistant project manager, support engineer, technical manuals co-author, and crash-course instructor.",
     "technologies": ["C", "Java", "J2EE", "Visual Basic", ".NET"]
-  },
-  {
-    "period": "2004 - 2014, 2024 - PRESENT",
-    "company": "Various other companies and organizations",
-    "role": "Freelance Senior Web Developer / IT Consultant",
-    "scope": "Startup co-founder. Websites and web applications development. Technical consultancy. ",
-    "technologies": [
-      "Astro",
-      "Svelte",
-      "SvelteKit",
-      "Tailwind",
-      "PHP",
-      "Yii",
-      "Wordpress",
-      "Processwire",
-      "Foundation",
-      "Bootstrap"
-    ]
   }
 ]
