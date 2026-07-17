@@ -1,6 +1,5 @@
 ---
 import Button from '../common/Button.astro';
-import BtnArrow from '../common/BtnArrow.astro';
 import data from '../../data/arnis/media.json';
 
 const { eyebrow, heading, images, galleryLink } = data;
@@ -26,15 +25,18 @@ const headingLines = heading.split('\n');
 
   {
     images.length > 0 ? (
-      <div class="reveal grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
+      <div class="reveal grid grid-cols-1 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-4 mb-12">
         {images.map((image: { src: string; alt: string }) => (
-          <div class="aspect-square overflow-hidden border border-ink-700">
+          <div class="relative group aspect-square overflow-hidden border border-ink-700">
             <img
               src={image.src}
               alt={image.alt}
-              class="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-500"
+              class=" w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-500 ease-in-out"
               loading="lazy"
             />
+            <div class="absolute bottom-0 text-center left-0 px-3 py-4 text-xs md:text-sm text-ink-200 bg-ink-900/70 w-full opacity-100 pointer-fine:opacity-0 pointer-fine:group-hover:opacity-100 transition-opacity duration-500 ease-in-out ">
+              {image.alt}
+            </div>
           </div>
         ))}
       </div>
@@ -54,6 +56,20 @@ const headingLines = heading.split('\n');
     class="reveal inline-flex gap-2"
   >
     {galleryLink.label}
-    <BtnArrow />
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+      <polyline points="15 3 21 3 21 9"></polyline>
+      <line x1="10" y1="14" x2="21" y2="3"></line>
+    </svg>
   </Button>
 </section>

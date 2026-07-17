@@ -30,33 +30,31 @@ const headingLines = heading.split('\n');
     class="reveal md:hidden mb-6"
   />
 
-  <div class="flex items-start space-x-10">
-    <div>
-      <p class="reveal text-heading mb-6">
-        {
-          headingLines.map((line, i) => (
-            <>
-              {i > 0 && <br />}
-              {line}
-            </>
-          ))
-        }
-      </p>
+  <div class="flex items-start space-x-8">
+    <p class="reveal text-heading mb-6">
+      {
+        headingLines.map((line, i) => (
+          <>
+            {i > 0 && <br />}
+            {line}
+          </>
+        ))
+      }
+    </p>
 
-      <p
-        class="reveal text-sm md:text-base max-w-lg leading-relaxed text-ink-200 mb-12"
-      >
-        {description}
-      </p>
-    </div>
     <Image
       src={karilyonLogo}
       alt="LADAI Logo"
       width={320}
       height={232}
-      class="reveal hidden md:inline w-[320px]"
+      class="reveal hidden md:inline w-[200px]"
     />
   </div>
+  <p
+    class="reveal text-sm md:text-base max-w-lg leading-relaxed text-ink-200 mb-12"
+  >
+    {description}
+  </p>
 
   <div class="reveal grid grid-cols-1 lg:grid-cols-2 gap-12">
     <!-- Details -->

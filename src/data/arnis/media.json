@@ -1,9 +1,36 @@
 {
   "eyebrow": "Gallery",
   "heading": "In Practice",
-  "images": [],
+  "images": [
+    {
+      "src": "/images/arnis/img-02.webp",
+      "alt": "Leading students Regina De Vera and Marionne Diamse through the Lapunti Triangular Drill. Photo by Josh Balburias."
+    },
+    {
+      "src": "/images/arnis/img-03.webp",
+      "alt": "Checking an Espada y Daga lock being performed by students Jerico Lagdameo and Daniel Wong. Photo by Josh Balburias."
+    },
+    {
+      "src": "/images/arnis/img-04.webp",
+      "alt": "Espada y Daga training with Master Buboy Ador. Photo by Josh Balburias."
+    },
+    {
+      "src": "/images/arnis/img-01.webp",
+      "alt": "Early UP days rainy day training. With my brother Emil, supervised by Master Nonoy Doncillo. Circa 2012."
+    }
+  ],
   "galleryLink": {
-    "label": "View Full Gallery",
+    "label": "View Full Gallery in Lapunti Karilyon",
     "url": "https://lapunti.org/gallery"
-  }
+  },
+  "reserverd-images": [
+    {
+      "src": "/images/arnis/img-05.webp",
+      "alt": "With private students Ivan and Justinne Rivera, with their bengal tiger pet named 'Lakan' in the background. Silang, Cavite."
+    },
+    {
+      "src": "/images/arnis/img-06.webp",
+      "alt": "With private students in Sta. Rosa, Laguna. UP Fraternity brother Jack Barajas and sons."
+    }
+  ]
 }
