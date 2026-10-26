@@ -1,6 +1,6 @@
 ---
 title: Water Supply Survey Map
-projectContext: Web application design and development of a survey respondent locations map for a water supply monitoring department of the University of the Philippines College of Engineering. Raw survey data conversion and ingestion, interactive map plotting, data filtering and display.
+projectContext: Web application design and development of a fully interactive survey respondents location map for a water supply monitoring department of the University of the Philippines College of Engineering. Raw data ingestion and conversion from excel sheets, geolocation, interactive display and filtering of more than 60k data points.
 technologies:
   - Astro
   - Svelte

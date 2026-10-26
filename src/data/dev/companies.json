@@ -1,9 +1,9 @@
 [
   {
     "period": "2004 - 2014, 2024 - PRESENT",
-    "company": "Various companies and organizations",
+    "company": "Various clients, companies and organizations",
     "role": "Freelance Senior Web Developer / IT Consultant",
-    "scope": "Startup co-founder. Websites and web applications development. Technical consultancy. ",
+    "scope": "Websites and web applications development. Technical writing/communication and consultancy. Startup co-founder.",
     "technologies": [
       "Astro",
       "Svelte",
@@ -21,12 +21,14 @@
     "period": "2020 - 2024",
     "company": "WWölfe.io",
     "role": "Senior Front End Developer",
-    "scope": "Planning, research, testing, selection, implementation and deployment of modern front end technologies and solutions for various web projects.",
+    "scope": "Development and support for a number of large membership and high-traffic sites. Tech research, testing, selection, integration and customized implementation",
+    "scopeOld": "Planning, research, testing, selection, implementation and deployment of modern front end technologies and solutions for various web projects.",
     "technologies": [
       "NextJS",
       "Vue.js",
       "Typescript",
       "Tailwind",
+      "DaisyUI",
       "Shadcn/UI",
       "AWS",
       "MJML"
@@ -36,7 +38,7 @@
     "period": "2014 - 2020",
     "company": "Offshorly / Coapperative",
     "role": "Senior Developer",
-    "scope": "Design, development, and stack migration of corporate/organizational websites, Wordpress plugin development, development of custom web/intranet tools.",
+    "scope": "Design, development, and stack migration of corporate/organizational websites. Wordpress plugin development. Development of custom web/intranet tools.",
     "technologies": [
       "PHP",
       "WordPress",

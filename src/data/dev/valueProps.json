@@ -4,27 +4,27 @@
   "items": [
     {
       "title": "Web Development & Front End",
-      "description": "From UI/UX design, design conversion and implementation, to deployment. Building high-performance web experiences for projects of any size, from simple boutique sites to complex web applications."
+      "description": "<b>UI/UX design, design-to-HTML conversion, end-to-end website development (from planning, design, iteration, to deployment)</b>. Building high-performance web projects of any size, from simple boutique sites to complex web applications."
     },
     {
       "title": "Modern Tech Selection",
-      "description": "Planning, research, testing, and implementation. Evaluating and selecting modern front-end technologies and software tools tailored to your specific project needs."
+      "description": "<b/>Needs assessment, research, testing, stack selection and implementation</b>. Evaluating and selecting modern front-end technologies and software tools tailored to your specific project needs."
     },
     {
       "title": "Project Management",
-      "description": "Managing project lifecycles and timelines. Keeping deliverables organized and coordinating with cross-functional teams to ensure on-time delivery."
+      "description": "<b>Managing project lifecycles and timelines</b>. Keeping deliverables organized and coordinating with cross-functional teams to ensure on-time delivery."
     },
     {
       "title": "IT Consultancy",
-      "description": "Strategic technical advisory backed by 25+ years of experience. Helping startups and businesses map out architectures, build prototypes, and avoid costly technical mistakes."
+      "description": "<b>Strategic technical advise and consultancy. Backed by 25+ years of industry experience</b>. Helping startups and businesses in mapping out architectures, building prototypes, and avioding costly technical mistakes."
     },
     {
       "title": "AI-Enhanced Workflows",
-      "description": "Exploring and integrating AI-assisted tools to enhance development workflows, accelerate delivery, and improve code quality and maintainability."
+      "description": "<b>Not for vibe coding or producing AI slop code</b>. Exploring and integrating AI-assisted tools with appropriate guardrails to enhance development workflows, accelerate delivery, and improve code quality and maintainability."
     },
     {
       "title": "Technical Communication",
-      "description": "Documentation, guides, training manuals, and system specs. Translating complex technical concepts into clear, actionable documents."
+      "description": "<b>Documentation, guides, training manuals, and system specs</b>. Translating complex technical concepts into clear, actionable documents."
     }
   ]
 }

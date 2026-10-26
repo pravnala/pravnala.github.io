@@ -1,15 +1,18 @@
 {
   "eyebrow": "About",
-  "heading": "Craftsman\nMentality",
+  "heading": "Digital\nCraftsman",
   "narrative": [
-    "I like to think of myself as a craftsman in this digital age. Someone who takes pride in producing quality work tailored for each client. Where the enjoyment that clients and users derives from the final product is a reward in itself.",
-    "A master craftsman chooses his tools well, even his projects deliberately, and brings years of distilled experience into the job. The work is not rushed. And when finished, embodies an elegant simplicity. Quality visible in the smallest details. Being a master craftsman may be an ideal, especially in this field, but it's an ideal that I'm trying to live by.",
-    "Decades in this craft has taught me one consistent lesson: don't chase hype. Good and reliable tools, tested practices, and sound principles outlast every buzzword cycle. Simplicity, performance, and maintainability win every time."
+    "<b>I've been building applications since 1999</b>. Started as an application systems engineer involved in server-side applications development, legacy systems support and maintenance, servicing a number of telecommunication companies and government agencies in the Philippines. Over the years I have transitioned to web design and development using mostly open source technology stacks for both local and foreign clients. From J2EE, PHP and Python web frameworks to modern Javascript stacks using VueJS and NextJS. I discovered Svelte around 2019 then Astro in the early 2020s and started using them for personal client projects.",
+    "Given a choice, these are the frameworks that I recommend to my clients along with Tailwind for frontend styling: Astro for websites and Svelte for web applications, or both combined for more complex web projects. Even with newer frameworks coming up, I find that these two are still unbeatable today in terms of performance, minimizing bloat, ease of development and maintainance.",
+    "<b>{years} of experience</b> taught me a number of valuable lessons and made me adopt a craftsman's approach to web development. To take pride in producing quality work tailored for each client. To choose the best tools, avoid needless complexity, and not rush through a job by ignoring or skimming over the finer details. Those would come to bite you in the end. The enjoyment that clients and users derive for a job well done is a reward in and by itself."
   ],
   "stats": [
     { "value": "{years}", "label": "Years of experience" },
     { "value": "100+", "label": "Projects delivered" },
-    { "value": "Astro / Svelte", "label": "Preferred stack" },
-    { "value": "∞", "label": "Ongoing learning" }
+    {
+      "value": "Astro<br />Svelte<br />Tailwind",
+      "label": "Current preferred stack"
+    },
+    { "value": "∞", "label": "Continuous learning" }
   ]
 }

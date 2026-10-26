@@ -26,18 +26,30 @@ const headingLines = heading.split('\n');
 
   <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
     {
-      stacks.map(({ label, items }) => (
+      stacks.map(({ label, items, otherItems }) => (
         <div>
           <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6">
             {label}
           </h3>
           <ul class="flex flex-wrap gap-2" aria-label={`${label} technologies`}>
             {items.map((item) => (
-              <li class="text-xs font-bold tracking-[0.12em] uppercase border border-ink-500 px-3 py-1.5 text-ink-200 hover:border-ink-400 hover:text-ink-50 transition-colors duration-500 cursor-default">
+              <li class="text-xs font-bold tracking-[0.12em] bg-ink-700/50 uppercase border border-ink-500 px-3 py-1.5 text-ink-200 hover:border-ink-300 hover:text-ink-100 transition-colors duration-500 cursor-default">
                 {item}
               </li>
             ))}
           </ul>
+          {otherItems && otherItems.length > 0 && (
+            <ul
+              class="flex flex-wrap gap-2 mt-3"
+              aria-label={`${label} technologies`}
+            >
+              {otherItems.map((item) => (
+                <li class="text-xs font-bold tracking-[0.12em] uppercase border border-ink-400 px-3 py-1.5 text-ink-200 opacity-60 transition-opacity hover:opacity-90 duration-500 cursor-default">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       ))
     }

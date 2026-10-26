@@ -5,16 +5,16 @@
   "fitHeading": "Where I do my best work",
   "notFitHeading": "Probably not the right match",
   "items": [
-    "Clients who want a thoughtful partner, not just a pair of hands",
-    "Projects where quality, performance, and maintainability matter long-term",
-    "Teams open to modern, lightweight stacks--like Astro, Svelte, and SvelteKit--over bloated defaults.",
+    "Clients who want a thoughtful partner, not just a pair of hands.",
+    "Projects where quality, performance, and maintainability matter long-term.",
+    "Teams open to modern, lightweight stacks over bloated alternatives.",
     "Engagements with clear goals and accessible decision-makers.",
     "Startups and small teams that need senior-level front-end expertise without the overhead."
   ],
   "notFit": [
-    "Projects that need something built fast and cheap. Speed and craft rarely coexist.",
+    "Projects that need something built fast and cheap. Rushed work and quality rarely coexist.",
     "Clients who want the latest hyped framework or technologies regardless of whether it fits the problem.",
-    "Projects paid entirely in company stock (equity) or speculative work arrangements.",
+    "Projects paid entirely in equity or speculative work arrangements.",
     "Projects with unclear goals, missing timelines, or loosely defined requirements."
   ]
 }

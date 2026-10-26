@@ -1,14 +1,47 @@
 {
-  "eyebrow": "Tech",
-  "heading": "Current\nStack",
+  "eyebrow": "Past & Current Stack",
+  "heading": "Tech Stack\nExperience",
   "stacks": [
     {
       "label": "Frameworks",
-      "items": ["Astro", "Svelte", "SvelteKit", "Keystatic", "Vue.js", "NextJS"]
+      "items": ["Astro", "Svelte", "SvelteKit"],
+      "otherItems": [
+        "Vue.js",
+        "NextJS",
+        "Laravel",
+        "Ruby on Rails",
+        "Flask",
+        "Yii",
+        "J2EE",
+        ".NET",
+        "Foundation",
+        "Bootstrap",
+        "MJML"
+      ]
+    },
+    {
+      "label": "Frontend",
+      "items": ["Tailwind"],
+      "otherItems": [
+        "ShadCN/UI",
+        "Foundation",
+        "Bootstrap",
+        "DaisyUI",
+        "JQuery",
+        "Flowbite",
+        "Less",
+        "Sass"
+      ]
+    },
+    {
+      "label": "CMS",
+      "items": ["Keystatic", "Vault CMS"],
+      "otherItems": ["Worpress", "Processwire", "Drupal"]
     },
     {
       "label": "Languages",
-      "items": ["Typescript", "Javascript", "Python", "HTML", "CSS"]
+      "items": ["Typescript", "Javascript", "Python", "HTML", "CSS"],
+      "otherItems": ["C", "C++", "Visual Basic", "PHP"]
     },
     {
       "label": "Cloud & Services",
@@ -18,15 +51,29 @@
         "Render",
         "Appwrite",
         "PostHog",
-        "Google Analytics",
-        "Google Tag Manager",
-        "Google Search Console",
-        "Google Maps",
+        "PageSpeed Insights",
         "Resend",
         "Formspree",
         "Mapbox",
         "etc."
+      ],
+      "otherItems": [
+        "Gitlab",
+        "Bitbucket",
+        "Google Analytics",
+        "Google Tag Manager",
+        "Google Search Console",
+        "GTmetrix",
+        "Google Maps",
+        "Digital Ocean",
+        "Vultr",
+        "AWS"
       ]
+    },
+    {
+      "label": "AI Workflow",
+      "items": ["Kiro"],
+      "otherItems": ["CodeRabbit", "Github Copilot", "Google Antigravity"]
     }
   ]
 }

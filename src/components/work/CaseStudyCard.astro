@@ -48,7 +48,7 @@ const projectImage =
   class:list={[
     'group relative border-4 border-ink-700 bg-ink-700 flex flex-col',
     'transition-all duration-500 ease-in-out hover:bg-ink-600 hover:-translate-y-3 hover:border-ink-600',
-    'max-w-[490px] overflow-hidden',
+    'max-w-122.5 overflow-hidden',
   ]}
 >
   <!-- Cover image -->
@@ -98,7 +98,7 @@ const projectImage =
         )
       }
       {
-        externalUrl && (
+        externalUrl ? (
           <Button
             href={externalUrl}
             target="_blank"
@@ -123,6 +123,8 @@ const projectImage =
               <line x1="10" y1="14" x2="21" y2="3" />
             </svg>
           </Button>
+        ) : (
+          <div class="text-ink-400 text-sm">Not publicly available</div>
         )
       }
     </div>

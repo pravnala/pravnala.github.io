@@ -1,10 +1,10 @@
 ---
 title: Regina De Vera
-projectContext: Website redesign consultancy, tech stack migration, and development for Regina De Vera, a Julliard-trained actor and educator. Keystatic CMS. The project also involved migration and reformatting of 100+ blog articles, automated using python scripts.
+projectContext: Website consultancy & redesign, tech stack migration, and development for Julliard-trained actor and educator Regina De Vera. Keystatic CMS backend. Automated migration, remapping and reformatting of 100+ blog articles from old Squarespace site using python crawler scripts.
 technologies:
   - Astro
   - Bun
-  - Keystatic
+  - Keystatic CMS
   - Tailwind
   - Typescript
   - Python

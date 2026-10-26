@@ -19,7 +19,7 @@ const pageHeadingLines = pageHeading.split('\n');
 >
   <h2 id="good-fit-heading" class="reveal text-eyebrow">{heading}</h2>
 
-  <p class="reveal text-heading mb-6">
+  <p class="reveal text-heading mb-12">
     {
       pageHeadingLines.map((line, i) => (
         <>
@@ -29,14 +29,14 @@ const pageHeadingLines = pageHeading.split('\n');
       ))
     }
   </p>
-  <p class="reveal leading-relaxed text-ink-300 mb-12 max-w-prose">
+  <!-- <p class="reveal leading-relaxed text-ink-300 mb-12 max-w-prose">
     {description}
-  </p>
+  </p> -->
 
   <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Fit card -->
     <div
-      class="border border-ink-600 p-8 md:p-10 border-l-4 border-l-ink-400 hover:border-ink-500 hover:-translate-y-3 transition-all duration-500 ease-in-out"
+      class="border bg-ink-700 border-ink-600 p-8 md:p-10 border-l-4 border-l-ink-400 hover:border-ink-500 hover:-translate-y-3 transition-all duration-500 ease-in-out"
     >
       <h3
         class="text-xl md:text-3xl font-black tracking-[-0.02em] mb-6 text-ink-50"
@@ -70,17 +70,17 @@ const pageHeadingLines = pageHeading.split('\n');
 
     <!-- Not a fit card -->
     <div
-      class="border border-ink-700 p-8 md:p-10 hover:border-ink-600 hover:-translate-y-3 transition-all duration-500 ease-in-out"
+      class="border border-ink-600 p-8 md:p-10 hover:border-ink-500 hover:-translate-y-3 transition-all duration-500 ease-in-out"
     >
       <h3
-        class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6 text-ink-400"
+        class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-6 text-ink-50"
       >
         {notFitHeading}
       </h3>
       <ul class="space-y-5" role="list">
         {
           notFit.map((item) => (
-            <li class="flex items-start gap-3 text-sm md:text-base leading-relaxed text-ink-400">
+            <li class="flex items-start gap-3 text-sm md:text-base leading-relaxed text-ink-200">
               <svg
                 width="16"
                 height="16"
