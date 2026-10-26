@@ -13,7 +13,7 @@
     },
     { "text": "IT Consultant & Technical Communicator", "bold": false },
     { "text": "Linux & Open Source Advocate", "bold": false },
-    { "text": "Cycling Enthusiast", "bold": false }
+    { "text": "Writer & Cycling Enthusiast", "bold": false }
   ],
   "buttons": [
     { "label": "Dev Work", "href": "/dev", "variant": "primary" },
