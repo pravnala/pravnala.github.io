@@ -13,13 +13,17 @@ function isActive(href: string): boolean {
   <div class="section-container h-16 py-0 flex items-center justify-between">
     <a
       href="/"
-      class="text-xl font-black transition-colors duration-500 ease-out text-ink-50 hover:text-ink-300 group"
+      class="text-xl font-black transition-colors duration-500 ease-out text-ink-50 hover:text-ink-400 group"
       aria-label="pra>nala — Home"
     >
       pra<span
-        class="text-ink-300/80 transition-transform duration-500 ease-out group-hover:text-ink-50"
+        class="text-ink-400 transition-colors duration-500 ease-out group-hover:text-ink-50"
         >v</span
       >nala
+      <span
+        class="font-light text-base ml-3 opacity-0 text-ink-400 group-hover:opacity-90 transition-opacity duration-500 ease-in-out"
+        >Alvin Penaflor</span
+      >
     </a>
 
     <!-- Desktop nav -->
@@ -67,12 +71,11 @@ function isActive(href: string): boolean {
       aria-label="Open navigation menu"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-[5px] border border-ink-300/40 transition-opacity hover:opacity-60"
+      class="flex md:hidden flex-col justify-center items-center w-9 h-9 gap-1.25 border border-ink-300/40 transition-opacity hover:opacity-60"
     >
-      <span class="hamburger-bar bar-top block w-4 h-[2px] bg-current"></span>
-      <span class="hamburger-bar bar-mid block w-4 h-[2px] bg-current"></span>
-      <span class="hamburger-bar bar-bottom block w-4 h-[2px] bg-current"
-      ></span>
+      <span class="hamburger-bar bar-top block w-4 h-0.5 bg-current"></span>
+      <span class="hamburger-bar bar-mid block w-4 h-0.5 bg-current"></span>
+      <span class="hamburger-bar bar-bottom block w-4 h-0.5 bg-current"></span>
     </button>
   </div>
 </header>
