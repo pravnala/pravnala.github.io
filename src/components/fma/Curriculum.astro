@@ -1,7 +1,16 @@
 ---
 import data from '../../data/fma/curriculum.json';
 
-const { eyebrow, heading, disciplinesHeading, tracks, weapons } = data;
+const {
+  eyebrow,
+  heading,
+  disciplinesHeading,
+  specModHeading,
+  specModDesc,
+  tracks,
+  modules,
+  specModules,
+} = data;
 const headingLines = heading.split('\n');
 ---
 
@@ -44,19 +53,43 @@ const headingLines = heading.split('\n');
     }
   </div>
 
-  <!-- Weapon Categories -->
-  <div class="reveal border-t border-ink-700 pt-12">
+  <!-- Traditional Curriculum -->
+  <div class="reveal border-t border-ink-700 pt-12 pb-12">
     <h3 class="reveal text-xl md:text-2xl font-black tracking-[-0.02em] mb-8">
       {disciplinesHeading}
     </h3>
     <div class="reveal grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {
-        weapons.map(({ name, description }) => (
+        modules.map(({ name, description }) => (
           <div class="group cursor-default">
             <p class="text-sm font-bold text-ink-100 mb-1 group-hover:text-ink-50 transition-colors duration-500">
               {name}
             </p>
             <p class="text-xs text-ink-400 group-hover:text-ink-300 transition-colors duration-500">
+              {description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Special Focus Modules -->
+  <div class="reveal border-t border-ink-700 pt-12">
+    <h3
+      class="reveal text-xl md:text-2xl font-black tracking-[-0.02em] mb-5 text-ink-600"
+    >
+      {specModHeading}
+    </h3>
+    <p class="text-ink-600 text-sm mb-12">{specModDesc}</p>
+    <div class="reveal grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      {
+        specModules.map(({ name, description }) => (
+          <div class="group cursor-default">
+            <p class="text-sm font-bold text-ink-600 mb-1 group-hover:text-ink-50 transition-colors duration-500">
+              {name}
+            </p>
+            <p class="text-xs text-ink-700 group-hover:text-ink-300 transition-colors duration-500">
               {description}
             </p>
           </div>

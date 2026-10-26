@@ -4,19 +4,19 @@
   "cards": [
     {
       "title": "Principles Over Techniques",
-      "description": "Understanding the 'why' behind every movement. A principle applies everywhere. Across weapons, ranges, and scenarios. A technique is situational. Master the principle and the techniques follow."
+      "description": "Understanding the 'why' behind every movement. A technique is situational. A principle applies everywhere; across weapons, ranges, and scenarios. Master the principle and the techniques follow. <i>'From one thing, know ten thousand things'</i>."
+    },
+    {
+      "title": "Make it Work",
+      "description": "You haven't really learned a skill if you can't make it work. A technique should be made operational by continuous drilling, pressure-testing, then refining based on what worked and what didn't. Learn, test, refine, repeat. <i>'All doubts must fall before a student can become a master'</i>."
     },
     {
       "title": "Own It",
-      "description": "Adapt, personalize, make it yours. You don't imitate your teacher forever. You internalize until the art becomes your own expression. The goal is finding your own Lapunti."
+      "description": "First, learn by doing what is shown, then by adapting it for yourself, and then you make it your own. Imitating your teacher can only take you so far. Absorb, internalize, until the art becomes your own expression. The ultimate goal is finding your own Lapunti."
     },
     {
       "title": "Traditional Knowledge, Modern Methods",
-      "description": "Respecting the art's roots and lineage while structuring training for progressive learning, measurable growth, and easier absorption. Old wisdom delivered through modern methodology."
-    },
-    {
-      "title": "Learn, Test, Refine, Repeat",
-      "description": "Every skill is drilled, then pressure-tested under resistance, then refined based on what worked and what didn't. The cycle never ends. Rank is a responsibility, not a finish line. The instructor is always a student."
+      "description": "Respect and honor the art's roots and lineage, while structuring training for progressive learning, measurable growth, and easier absorption. The teacher is also a student, and I'm always on the lookout for effective ways of transmitting old wisdom using modern methodology."
     }
   ]
 }

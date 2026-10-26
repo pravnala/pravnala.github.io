@@ -2,10 +2,10 @@
   "eyebrow": "Instructor Profile",
   "heading": "Guro\nAlvin Penaflor",
   "lineageHeading": "Lineage",
-  "timelineHeading": "Timeline",
+  "timelineHeading": "Personal History",
   "narrative": [
-    "Practiced and dabbled in other forms of martial arts from an early age before finding Lapunti. From Karate, Judo, Aikido, Tai Chi, Jeet Kune Do, Krav Maga to lesser known arts like Zeta Zen Aikido and Wonwhado.",
-    "Co-founded <b>Lapunti Arnis De Abanico UP Diliman Training Group</b> in 2010. Now known as <b>Lapunti Karilyon</b>."
+    "Practiced and dabbled in different forms of martial arts from an early age before finding Lapunti. From Karate, Judo, Aikido, Tai Chi, Jeet Kune Do, Krav Maga to lesser known arts like Zeta Zen Aikido and Wonwhado.",
+    "Co-founded <b>Lapunti Arnis De Abanico UP Diliman Training Group</b> in 2010. Now known as <i>Lapunti Pangkat Karilyon</i> (Lapunti Karilyon Group) or simply as <b>Lapunti Karilyon</b>."
   ],
   "credentials": {
     "rank": "<b>Guro</b> (<i>Lakan Apat</i> - Instructor)",
@@ -31,19 +31,19 @@
   "lineage": [
     {
       "names": ["Arsenio Caburnay"],
-      "title": "Main developer & originator of the Caburnay family art. A 'panday' or blacksmith by trade who went around the Visayas and Mindanao to ply his trade and learn from different masters of the area."
+      "title": "Main developer & originator of the Caburnay family art. A 'panday' or blacksmith by trade who went around the Visayas and Mindanao to ply his trade and learn from different masters of these regions."
     },
     {
       "names": ["GM Felimon Caburnay"],
-      "title": "Grand Master. Established the early Escrima de Abanico group, later became the Lapunti Arnis De Abanico school or style"
+      "title": "Grandmaster. Established and led the early Escrima de Abanico group, which later became the Lapunti Arnis De Abanico school or style."
     },
     {
       "names": ["SGM Prudencio 'Undo' Caburnay"],
-      "title": "Supreme Grandmaster of Lapunti Arnis De Abanico"
+      "title": "Supreme Grandmaster of Lapunti Arnis De Abanico. Further developed and refined the art passed down by his father and uncle into its present form."
     },
     {
       "names": ["GM Crisanto 'Cris' Ampit"],
-      "title": "Grandmaster. Direct student of GM Felimon and SGM Undo Caburnay. Brought the art of Lapunti Arnis De Abanico to Luzon."
+      "title": "Grandmaster. Direct student of GM Felimon and SGM Undo Caburnay. Migrated with his family from Cebu to Bulacan, bringing the art of Lapunti Arnis De Abanico to Luzon."
     },
     {
       "names": ["SM Danilo 'Buboy' Ador Jr.", "SM Edwin 'Nonoy' Doncillo"],
@@ -51,7 +51,7 @@
     },
     {
       "names": ["Guro Alvin Penaflor"],
-      "title": "Lakan Apat or Guro (teacher/instructor). Direct student of both SM Buboy Ador and SM Nonoy Doncillo."
+      "title": "Lakan Apat or <i>Guro</i> (teacher/instructor). Direct student of both SM Buboy Ador and SM Nonoy Doncillo."
     }
   ],
   "timeline": [
@@ -65,7 +65,7 @@
     },
     {
       "year": "2011",
-      "event": "Group officially recognized as a Lapunti chapter by SGM Undo Caburnay and LADAI Headquarters"
+      "event": "UP Diliman training group officially recognized as an independent Lapunti chapter by SGM Undo Caburnay and LADAI Headquarters"
     },
     {
       "year": "2015",
@@ -73,7 +73,7 @@
     },
     {
       "year": "Present",
-      "event": "Active instructor at Lapunti Karilyon, University of the Philippines, Diliman campus and teaching a few private students on spare time."
+      "event": "Active instructor at Lapunti Karilyon, University of the Philippines, Diliman campus and teaching a few private students on spare time"
     }
   ]
 }

@@ -1,11 +1,13 @@
 {
   "eyebrow": "Training",
   "heading": "What You'll\nLearn",
-  "disciplinesHeading": "Subdisciplines",
+  "disciplinesHeading": "Curriculum Modules",
+  "specModHeading": "Special Focus Modules",
+  "specModDesc": "This is just a preview of special courses that we are developing or considering for development. Contact me if anything catches your interest or to suggest another course you might be interested in taking.",
   "tracks": [
     {
       "title": "Full Curriculum",
-      "description": "<b>The traditional route</b>. A progressive structure with eligibility for rank promotions. Following the Lapunti Karilyon official curriculum. A curriculum that I helped to develop, based on traditional Lapunti lessons but structured and supplemented for progressive learning and easier absorption.",
+      "description": "<b>The traditional route</b>. A progressive structure with eligibility for rank promotions. Following the Lapunti Karilyon official curriculum. A curriculum that I helped to develop based on traditional Lapunti lessons, but structured and supplemented for progressive learning and easier absorption.",
       "badge": "Rank Eligible"
     },
     {
@@ -14,7 +16,7 @@
       "badge": "Flexible"
     }
   ],
-  "weapons": [
+  "modules": [
     { "name": "Solo Baston", "description": "Single stick or long blade" },
     { "name": "Daga", "description": "Knife or dagger" },
     { "name": "Espada y Daga", "description": "Stick/blade and dagger" },
@@ -22,7 +24,34 @@
     { "name": "Mano-Mano", "description": "Empty hand combat" },
     {
       "name": "Traditional Forms & Drills",
-      "description": "Classical drilling patterns"
+      "description": "Classical training patterns"
+    }
+  ],
+  "specModules": [
+    {
+      "name": "Basic Self Defense",
+      "description": "Basic defense course against common attacks"
+    },
+    {
+      "name": "Women's Self Defense",
+      "description": "Self defense course specially adapted for women"
+    },
+    {
+      "name": "Weapon Assessment & Acquisition",
+      "description": "Identifying and using everyday objects as a weapon"
+    },
+    {
+      "name": "Weapon Retention",
+      "description": "Preventing and countering disarms"
+    },
+    {
+      "name": "Weapon Transition",
+      "description": "Applying universal concepts from weapon to weapon and empty hand"
+    },
+    { "name": "Bangkaw", "description": "Long staff" },
+    {
+      "name": "Basic Solo Baston",
+      "description": "Short course on basic handling, striking and defense using the single stick"
     }
   ]
 }

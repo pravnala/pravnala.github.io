@@ -1,5 +1,5 @@
 {
-  "eyebrow": "The School",
+  "eyebrow": "Our Group",
   "heading": "Lapunti\nKarilyon",
   "trainingCardHeading": "Regular Training",
   "trainingLabels": {
@@ -19,7 +19,7 @@
     "location": "University of the Philippines Diliman, Quezon City, Philippines"
   },
   "link": {
-    "label": "Visit Lapunti Karilyon",
+    "label": "Lapunti Karilyon Website",
     "url": "https://lapunti.org/"
   }
 }

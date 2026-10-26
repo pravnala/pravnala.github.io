@@ -31,9 +31,10 @@ const headingLines = heading.split('\n');
           <h3 class="text-xl md:text-2xl font-black tracking-[-0.02em] mb-3">
             {title}
           </h3>
-          <p class="text-sm leading-relaxed text-ink-500 group-hover:text-ink-700 transition-colors duration-500 ease-in-out">
-            {description}
-          </p>
+          <p
+            class="text-sm leading-relaxed text-ink-500 group-hover:text-ink-700 transition-colors duration-500 ease-in-out"
+            set:html={description}
+          ></p>
         </div>
       ))
     }

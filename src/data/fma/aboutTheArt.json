@@ -1,18 +1,18 @@
 {
   "eyebrow": "The Art",
   "heading": "Lapunti Arnis\nDe Abanico",
-  "intro": "A classic Cebuano system engineered for rapid-fire execution. Lapunti pairs intricate <i>abanico</i> (fan) strikes with a signature cross-legged stance and footwork, maximizing torque, structural stability, and deceptive angles of attack.",
+  "intro": "A multi-weapon-oriented Filipino combative system that originated from Cebu, Philippines. Lapunti is engineered to overwhelm opponents using rapid-fire combinations, and by pairing two of its most unique and deceptive features: <b><i>abanico</i> (fan) strikes and the cross-legged stance or footwork.</b>",
   "characteristics": [
     {
       "title": "Abanico Strikes",
-      "description": "Rapid fan-like combinations that go around conventional blocks and defenses, striking at unexpected angles in swift succession. Honed through decades of experimentation and actual combat."
+      "description": "Rapid fan-like combinations that strikes from unexpected angles and goes around common blocks or positions of defense. Honed through decades of experimentation and testing in actual combat or fight challenges."
     },
     {
       "title": "Cross-Legged Footwork",
-      "description": "The only style of arnis that uses cross-legged stance and footwork. Enables swift gap-closing, angling against opponents, effective multi-opponent movement, and combat in tight spaces."
+      "description": "The only FMA style that traditionally employs this type of stance and footwork. Enabling a practitioner to swiftly close or create distance, evade or gain a more advantageous position, effectively deal with multiple opponents, and fight in tight spaces."
     }
   ],
-  "founders": "Developed by the Caburnay family: Arsenio Caburnay, GM Felimon Caburnay, and SGM Prudencio 'Undo' Caburnay, with significant contributions from GM Johnny Chiuten, a master of Choy Li Fut Kung Fu and other arnis styles. Officially founded in Cebu, 1972. ",
+  "founders": "<b>Developed during the early 1900s by the Caburnay family:</b> Arsenio Caburnay, GM Felimon Caburnay, and SGM Prudencio 'Undo' Caburnay, with significant contributions from GM Johnny Chiuten, a master of Choy Li Fut Kung Fu and other arnis styles. Official organization established in 1972, in Cebu, Philippines. ",
   "acronym": {
     "label": "LAPUNTI: The 3 barangays in Cebu where the Caburnay family practiced and developed the art; and the core ideals every practitioner strives to embody:",
     "values": [

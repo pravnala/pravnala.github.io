@@ -1,6 +1,6 @@
 {
   "eyebrow": "Gallery",
-  "heading": "In Practice",
+  "heading": "Training Photos",
   "images": [
     {
       "src": "/images/fma/img-02.webp",
@@ -12,15 +12,15 @@
     },
     {
       "src": "/images/fma/img-04.webp",
-      "alt": "Espada y Daga training with Master Buboy Ador. Photo by Josh Balburias."
+      "alt": "Espada y Daga training with Senior Master Buboy Ador. Photo by Josh Balburias."
     },
     {
       "src": "/images/fma/img-01.webp",
-      "alt": "Early UP days rainy day training. With my brother Emil, supervised by Master Nonoy Doncillo. Circa 2012."
+      "alt": "Early UP days rainy day training. With my brother Emil, supervised by Senior Master Nonoy Doncillo. Circa 2012."
     }
   ],
   "galleryLink": {
-    "label": "View Full Gallery in Lapunti Karilyon",
+    "label": "View Lapunti Karilyon Gallery",
     "url": "https://lapunti.org/gallery"
   },
   "reserverd-images": [
