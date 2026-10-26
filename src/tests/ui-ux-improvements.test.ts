@@ -259,7 +259,7 @@ describe('Property 6: Active nav link indicator present for every route', () => 
   it('isActive(route, route) is always true for every nav route', () => {
     fc.assert(
       fc.property(
-        fc.constantFrom('/', '/work', '/arnis', '/blog', '/contact'),
+        fc.constantFrom('/', '/work', '/fma', '/blog', '/contact'),
         (route) => {
           return isActive(route, route) === true;
         }

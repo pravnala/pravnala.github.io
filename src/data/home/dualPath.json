@@ -16,7 +16,7 @@
     }
   },
   "arnis": {
-    "eyebrow": "Arnis",
+    "eyebrow": "FMA",
     "heading": "Filipino\nMartial Arts",
     "summary": "{fmaPracticeYears} years of practice in the art of Lapunti Arnis de Abanico.",
     "description": "Previously trained and dabbled in different forms of martial arts: Karate, Judo, Aikido, Tai Chi, Jeet Kune Do, Krav Maga and Wonwhado. Found the art that I will practice for life in Lapunti Arnis De Abanico. While taking inspiration from other fields and valuable lessons from other disciplines, I am now on a path which my Lapunti teachers themselves have embarked on. A path of reflection and discovery, of sharing the art with others, and towards finding my own Lapunti.",
@@ -25,7 +25,7 @@
       { "value": "{fmaTeachingYears}", "label": "Years teaching" },
       { "value": "Guro", "label": "Title / Rank" }
     ],
-    "primaryButton": { "label": "Explore Arnis", "href": "/arnis" },
+    "primaryButton": { "label": "Explore FMA", "href": "/fma" },
     "secondaryButton": {
       "label": "Train with me",
       "href": "/contact?type=arnis-fma"

@@ -1,6 +1,6 @@
 [
   { "href": "/", "label": "Home" },
   { "href": "/dev", "label": "Dev" },
-  { "href": "/arnis", "label": "Arnis" },
+  { "href": "/fma", "label": "FMA" },
   { "href": "/contact", "label": "Contact" }
 ]

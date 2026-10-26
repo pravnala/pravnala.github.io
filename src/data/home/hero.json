@@ -1,13 +1,22 @@
 {
   "name": "Alvin Penaflor",
   "roles": [
-    { "text": "Web Developer", "bold": true },
-    { "text": "FMA Instructor", "bold": true },
+    {
+      "text": "Web Developer",
+      "subtext": "High-Performant Websites & Web Applications",
+      "bold": true
+    },
+    {
+      "text": "Martial Artist",
+      "subtext": "Filipino Martials Arts Coaching & Instruction",
+      "bold": true
+    },
     { "text": "IT Consultant & Technical Communicator", "bold": false },
-    { "text": "Linux & Open Source Advocate", "bold": false }
+    { "text": "Linux & Open Source Advocate", "bold": false },
+    { "text": "Cycling Enthusiast", "bold": false }
   ],
   "buttons": [
     { "label": "Dev Work", "href": "/dev", "variant": "primary" },
-    { "label": "FMA Training", "href": "/arnis", "variant": "secondary" }
+    { "label": "FMA Training", "href": "/fma", "variant": "secondary" }
   ]
 }

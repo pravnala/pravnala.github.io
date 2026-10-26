@@ -1,6 +1,6 @@
 {
   "eyebrow": "Philosophy",
-  "heading": "Core\nValues",
+  "heading": "My Core Values",
   "description": "Merging Filipino martial philosophy and technical craftsmanship.",
   "quotes": [
     {
@@ -19,15 +19,15 @@
     },
     {
       "title": "Simplicity & Directness",
-      "body": "Employ only what is necessary and reduce complexity. Every line of code, every action, should be deliberate. Sloppiness compounds into failure."
+      "body": "Employ only what is necessary and reduce complexity. Every action or line of code should be intentional. Sloppiness compounds into failure."
     },
     {
       "title": "Mastery & Discipline",
-      "body": "Mastery makes difficult things look effortless. But the path to mastery is far from easy. It's showing up daily, doing the work, and refining what came before."
+      "body": "Mastery makes difficult things look easy, but the path to mastery is paved with hard work. It requires showing up daily, doing the work, and refining what came before."
     },
     {
       "title": "Continuous Flow & Improvement",
-      "body": "Close-mindedness leads to stagnation. Failing to move could be fatal. If it's not working don't force it. There's always a better way. Find it."
+      "body": "Be open to new ideas and avoid stagnation. Learn from other disciplines. Failing to adapt could be fatal. Don't force it if it's not working, find a better way."
     }
   ],
   "nudge": {
